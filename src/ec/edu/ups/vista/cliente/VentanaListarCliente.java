@@ -55,9 +55,12 @@ public class VentanaListarCliente extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCliente = new javax.swing.JTable();
         jlbTituloListaCliente = new javax.swing.JLabel();
+
+        jMenuItem1.setText("jMenuItem1");
 
         setClosable(true);
 
@@ -66,7 +69,7 @@ public class VentanaListarCliente extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Codigo", "Cedula", "Nombre", "Direccion", "Telefono"
+                "Codigo", "Cedula", "Nombre", "Direccion", "Telefono", "Email"
             }
         ));
         jScrollPane1.setViewportView(tblCliente);
@@ -80,21 +83,19 @@ public class VentanaListarCliente extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 725, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(338, 338, 338)
-                .addComponent(jlbTituloListaCliente)
-                .addContainerGap(342, Short.MAX_VALUE))
+                .addGap(270, 270, 270)
+                .addComponent(jlbTituloListaCliente))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jlbTituloListaCliente)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
+                .addGap(23, 23, 23))
         );
 
         pack();
@@ -102,6 +103,7 @@ public class VentanaListarCliente extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel jlbTituloListaCliente;
     private javax.swing.JTable tblCliente;

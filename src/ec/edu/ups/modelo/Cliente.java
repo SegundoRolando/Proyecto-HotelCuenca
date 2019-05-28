@@ -18,18 +18,18 @@ public class Cliente {
     private String cedula;
     private String direccion;
     private String telefono;
+    private String email;
 
     public Cliente() {
     }
 
-    
-    
-    public Cliente(int codigo, String nombre, String cedula, String direccion, String telefono) {
+    public Cliente(int codigo, String nombre, String cedula, String direccion, String telefono, String email) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.cedula = cedula;
         this.direccion = direccion;
         this.telefono = telefono;
+        this.email = email;
     }
 
     public int getCodigo() {
@@ -71,6 +71,16 @@ public class Cliente {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    
 
     @Override
     public int hashCode() {
