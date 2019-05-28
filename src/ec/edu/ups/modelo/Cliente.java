@@ -16,7 +16,6 @@ public class Cliente extends Persona {
     public Cliente(){
         
     }
-
     public Cliente(int codigoCliente) {
         this.codigoCliente = codigoCliente;
     }
