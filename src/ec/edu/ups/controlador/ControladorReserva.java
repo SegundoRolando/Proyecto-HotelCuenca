@@ -56,7 +56,6 @@ public class ControladorReserva {
             }
         }
     }
-    
     public void imprimir(){
         for (Reserva reserva : lista) {
             System.out.println(reserva.getCodigoReserva());
@@ -70,6 +69,4 @@ public class ControladorReserva {
     public int getNumero() {
         return numero;
     }
-    
-    
 }
