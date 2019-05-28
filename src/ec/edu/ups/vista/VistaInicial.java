@@ -6,6 +6,8 @@
 package ec.edu.ups.vista;
 
 import java.awt.Desktop;
+import javax.swing.JOptionPane;
+import jdk.nashorn.internal.ir.BreakNode;
 
 /**
  *
@@ -16,8 +18,10 @@ public class VistaInicial extends javax.swing.JFrame {
     /**
      * Creates new form VistaPrincipal
      */
+    VistaPrincipal principal;
     public VistaInicial() {
         initComponents();
+        principal=new VistaPrincipal();
     }
 
     /**
@@ -33,9 +37,10 @@ public class VistaInicial extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtUsuario = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txtContraseña = new javax.swing.JPasswordField();
         menuBar = new javax.swing.JMenuBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -55,7 +60,7 @@ public class VistaInicial extends javax.swing.JFrame {
 
         jLabel3.setText("Contraseña");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 370, -1, -1));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 340, 130, -1));
+        getContentPane().add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 340, 130, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Desktop\\Proyecto Progra\\usuario.png")); // NOI18N
         jLabel4.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -64,7 +69,11 @@ public class VistaInicial extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 220, 150, 100));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 370, 130, -1));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel5.setText("Acceso al Sistema");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 170, 210, 30));
+        getContentPane().add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 370, 130, -1));
         setJMenuBar(menuBar);
 
         pack();
@@ -76,8 +85,21 @@ public class VistaInicial extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        VistaPrincipal vistaPrincipal=new VistaPrincipal();
-        vistaPrincipal.setVisible(true);
+        
+        if(txtUsuario.getText().equals("hotelcuenca")&& txtContraseña.getText().equals("123456")){
+            JOptionPane.showMessageDialog(this, "login exitoso");
+            principal.setVisible(true);
+            this.dispose();
+        }else {
+            JOptionPane.showMessageDialog(this, "usuario y contraseña incorrecta");
+            txtContraseña.setText("");
+            txtUsuario.setText("");
+            
+        }
+        
+     
+  
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -122,9 +144,10 @@ public class VistaInicial extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JMenuBar menuBar;
+    private javax.swing.JPasswordField txtContraseña;
+    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 
 }
