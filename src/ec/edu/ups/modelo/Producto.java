@@ -5,49 +5,53 @@
  */
 package ec.edu.ups.modelo;
 
+import java.util.Objects;
+
 /**
  *
- * @author ASUS
+ * @author 
  */
 public class Producto {
-    private int codigoProducto;
-    private String nombreProducto;
-    private String detalle;
-    private double precio;
     
-    public Producto(){
-        
+    private int codigoProducto;
+    private String nombre;
+    private double precio;
+    private String detalle; 
+    private int cantidad;
+    
+    public Producto() {
     }
 
-    public Producto(int codigoProducto, String nombreProducto, String detalle, double precio) {
-        this.codigoProducto = codigoProducto;
-        this.nombreProducto = nombreProducto;
-        this.detalle = detalle;
+    public Producto(int codigo, String nombre, double precio, String marca, String detalle,int cantidad) {
+        this.codigoProducto = codigo;
+        this.nombre = nombre;
         this.precio = precio;
+        this.detalle = detalle;
+        this.cantidad = cantidad;
     }
 
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+    
     public int getCodigoProducto() {
         return codigoProducto;
     }
 
-    public void setCodigoProducto(int codigoProducto) {
-        this.codigoProducto = codigoProducto;
+    public void setCodigoProducto(int codigo) {
+        this.codigoProducto = codigo;
     }
 
-    public String getNombreProducto() {
-        return nombreProducto;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreProducto(String nombreProducto) {
-        this.nombreProducto = nombreProducto;
-    }
-
-    public String getDetalle() {
-        return detalle;
-    }
-
-    public void setDetalle(String detalle) {
-        this.detalle = detalle;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public double getPrecio() {
@@ -58,9 +62,38 @@ public class Producto {
         this.precio = precio;
     }
 
-    @Override
-    public String toString() {
-        return "Producto{" + "codigoProducto=" + codigoProducto + ", nombreProducto=" + nombreProducto + ", detalle=" + detalle + ", precio=" + precio + '}';
+    public String getDetalle() {
+        return detalle;
     }
-    
+
+    public void setDetalle(String detalle) {
+        this.detalle = detalle;
+    }
+
+
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 41 * hash + this.codigoProducto;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Producto other = (Producto) obj;
+        if (this.codigoProducto != other.codigoProducto) {
+            return false;
+        }
+        return true;
+    }   
 }
