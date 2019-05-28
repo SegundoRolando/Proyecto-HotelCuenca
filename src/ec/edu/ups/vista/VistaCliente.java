@@ -525,7 +525,6 @@ public class VistaCliente extends javax.swing.JFrame {
         localizacion=new Locale("en","US");
         Locale.setDefault(localizacion);
         cambiarIdioma();
-        
     }//GEN-LAST:event_itmInglesFactura1ActionPerformed
 
     private void itmCreateFactura1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmCreateFactura1ActionPerformed
