@@ -24,6 +24,8 @@ import ec.edu.ups.controlador.ControladorCliente;
 import ec.edu.ups.controlador.ControladorFactura;
 import ec.edu.ups.controlador.ControladorFacturaDetalle;
 import ec.edu.ups.controlador.ControladorProducto;
+import ec.edu.ups.controlador.ControladorReservacion;
+import ec.edu.ups.vista.reservacion.CrearReservacion;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -37,6 +39,7 @@ public class VistaCliente extends javax.swing.JFrame {
     private ControladorProducto controladorProducto;
     private ControladorFactura controladorFactura;
     private ControladorFacturaDetalle controladorFacturaDetalle;
+    private ControladorReservacion controladorReservacion;
     private Locale localizacion;
     private ResourceBundle mensajes;
 
@@ -50,6 +53,7 @@ public class VistaCliente extends javax.swing.JFrame {
         controladorProducto = new ControladorProducto();
         controladorFactura = new ControladorFactura();
         controladorFacturaDetalle=new ControladorFacturaDetalle();
+        controladorReservacion =new ControladorReservacion();
         //System.out.println("Localizacion por defecto :"+Locale.getDefault().getLanguage());
         localizacion = new Locale("es", "EC");
         Locale.setDefault(localizacion);
@@ -122,6 +126,13 @@ public class VistaCliente extends javax.swing.JFrame {
         itmUpdateFactura = new javax.swing.JMenuItem();
         itmDeleateFactura = new javax.swing.JMenuItem();
         itmListarFactura = new javax.swing.JMenuItem();
+        facturaMenu1 = new javax.swing.JMenu();
+        itmCreateFactura1 = new javax.swing.JMenuItem();
+        itmReadFactura1 = new javax.swing.JMenuItem();
+        itmUpdateFactura1 = new javax.swing.JMenuItem();
+        itmDeleateFactura1 = new javax.swing.JMenuItem();
+        itmListarFactura1 = new javax.swing.JMenuItem();
+        itmCreateFactura2 = new javax.swing.JMenuItem();
         idiomaMenu = new javax.swing.JMenu();
         itmEspanolFactura1 = new javax.swing.JMenuItem();
         itmInglesFactura1 = new javax.swing.JMenuItem();
@@ -290,6 +301,69 @@ public class VistaCliente extends javax.swing.JFrame {
 
         menuBar.add(facturaMenu);
 
+        facturaMenu1.setText("Reservacion");
+
+        itmCreateFactura1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        itmCreateFactura1.setMnemonic('o');
+        itmCreateFactura1.setText("Create");
+        itmCreateFactura1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmCreateFactura1ActionPerformed(evt);
+            }
+        });
+        facturaMenu1.add(itmCreateFactura1);
+
+        itmReadFactura1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
+        itmReadFactura1.setMnemonic('s');
+        itmReadFactura1.setText("Read");
+        itmReadFactura1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmReadFactura1ActionPerformed(evt);
+            }
+        });
+        facturaMenu1.add(itmReadFactura1);
+
+        itmUpdateFactura1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
+        itmUpdateFactura1.setMnemonic('a');
+        itmUpdateFactura1.setText("Update");
+        itmUpdateFactura1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmUpdateFactura1ActionPerformed(evt);
+            }
+        });
+        facturaMenu1.add(itmUpdateFactura1);
+
+        itmDeleateFactura1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
+        itmDeleateFactura1.setMnemonic('x');
+        itmDeleateFactura1.setText("Delete");
+        itmDeleateFactura1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmDeleateFactura1ActionPerformed(evt);
+            }
+        });
+        facturaMenu1.add(itmDeleateFactura1);
+
+        itmListarFactura1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
+        itmListarFactura1.setText("Listar");
+        itmListarFactura1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmListarFactura1ActionPerformed(evt);
+            }
+        });
+        facturaMenu1.add(itmListarFactura1);
+
+        itmCreateFactura2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        itmCreateFactura2.setMnemonic('o');
+        itmCreateFactura2.setText("Create");
+        itmCreateFactura2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmCreateFactura2ActionPerformed(evt);
+            }
+        });
+        facturaMenu1.add(itmCreateFactura2);
+
+        menuBar.add(facturaMenu1);
+
         idiomaMenu.setText("Idiomas");
 
         itmEspanolFactura1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
@@ -324,7 +398,7 @@ public class VistaCliente extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
         );
 
         pack();
@@ -454,6 +528,35 @@ public class VistaCliente extends javax.swing.JFrame {
         
     }//GEN-LAST:event_itmInglesFactura1ActionPerformed
 
+    private void itmCreateFactura1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmCreateFactura1ActionPerformed
+        CrearReservacion crearReservacion=new CrearReservacion(controladorReservacion);
+        crearReservacion.setVisible(true);
+        desktopPane.add(crearReservacion);
+    }//GEN-LAST:event_itmCreateFactura1ActionPerformed
+
+    private void itmReadFactura1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmReadFactura1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itmReadFactura1ActionPerformed
+
+    private void itmUpdateFactura1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmUpdateFactura1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itmUpdateFactura1ActionPerformed
+
+    private void itmDeleateFactura1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmDeleateFactura1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itmDeleateFactura1ActionPerformed
+
+    private void itmListarFactura1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmListarFactura1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itmListarFactura1ActionPerformed
+
+    private void itmCreateFactura2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmCreateFactura2ActionPerformed
+        // TODO add your handling code here:
+        VentanaCrearFactura crearFactura = new VentanaCrearFactura(controladorFactura, controladorCliente,controladorProducto,controladorFacturaDetalle);
+        crearFactura.setVisible(true);
+        desktopPane.add(crearFactura);
+    }//GEN-LAST:event_itmCreateFactura2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -496,23 +599,30 @@ public class VistaCliente extends javax.swing.JFrame {
     private javax.swing.JMenu clienteMenu;
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenu facturaMenu;
+    private javax.swing.JMenu facturaMenu1;
     private javax.swing.JMenu idiomaMenu;
     private javax.swing.JMenuItem itmCreateCliente;
     private javax.swing.JMenuItem itmCreateFactura;
+    private javax.swing.JMenuItem itmCreateFactura1;
+    private javax.swing.JMenuItem itmCreateFactura2;
     private javax.swing.JMenuItem itmCreateProducto;
     private javax.swing.JMenuItem itmDeleateCliente;
     private javax.swing.JMenuItem itmDeleateFactura;
+    private javax.swing.JMenuItem itmDeleateFactura1;
     private javax.swing.JMenuItem itmDeleateProducto;
     private javax.swing.JMenuItem itmEspanolFactura1;
     private javax.swing.JMenuItem itmInglesFactura1;
     private javax.swing.JMenuItem itmListarCliente;
     private javax.swing.JMenuItem itmListarFactura;
+    private javax.swing.JMenuItem itmListarFactura1;
     private javax.swing.JMenuItem itmListarProducto;
     private javax.swing.JMenuItem itmReadCliente;
     private javax.swing.JMenuItem itmReadFactura;
+    private javax.swing.JMenuItem itmReadFactura1;
     private javax.swing.JMenuItem itmReadProducto;
     private javax.swing.JMenuItem itmUpdateCliente;
     private javax.swing.JMenuItem itmUpdateFactura;
+    private javax.swing.JMenuItem itmUpdateFactura1;
     private javax.swing.JMenuItem itmUpdateProducto;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuBar menuBar;
