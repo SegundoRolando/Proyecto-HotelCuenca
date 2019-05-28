@@ -223,6 +223,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         VistaCliente vistaCliente=new VistaCliente();
         vistaCliente.setVisible(true);
+         this.dispose();
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
