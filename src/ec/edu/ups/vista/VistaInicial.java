@@ -6,6 +6,7 @@
 package ec.edu.ups.vista;
 
 import java.awt.Desktop;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 import jdk.nashorn.internal.ir.BreakNode;
 
@@ -53,9 +54,14 @@ public class VistaInicial extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jButton1KeyPressed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 400, -1, -1));
 
-        jLabel1.setText("Usurio");
+        jLabel1.setText("Usuario");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 340, -1, -1));
 
         jLabel3.setText("Contraseña");
@@ -73,6 +79,12 @@ public class VistaInicial extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel5.setText("Acceso al Sistema");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 170, 210, 30));
+
+        txtContraseña.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtContraseñaKeyPressed(evt);
+            }
+        });
         getContentPane().add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 370, 130, -1));
         setJMenuBar(menuBar);
 
@@ -101,6 +113,29 @@ public class VistaInicial extends javax.swing.JFrame {
   
        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed
+        // TODO add your handling code here:
+       
+        
+    }//GEN-LAST:event_jButton1KeyPressed
+
+    private void txtContraseñaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtContraseñaKeyPressed
+        // TODO add your handling code here:
+        if (evt.getExtendedKeyCode()== KeyEvent.VK_ENTER) {
+              if(txtUsuario.getText().equals("hotelcuenca")&& txtContraseña.getText().equals("123456")){
+            JOptionPane.showMessageDialog(this, "login exitoso");
+            principal.setVisible(true);
+            this.dispose();
+        }else {
+            JOptionPane.showMessageDialog(this, "usuario y contraseña incorrecta");
+            txtContraseña.setText("");
+            txtUsuario.setText("");
+            
+         }
+        }
+        
+    }//GEN-LAST:event_txtContraseñaKeyPressed
 
     /**
      * @param args the command line arguments
