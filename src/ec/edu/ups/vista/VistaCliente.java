@@ -6,7 +6,7 @@
 package ec.edu.ups.vista;
 
 import ec.edu.ups.vista.factura.VentanaListarFactura;
-import ec.edu.ups.vista.factura.VentanaLeerFactura;
+
 import ec.edu.ups.vista.factura.VentanaActualizarFactura;
 import ec.edu.ups.vista.factura.VentanaCrearFactura;
 import ec.edu.ups.vista.factura.VentanaEliminarFactura;
@@ -483,22 +483,16 @@ public class VistaCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_itmCreateFacturaActionPerformed
 
     private void itmReadFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmReadFacturaActionPerformed
-        VentanaLeerFactura buscarFactura=new VentanaLeerFactura(controladorProducto);
-        buscarFactura.setVisible(true);
-        desktopPane.add(buscarFactura);
+        
     }//GEN-LAST:event_itmReadFacturaActionPerformed
 
     private void itmUpdateFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmUpdateFacturaActionPerformed
         // TODO add your handling code here:
-        VentanaActualizarFactura updateFactura = new VentanaActualizarFactura(controladorFactura, controladorCliente);
-        updateFactura.setVisible(true);
-        desktopPane.add(updateFactura);
+    
     }//GEN-LAST:event_itmUpdateFacturaActionPerformed
 
     private void itmDeleateFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmDeleateFacturaActionPerformed
-      VentanaEliminarFactura deleteFactura = new VentanaEliminarFactura(controladorProducto);
-        deleteFactura.setVisible(true);
-        desktopPane.add(deleteFactura);       
+     
         
         
         
