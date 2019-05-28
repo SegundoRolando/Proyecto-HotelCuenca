@@ -25,6 +25,7 @@ import ec.edu.ups.controlador.ControladorFactura;
 import ec.edu.ups.controlador.ControladorFacturaDetalle;
 import ec.edu.ups.controlador.ControladorProducto;
 import ec.edu.ups.controlador.ControladorReservacion;
+import ec.edu.ups.vista.reservacion.BuscarReservacion;
 import ec.edu.ups.vista.reservacion.CrearReservacion;
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -529,6 +530,9 @@ public class VistaCliente extends javax.swing.JFrame {
 
     private void itmReadFactura1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmReadFactura1ActionPerformed
         // TODO add your handling code here:
+        BuscarReservacion buscar = new BuscarReservacion(controladorReservacion);
+        buscar.setVisible(true);
+        desktopPane.add(buscar);
     }//GEN-LAST:event_itmReadFactura1ActionPerformed
 
     private void itmUpdateFactura1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmUpdateFactura1ActionPerformed

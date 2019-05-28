@@ -47,7 +47,7 @@ public void cambiarIdioma(ResourceBundle mensajes){
         jPanel1 = new javax.swing.JPanel();
         jlbCodigoBuscarClient = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
-        btnAceptar = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
         txtDireccion = new javax.swing.JTextField();
         txtTelefono = new javax.swing.JTextField();
         txtNombre = new javax.swing.JTextField();
@@ -71,10 +71,10 @@ public void cambiarIdioma(ResourceBundle mensajes){
             }
         });
 
-        btnAceptar.setText("BUSCAR");
-        btnAceptar.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscar.setText("BUSCAR");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAceptarActionPerformed(evt);
+                btnBuscarActionPerformed(evt);
             }
         });
 
@@ -117,7 +117,7 @@ public void cambiarIdioma(ResourceBundle mensajes){
                         .addGap(26, 26, 26)
                         .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(27, 27, 27)
-                        .addComponent(btnAceptar))
+                        .addComponent(btnBuscar))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jlbNombreBuscarClient)
@@ -146,7 +146,7 @@ public void cambiarIdioma(ResourceBundle mensajes){
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlbCodigoBuscarClient)
                     .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAceptar))
+                    .addComponent(btnBuscar))
                 .addGap(42, 42, 42)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -202,7 +202,7 @@ public void cambiarIdioma(ResourceBundle mensajes){
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
         int codigo = Integer.parseInt(txtCodigo.getText());
         Cliente cliente = controladorCliente.read(codigo);
@@ -211,7 +211,7 @@ public void cambiarIdioma(ResourceBundle mensajes){
         txtDireccion.setText(cliente.getDireccion());
         txtTelefono.setText(cliente.getTelefono());
         
-    }//GEN-LAST:event_btnAceptarActionPerformed
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         
@@ -228,7 +228,7 @@ public void cambiarIdioma(ResourceBundle mensajes){
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAceptar;
+    private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jlbCedulaBuscarClient;

@@ -196,7 +196,7 @@ public class CrearReservacion extends javax.swing.JInternalFrame {
         txtCodigo.setText(Integer.toString(this.controladorReservacion.getCodigo()));
         JOptionPane.showMessageDialog(this, "RESERRVACION CREADA", "Crear RESERVACION", JOptionPane.INFORMATION_MESSAGE);
         txtCodigo.setText(String.valueOf(this.controladorReservacion.getCodigo()));
-        txtCodigo.setText("");
+        
         txtCodiHabitacion.setText("");
         txtCodTrabaador.setText("");
         txtFechReser.setText("");

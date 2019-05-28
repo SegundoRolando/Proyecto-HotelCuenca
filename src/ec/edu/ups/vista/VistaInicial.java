@@ -98,7 +98,7 @@ public class VistaInicial extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
-        if(txtUsuario.getText().equals("hotelcuenca")&& txtContraseña.getText().equals("123456")){
+        if(txtUsuario.getText().equals("h")&& txtContraseña.getText().equals("1")){
             JOptionPane.showMessageDialog(this, "login exitoso");
             principal.setVisible(true);
             this.dispose();
@@ -123,7 +123,7 @@ public class VistaInicial extends javax.swing.JFrame {
     private void txtContraseñaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtContraseñaKeyPressed
         // TODO add your handling code here:
         if (evt.getExtendedKeyCode()== KeyEvent.VK_ENTER) {
-              if(txtUsuario.getText().equals("hotelcuenca")&& txtContraseña.getText().equals("123456")){
+              if(txtUsuario.getText().equals("h")&& txtContraseña.getText().equals("1")){
             JOptionPane.showMessageDialog(this, "login exitoso");
             principal.setVisible(true);
             this.dispose();
