@@ -5,9 +5,10 @@
  */
 package ec.edu.ups.vista;
 
+import com.sun.swing.internal.plaf.basic.resources.basic;
 import ec.edu.ups.vista.factura.ListarFactura;
 
-import ec.edu.ups.vista.factura.ActualizarFactura;
+
 import ec.edu.ups.vista.factura.CrearFactura;
 import ec.edu.ups.vista.factura.EliminarFactura;
 import ec.edu.ups.vista.cliente.EliminarCliente;
@@ -30,6 +31,7 @@ import ec.edu.ups.vista.empleado.BuscarEmpleado;
 import ec.edu.ups.vista.empleado.CrearEmpleado;
 import ec.edu.ups.vista.empleado.EliminarEmpleado;
 import ec.edu.ups.vista.empleado.ListarEmpleado;
+import ec.edu.ups.vista.factura.BuscarFactura;
 import ec.edu.ups.vista.reservacion.ActualizarReservacion;
 import ec.edu.ups.vista.reservacion.BuscarReservacion;
 import ec.edu.ups.vista.reservacion.CrearReservacion;
@@ -610,7 +612,9 @@ public class VistaMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_itmDeleateFacturaActionPerformed
 
     private void itmReadFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmReadFacturaActionPerformed
-
+        BuscarFactura buscarFactura=new BuscarFactura(controladorFactura, controladorCliente, controladorProducto, controladorFacturaDetalle);
+        buscarFactura.setVisible(true);
+        desktopPane.add(buscarFactura);
     }//GEN-LAST:event_itmReadFacturaActionPerformed
 
     private void itmCreateFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmCreateFacturaActionPerformed
