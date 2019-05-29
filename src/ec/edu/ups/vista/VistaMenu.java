@@ -27,6 +27,7 @@ import ec.edu.ups.controladores.ControladorFactura;
 import ec.edu.ups.controladores.ControladorFacturaDetalle;
 import ec.edu.ups.controladores.ControladorProducto;
 import ec.edu.ups.controladores.ControladorReservacion;
+import ec.edu.ups.vista.empleado.ActualizarEmpleado;
 import ec.edu.ups.vista.empleado.BuscarEmpleado;
 import ec.edu.ups.vista.empleado.CrearEmpleado;
 import ec.edu.ups.vista.empleado.EliminarEmpleado;
@@ -641,6 +642,9 @@ public class VistaMenu extends javax.swing.JFrame {
 
     private void itmUpdateEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmUpdateEmpleadoActionPerformed
         // TODO add your handling code here:
+        ActualizarEmpleado actualizarEmpleado=new ActualizarEmpleado(controadorEmpleado);
+        actualizarEmpleado.setVisible(true);
+        desktopPane.add(actualizarEmpleado);
     }//GEN-LAST:event_itmUpdateEmpleadoActionPerformed
 
     private void itmDeleateEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmDeleateEmpleadoActionPerformed
