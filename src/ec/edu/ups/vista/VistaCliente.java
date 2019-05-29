@@ -107,6 +107,20 @@ public class VistaCliente extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+        jPopupMenu1 = new javax.swing.JPopupMenu();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jMenuBar3 = new javax.swing.JMenuBar();
+        jMenu6 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
+        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
+        jPopupMenu2 = new javax.swing.JPopupMenu();
+        jToggleButton1 = new javax.swing.JToggleButton();
         desktopPane = new javax.swing.JDesktopPane();
         menuBar = new javax.swing.JMenuBar();
         clienteMenu = new javax.swing.JMenu();
@@ -138,6 +152,31 @@ public class VistaCliente extends javax.swing.JFrame {
         itmInglesFactura1 = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
+
+        jMenu1.setText("File");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("jMenu3");
+
+        jMenu4.setText("File");
+        jMenuBar2.add(jMenu4);
+
+        jMenu5.setText("Edit");
+        jMenuBar2.add(jMenu5);
+
+        jMenu6.setText("File");
+        jMenuBar3.add(jMenu6);
+
+        jMenu7.setText("Edit");
+        jMenuBar3.add(jMenu7);
+
+        jRadioButtonMenuItem1.setSelected(true);
+        jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
+
+        jToggleButton1.setText("jToggleButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -602,7 +641,21 @@ public class VistaCliente extends javax.swing.JFrame {
     private javax.swing.JMenuItem itmUpdateFactura;
     private javax.swing.JMenuItem itmUpdateFactura1;
     private javax.swing.JMenuItem itmUpdateProducto;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuBar jMenuBar3;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JPopupMenu jPopupMenu2;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
+    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenu productoMenu;
     // End of variables declaration//GEN-END:variables
