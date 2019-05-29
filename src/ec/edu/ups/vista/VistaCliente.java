@@ -21,10 +21,12 @@ import ec.edu.ups.vista.producto.ListarProductos;
 import ec.edu.ups.vista.producto.CrearProducto;
 import ec.edu.ups.vista.producto.EliminarProducto;
 import ec.edu.ups.controladores.ControladorCliente;
+import ec.edu.ups.controladores.ControladorEmpleado;
 import ec.edu.ups.controladores.ControladorFactura;
 import ec.edu.ups.controladores.ControladorFacturaDetalle;
 import ec.edu.ups.controladores.ControladorProducto;
 import ec.edu.ups.controladores.ControladorReservacion;
+import ec.edu.ups.vista.empleado.CrearEmpleado;
 import ec.edu.ups.vista.reservacion.BuscarReservacion;
 import ec.edu.ups.vista.reservacion.CrearReservacion;
 import java.util.Locale;
@@ -41,6 +43,7 @@ public class VistaCliente extends javax.swing.JFrame {
     private ControladorFactura controladorFactura;
     private ControladorFacturaDetalle controladorFacturaDetalle;
     private ControladorReservacion controladorReservacion;
+    private ControladorEmpleado controadorEmpleado;
     private Locale localizacion;
     private ResourceBundle mensajes;
 
@@ -55,6 +58,7 @@ public class VistaCliente extends javax.swing.JFrame {
         controladorFactura = new ControladorFactura();
         controladorFacturaDetalle=new ControladorFacturaDetalle();
         controladorReservacion =new ControladorReservacion();
+        controadorEmpleado=new ControladorEmpleado();
         //System.out.println("Localizacion por defecto :"+Locale.getDefault().getLanguage());
         localizacion = new Locale("es", "EC");
         Locale.setDefault(localizacion);
@@ -120,6 +124,7 @@ public class VistaCliente extends javax.swing.JFrame {
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
         jPopupMenu2 = new javax.swing.JPopupMenu();
         jToggleButton1 = new javax.swing.JToggleButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
         desktopPane = new javax.swing.JDesktopPane();
         menuBar = new javax.swing.JMenuBar();
         clienteMenu = new javax.swing.JMenu();
@@ -183,6 +188,8 @@ public class VistaCliente extends javax.swing.JFrame {
         jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
 
         jToggleButton1.setText("jToggleButton1");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -488,7 +495,7 @@ public class VistaCliente extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE)
+                .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -634,6 +641,10 @@ public class VistaCliente extends javax.swing.JFrame {
 
     private void itmCreateEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmCreateEmpleadoActionPerformed
         // TODO add your handling code here:
+        CrearEmpleado crearEmpleado=new CrearEmpleado(controadorEmpleado);
+        crearEmpleado.setVisible(true);
+        desktopPane.add(crearEmpleado);
+        
     }//GEN-LAST:event_itmCreateEmpleadoActionPerformed
 
     private void itmReadrEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmReadrEmpleadoActionPerformed
@@ -729,6 +740,7 @@ public class VistaCliente extends javax.swing.JFrame {
     private javax.swing.JMenuItem itmUpdateEmpleado;
     private javax.swing.JMenuItem itmUpdateFactura1;
     private javax.swing.JMenuItem itmUpdateProducto;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
