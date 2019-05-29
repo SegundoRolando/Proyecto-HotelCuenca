@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.ups.controlador;
+package ec.edu.ups.controladores;
 
 import ec.edu.ups.modelo.Factura;
 import java.util.HashSet;

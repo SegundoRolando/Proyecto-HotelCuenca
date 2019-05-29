@@ -5,7 +5,7 @@
  */
 package ec.edu.ups.vista.cliente;
 
-import ec.edu.ups.controlador.ControladorCliente;
+import ec.edu.ups.controladores.ControladorCliente;
 import ec.edu.ups.modelo.Cliente;
 import java.util.ResourceBundle;
 import java.util.Set;
@@ -15,13 +15,13 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author 
  */
-public class VentanaListarCliente extends javax.swing.JInternalFrame {
+public class ListarCliente extends javax.swing.JInternalFrame {
  private ControladorCliente controladorCliente;
  private ResourceBundle mensajes;
     /**
      * Creates new form ListarClientes
      */
-    public VentanaListarCliente(ControladorCliente controladorCliente,ResourceBundle mensajes) {
+    public ListarCliente(ControladorCliente controladorCliente,ResourceBundle mensajes) {
         initComponents();
         this.controladorCliente=controladorCliente;
         this.mensajes = mensajes ;

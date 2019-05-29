@@ -5,7 +5,7 @@
  */
 package ec.edu.ups.vista.cliente;
 
-import ec.edu.ups.controlador.ControladorCliente;
+import ec.edu.ups.controladores.ControladorCliente;
 import ec.edu.ups.modelo.Cliente;
 import java.util.ResourceBundle;
 
@@ -13,13 +13,13 @@ import java.util.ResourceBundle;
  *
  * @author 
  */
-public class VentanaLeerCliente extends javax.swing.JInternalFrame {
+public class BuscarCliente extends javax.swing.JInternalFrame {
     private ResourceBundle mensajes ;
     private ControladorCliente controladorCliente;
     /**
      * Creates new form ReadCliente
      */
-    public VentanaLeerCliente(ControladorCliente controladorCliente,ResourceBundle mensajes ) {
+    public BuscarCliente(ControladorCliente controladorCliente,ResourceBundle mensajes ) {
         initComponents();
         this.controladorCliente = controladorCliente;
         this.mensajes = mensajes;

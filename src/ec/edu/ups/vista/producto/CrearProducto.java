@@ -5,8 +5,8 @@
  */
 package ec.edu.ups.vista.producto;
 
-import ec.edu.ups.controlador.ControladorFacturaDetalle;
-import ec.edu.ups.controlador.ControladorProducto;
+import ec.edu.ups.controladores.ControladorFacturaDetalle;
+import ec.edu.ups.controladores.ControladorProducto;
 import ec.edu.ups.modelo.Cliente;
 import ec.edu.ups.modelo.FacturaDetalle;
 import ec.edu.ups.modelo.Producto;
@@ -17,14 +17,14 @@ import javax.swing.JOptionPane;
  *
  * @author 
  */
-public class VentanaCrearProducto extends javax.swing.JInternalFrame {
+public class CrearProducto extends javax.swing.JInternalFrame {
     private ResourceBundle mensajes;
    private ControladorProducto controladorProducto;
     private ControladorFacturaDetalle controladorFacturaDetalle;
     /**
      * Creates new form CrearCliente
      */
-    public VentanaCrearProducto(ControladorProducto controladorProducto,ControladorFacturaDetalle controladorFacturaDetalle,ResourceBundle mensajes) {
+    public CrearProducto(ControladorProducto controladorProducto,ControladorFacturaDetalle controladorFacturaDetalle,ResourceBundle mensajes) {
         initComponents();
         this.controladorProducto = controladorProducto;
         this.controladorFacturaDetalle=controladorFacturaDetalle;

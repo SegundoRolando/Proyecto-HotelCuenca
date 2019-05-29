@@ -5,14 +5,14 @@
  */
 package ec.edu.ups.vista.producto;
 
-import ec.edu.ups.controlador.ControladorProducto;
+import ec.edu.ups.controladores.ControladorProducto;
 import java.util.ResourceBundle;
 
 /**
  *
  * @author
  */
-public class VentanaEliminarProducto extends javax.swing.JInternalFrame {
+public class EliminarProducto extends javax.swing.JInternalFrame {
 
     private ResourceBundle mensajes;
     private ControladorProducto controladorProducto;
@@ -20,7 +20,7 @@ public class VentanaEliminarProducto extends javax.swing.JInternalFrame {
     /**
      * Creates new form DeleteCliente
      */
-    public VentanaEliminarProducto(ControladorProducto controladorProducto, ResourceBundle mensajes) {
+    public EliminarProducto(ControladorProducto controladorProducto, ResourceBundle mensajes) {
         initComponents();
         this.controladorProducto = controladorProducto;
         this.mensajes = mensajes;

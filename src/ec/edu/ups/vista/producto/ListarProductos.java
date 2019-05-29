@@ -5,8 +5,8 @@
  */
 package ec.edu.ups.vista.producto;
 
-import ec.edu.ups.controlador.ControladorFacturaDetalle;
-import ec.edu.ups.controlador.ControladorProducto;
+import ec.edu.ups.controladores.ControladorFacturaDetalle;
+import ec.edu.ups.controladores.ControladorProducto;
 import ec.edu.ups.modelo.Factura;
 import ec.edu.ups.modelo.Producto;
 import java.util.ResourceBundle;
@@ -17,13 +17,13 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author 
  */
-public class VentanaListarProductos extends javax.swing.JInternalFrame {
+public class ListarProductos extends javax.swing.JInternalFrame {
 private ControladorProducto controladorProducto;
 private ResourceBundle mensajes;
     /**
      * Creates new form ListarClientes
      */
-    public VentanaListarProductos(ControladorProducto controladorProducto,ResourceBundle mensajes) {
+    public ListarProductos(ControladorProducto controladorProducto,ResourceBundle mensajes) {
         initComponents();
         this.controladorProducto=controladorProducto;
         this.mensajes = mensajes ;

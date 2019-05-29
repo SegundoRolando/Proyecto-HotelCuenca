@@ -5,7 +5,7 @@
  */
 package ec.edu.ups.vista.producto;
 
-import ec.edu.ups.controlador.ControladorProducto;
+import ec.edu.ups.controladores.ControladorProducto;
 import ec.edu.ups.modelo.Producto;
 import java.util.ResourceBundle;
 import javax.swing.JOptionPane;
@@ -14,13 +14,13 @@ import javax.swing.JOptionPane;
  *
  * @author 
  */
-public class VentanaActualizarProductos extends javax.swing.JInternalFrame {
+public class ActualizarProductos extends javax.swing.JInternalFrame {
     private ResourceBundle mensajes;
     private ControladorProducto controladorProducto;
     /**
      * Creates new form UpdateCliente
      */
-    public VentanaActualizarProductos(ControladorProducto controladorProducto, ResourceBundle mensajes) {
+    public ActualizarProductos(ControladorProducto controladorProducto, ResourceBundle mensajes) {
         initComponents();
         this. mensajes = mensajes;
         this.controladorProducto = controladorProducto;

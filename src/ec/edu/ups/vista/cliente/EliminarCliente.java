@@ -5,20 +5,20 @@
  */
 package ec.edu.ups.vista.cliente;
 
-import ec.edu.ups.controlador.ControladorCliente;
+import ec.edu.ups.controladores.ControladorCliente;
 import java.util.ResourceBundle;
 
 /**
  *
  * @author 
  */
-public class VentanaEliminarCliente extends javax.swing.JInternalFrame {
+public class EliminarCliente extends javax.swing.JInternalFrame {
     private ResourceBundle mensajes;
     private ControladorCliente controladorCliente;
     /**
      * Creates new form DeleteCliente
      */
-    public VentanaEliminarCliente(ControladorCliente controladorCliente,ResourceBundle mensajes) {
+    public EliminarCliente(ControladorCliente controladorCliente,ResourceBundle mensajes) {
         initComponents();
         this.controladorCliente = controladorCliente;
         this.mensajes = mensajes;

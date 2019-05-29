@@ -5,7 +5,7 @@
  */
 package ec.edu.ups.vista.cliente;
 
-import ec.edu.ups.controlador.ControladorCliente;
+import ec.edu.ups.controladores.ControladorCliente;
 import ec.edu.ups.modelo.Cliente;
 import java.util.ResourceBundle;
 import javax.swing.JOptionPane;
@@ -14,14 +14,14 @@ import javax.swing.JOptionPane;
  *
  * @author 
  */
-public class VentanaActualizarCliente extends javax.swing.JInternalFrame {
+public class ActualizarCliente extends javax.swing.JInternalFrame {
     ControladorCliente controladorCliente;
     private ResourceBundle mensajes;
    // private ControladorCliente controladorCliente;
     /**
      * Creates new form UpdateCliente
      */
-    public VentanaActualizarCliente(ControladorCliente controladorCliente,ResourceBundle mensajes) {
+    public ActualizarCliente(ControladorCliente controladorCliente,ResourceBundle mensajes) {
         initComponents();
         this.controladorCliente = controladorCliente;
        this.mensajes = mensajes;

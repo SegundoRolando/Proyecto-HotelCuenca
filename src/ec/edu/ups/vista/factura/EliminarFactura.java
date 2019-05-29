@@ -13,14 +13,14 @@ package ec.edu.ups.vista.factura;
  *
  * @author ASUS
  */
-public class VentanaEliminarFactura extends javax.swing.JInternalFrame {
+public class EliminarFactura extends javax.swing.JInternalFrame {
     
   
    
     /**
      * Creates new form VentanaEiminarFactura
      */
-    public VentanaEliminarFactura() {
+    public EliminarFactura() {
         initComponents();
         
     }

@@ -5,26 +5,26 @@
  */
 package ec.edu.ups.vista;
 
-import ec.edu.ups.vista.factura.VentanaListarFactura;
+import ec.edu.ups.vista.factura.ListarFactura;
 
-import ec.edu.ups.vista.factura.VentanaActualizarFactura;
-import ec.edu.ups.vista.factura.VentanaCrearFactura;
-import ec.edu.ups.vista.factura.VentanaEliminarFactura;
-import ec.edu.ups.vista.cliente.VentanaEliminarCliente;
-import ec.edu.ups.vista.cliente.VentanaActualizarCliente;
-import ec.edu.ups.vista.cliente.VentanaCrearCliente;
-import ec.edu.ups.vista.cliente.VentanaListarCliente;
-import ec.edu.ups.vista.cliente.VentanaLeerCliente;
-import ec.edu.ups.vista.producto.VentanaActualizarProductos;
-import ec.edu.ups.vista.producto.VentanaLeerProducto;
-import ec.edu.ups.vista.producto.VentanaListarProductos;
-import ec.edu.ups.vista.producto.VentanaCrearProducto;
-import ec.edu.ups.vista.producto.VentanaEliminarProducto;
-import ec.edu.ups.controlador.ControladorCliente;
-import ec.edu.ups.controlador.ControladorFactura;
-import ec.edu.ups.controlador.ControladorFacturaDetalle;
-import ec.edu.ups.controlador.ControladorProducto;
-import ec.edu.ups.controlador.ControladorReservacion;
+import ec.edu.ups.vista.factura.ActualizarFactura;
+import ec.edu.ups.vista.factura.CrearFactura;
+import ec.edu.ups.vista.factura.EliminarFactura;
+import ec.edu.ups.vista.cliente.EliminarCliente;
+import ec.edu.ups.vista.cliente.ActualizarCliente;
+import ec.edu.ups.vista.cliente.CrearCliente;
+import ec.edu.ups.vista.cliente.ListarCliente;
+import ec.edu.ups.vista.cliente.BuscarCliente;
+import ec.edu.ups.vista.producto.ActualizarProductos;
+import ec.edu.ups.vista.producto.BuscarProducto;
+import ec.edu.ups.vista.producto.ListarProductos;
+import ec.edu.ups.vista.producto.CrearProducto;
+import ec.edu.ups.vista.producto.EliminarProducto;
+import ec.edu.ups.controladores.ControladorCliente;
+import ec.edu.ups.controladores.ControladorFactura;
+import ec.edu.ups.controladores.ControladorFacturaDetalle;
+import ec.edu.ups.controladores.ControladorProducto;
+import ec.edu.ups.controladores.ControladorReservacion;
 import ec.edu.ups.vista.reservacion.BuscarReservacion;
 import ec.edu.ups.vista.reservacion.CrearReservacion;
 import java.util.Locale;
@@ -133,7 +133,6 @@ public class VistaCliente extends javax.swing.JFrame {
         itmUpdateFactura1 = new javax.swing.JMenuItem();
         itmDeleateFactura1 = new javax.swing.JMenuItem();
         itmListarFactura1 = new javax.swing.JMenuItem();
-        itmCreateFactura2 = new javax.swing.JMenuItem();
         idiomaMenu = new javax.swing.JMenu();
         itmEspanolFactura1 = new javax.swing.JMenuItem();
         itmInglesFactura1 = new javax.swing.JMenuItem();
@@ -353,16 +352,6 @@ public class VistaCliente extends javax.swing.JFrame {
         });
         facturaMenu1.add(itmListarFactura1);
 
-        itmCreateFactura2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
-        itmCreateFactura2.setMnemonic('o');
-        itmCreateFactura2.setText("Create");
-        itmCreateFactura2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmCreateFactura2ActionPerformed(evt);
-            }
-        });
-        facturaMenu1.add(itmCreateFactura2);
-
         menuBar.add(facturaMenu1);
 
         idiomaMenu.setText("Idiomas");
@@ -406,13 +395,13 @@ public class VistaCliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void itmDeleateClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmDeleateClienteActionPerformed
-        VentanaEliminarCliente deleteCliente = new VentanaEliminarCliente(controladorCliente,mensajes);
+        EliminarCliente deleteCliente = new EliminarCliente(controladorCliente,mensajes);
         deleteCliente.setVisible(true);
         desktopPane.add(deleteCliente);
     }//GEN-LAST:event_itmDeleateClienteActionPerformed
 
     private void itmListarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmListarClienteActionPerformed
-        VentanaListarCliente listarCliente=new VentanaListarCliente(controladorCliente,mensajes);
+        ListarCliente listarCliente=new ListarCliente(controladorCliente,mensajes);
         listarCliente.setVisible(true);
         desktopPane.add(listarCliente);      
         
@@ -421,7 +410,7 @@ public class VistaCliente extends javax.swing.JFrame {
 
     private void itmCreateClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmCreateClienteActionPerformed
         // TODO add your handling code here:
-        VentanaCrearCliente crearCliente = new VentanaCrearCliente(controladorCliente,mensajes);
+        CrearCliente crearCliente = new CrearCliente(controladorCliente,mensajes);
         crearCliente.setVisible(true);
         desktopPane.add(crearCliente);
 
@@ -429,48 +418,48 @@ public class VistaCliente extends javax.swing.JFrame {
 
     private void itmReadClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmReadClienteActionPerformed
         // TODO add your handling code here:
-        VentanaLeerCliente readCliente = new VentanaLeerCliente(controladorCliente,mensajes);
+        BuscarCliente readCliente = new BuscarCliente(controladorCliente,mensajes);
         readCliente.setVisible(true);
         desktopPane.add(readCliente);
     }//GEN-LAST:event_itmReadClienteActionPerformed
 
     private void itmUpdateClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmUpdateClienteActionPerformed
         // TODO add your handling code here:
-        VentanaActualizarCliente updateCliente = new VentanaActualizarCliente(controladorCliente,mensajes);
+        ActualizarCliente updateCliente = new ActualizarCliente(controladorCliente,mensajes);
         updateCliente.setVisible(true);
         desktopPane.add(updateCliente);
     }//GEN-LAST:event_itmUpdateClienteActionPerformed
 
     private void itmCreateProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmCreateProductoActionPerformed
         // TODO add your handling code here:
-        VentanaCrearProducto crearProducto = new VentanaCrearProducto(controladorProducto,controladorFacturaDetalle,mensajes);
+        CrearProducto crearProducto = new CrearProducto(controladorProducto,controladorFacturaDetalle,mensajes);
         crearProducto.setVisible(true);
         desktopPane.add(crearProducto);
     }//GEN-LAST:event_itmCreateProductoActionPerformed
 
     private void itmReadProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmReadProductoActionPerformed
         // TODO add your handling code here:
-        VentanaLeerProducto readProducto = new VentanaLeerProducto(controladorProducto,mensajes);
+        BuscarProducto readProducto = new BuscarProducto(controladorProducto,mensajes);
         readProducto.setVisible(true);
         desktopPane.add(readProducto);
     }//GEN-LAST:event_itmReadProductoActionPerformed
 
     private void itmUpdateProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmUpdateProductoActionPerformed
         // TODO add your handling code here:
-        VentanaActualizarProductos updateProducto = new VentanaActualizarProductos(controladorProducto,mensajes);
+        ActualizarProductos updateProducto = new ActualizarProductos(controladorProducto,mensajes);
         updateProducto.setVisible(true);
         desktopPane.add(updateProducto);
     }//GEN-LAST:event_itmUpdateProductoActionPerformed
 
     private void itmDeleateProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmDeleateProductoActionPerformed
         // TODO add your handling code here:
-        VentanaEliminarProducto deleteProducto = new VentanaEliminarProducto(controladorProducto,mensajes);
+        EliminarProducto deleteProducto = new EliminarProducto(controladorProducto,mensajes);
         deleteProducto.setVisible(true);
         desktopPane.add(deleteProducto);
     }//GEN-LAST:event_itmDeleateProductoActionPerformed
 
     private void itmListarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmListarProductoActionPerformed
-        VentanaListarProductos listarProducto=new VentanaListarProductos(controladorProducto,mensajes);
+        ListarProductos listarProducto=new ListarProductos(controladorProducto,mensajes);
         listarProducto.setVisible(true);
         desktopPane.add(listarProducto); 
        
@@ -478,7 +467,7 @@ public class VistaCliente extends javax.swing.JFrame {
 
     private void itmCreateFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmCreateFacturaActionPerformed
         // TODO add your handling code here:
-        VentanaCrearFactura crearFactura = new VentanaCrearFactura(controladorFactura, controladorCliente,controladorProducto,controladorFacturaDetalle);
+        CrearFactura crearFactura = new CrearFactura(controladorFactura, controladorCliente,controladorProducto,controladorFacturaDetalle);
         crearFactura.setVisible(true);
         desktopPane.add(crearFactura);
     }//GEN-LAST:event_itmCreateFacturaActionPerformed
@@ -500,7 +489,7 @@ public class VistaCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_itmDeleateFacturaActionPerformed
 
     private void itmListarFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmListarFacturaActionPerformed
-        VentanaListarFactura listarFacturas=new VentanaListarFactura(controladorFactura);
+        ListarFactura listarFacturas=new ListarFactura(controladorFactura);
         listarFacturas.setVisible(true);
         desktopPane.add(listarFacturas);      
 
@@ -546,13 +535,6 @@ public class VistaCliente extends javax.swing.JFrame {
     private void itmListarFactura1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmListarFactura1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_itmListarFactura1ActionPerformed
-
-    private void itmCreateFactura2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmCreateFactura2ActionPerformed
-        // TODO add your handling code here:
-        VentanaCrearFactura crearFactura = new VentanaCrearFactura(controladorFactura, controladorCliente,controladorProducto,controladorFacturaDetalle);
-        crearFactura.setVisible(true);
-        desktopPane.add(crearFactura);
-    }//GEN-LAST:event_itmCreateFactura2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -601,7 +583,6 @@ public class VistaCliente extends javax.swing.JFrame {
     private javax.swing.JMenuItem itmCreateCliente;
     private javax.swing.JMenuItem itmCreateFactura;
     private javax.swing.JMenuItem itmCreateFactura1;
-    private javax.swing.JMenuItem itmCreateFactura2;
     private javax.swing.JMenuItem itmCreateProducto;
     private javax.swing.JMenuItem itmDeleateCliente;
     private javax.swing.JMenuItem itmDeleateFactura;

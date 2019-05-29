@@ -5,7 +5,7 @@
  */
 package ec.edu.ups.vista.producto;
 
-import ec.edu.ups.controlador.ControladorProducto;
+import ec.edu.ups.controladores.ControladorProducto;
 import ec.edu.ups.modelo.Cliente;
 import ec.edu.ups.modelo.Producto;
 import java.util.ResourceBundle;
@@ -14,13 +14,13 @@ import java.util.ResourceBundle;
  *
  * @author 
  */
-public class VentanaLeerProducto extends javax.swing.JInternalFrame {
+public class BuscarProducto extends javax.swing.JInternalFrame {
     private ResourceBundle mensajes;
     private ControladorProducto controladorProducto;
     /**
      * Creates new form ReadCliente
      */
-    public VentanaLeerProducto(ControladorProducto controladorProducto,ResourceBundle mensajes) {
+    public BuscarProducto(ControladorProducto controladorProducto,ResourceBundle mensajes) {
         initComponents();
         this.controladorProducto = controladorProducto;
         this.mensajes = mensajes;

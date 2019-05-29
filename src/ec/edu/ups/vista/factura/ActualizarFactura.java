@@ -12,12 +12,12 @@ package ec.edu.ups.vista.factura;
  *
  * @author ASUS
  */
-public class VentanaActualizarFactura extends javax.swing.JInternalFrame {
+public class ActualizarFactura extends javax.swing.JInternalFrame {
   
     /**
      * Creates new form VentanaActualizarFactura
      */
-    public VentanaActualizarFactura() {
+    public ActualizarFactura() {
         initComponents();
         }
  

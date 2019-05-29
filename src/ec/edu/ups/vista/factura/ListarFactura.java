@@ -5,7 +5,7 @@
  */
 package ec.edu.ups.vista.factura;
 
-import ec.edu.ups.controlador.ControladorFactura;
+import ec.edu.ups.controladores.ControladorFactura;
 import ec.edu.ups.modelo.Cliente;
 import ec.edu.ups.modelo.Factura;
 import java.util.Set;
@@ -15,14 +15,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author 
  */
-public class VentanaListarFactura extends javax.swing.JInternalFrame {
+public class ListarFactura extends javax.swing.JInternalFrame {
 
     private final ControladorFactura controladorFactura;
 
     /**
      * Creates new form ListarClientes
      */
-    public VentanaListarFactura(ControladorFactura controladorFactura) {
+    public ListarFactura(ControladorFactura controladorFactura) {
         initComponents();
         this.controladorFactura=controladorFactura;
         llenarDatos();
