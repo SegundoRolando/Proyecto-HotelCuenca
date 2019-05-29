@@ -216,8 +216,8 @@ public class BuscarReservacion extends javax.swing.JInternalFrame {
         String fechaTexto = formato.format(date.getTime());
         int codigo = Integer.parseInt(txtCodigo.getText());
         Reserva reserva = controladorReservacion.read(codigo);
-        txtNumHabitacion.setText(Integer.toString(controladorReservacion.getCodigo()));
-        txtCodigoEmpleado.setText(Integer.toString(controladorReservacion.getCodigo()));
+        txtNumHabitacion.setText(Integer.toString(reserva.getCodigoHabitacion()));
+        txtCodigoEmpleado.setText(Integer.toString(reserva.getCodigoTrabajador()));
         txtFechaReserva.setText(fechaTexto);
         txtFechaIngreso.setText(fechaTexto);
         txtFechaSalida.setText(fechaTexto);
