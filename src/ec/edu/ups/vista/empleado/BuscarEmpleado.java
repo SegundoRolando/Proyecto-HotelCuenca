@@ -219,7 +219,7 @@ public class BuscarEmpleado extends javax.swing.JInternalFrame {
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
-         int codigo = Integer.parseInt(txtCodigo.getText());
+        int codigo = Integer.parseInt(txtCodigo.getText());
         Empleado  empleado = controladorEmpleado.read(codigo);
         txtNombre.setText(empleado.getNombre());
         txtCedula.setText(empleado.getCedula());
