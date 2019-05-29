@@ -26,7 +26,10 @@ import ec.edu.ups.controladores.ControladorFactura;
 import ec.edu.ups.controladores.ControladorFacturaDetalle;
 import ec.edu.ups.controladores.ControladorProducto;
 import ec.edu.ups.controladores.ControladorReservacion;
+import ec.edu.ups.vista.empleado.BuscarEmpleado;
 import ec.edu.ups.vista.empleado.CrearEmpleado;
+import ec.edu.ups.vista.empleado.EliminarEmpleado;
+import ec.edu.ups.vista.empleado.ListarEmpleado;
 import ec.edu.ups.vista.reservacion.BuscarReservacion;
 import ec.edu.ups.vista.reservacion.CrearReservacion;
 import java.util.Locale;
@@ -649,6 +652,9 @@ public class VistaCliente extends javax.swing.JFrame {
 
     private void itmReadrEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmReadrEmpleadoActionPerformed
         // TODO add your handling code here:
+        BuscarEmpleado buscarEmpleado=new BuscarEmpleado(controadorEmpleado);
+        buscarEmpleado.setVisible(true);
+        desktopPane.add(buscarEmpleado);
     }//GEN-LAST:event_itmReadrEmpleadoActionPerformed
 
     private void itmUpdateEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmUpdateEmpleadoActionPerformed
@@ -657,14 +663,23 @@ public class VistaCliente extends javax.swing.JFrame {
 
     private void itmDeleateEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmDeleateEmpleadoActionPerformed
         // TODO add your handling code here:
+        EliminarEmpleado eliminarEmpleado=new EliminarEmpleado(controadorEmpleado);
+        eliminarEmpleado.setVisible(true);
+        desktopPane.add(eliminarEmpleado);
     }//GEN-LAST:event_itmDeleateEmpleadoActionPerformed
 
     private void itmListarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmListarEmpleadoActionPerformed
         // TODO add your handling code here:
+        ListarEmpleado listarEmpleado =new ListarEmpleado(controadorEmpleado);
+        listarEmpleado.setVisible(true);
+        desktopPane.add(listarEmpleado);
     }//GEN-LAST:event_itmListarEmpleadoActionPerformed
 
     private void itmListadoGeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmListadoGeneralActionPerformed
         // TODO add your handling code here:
+        ListarEmpleado listarEmpleado =new ListarEmpleado(controadorEmpleado);
+        listarEmpleado.setVisible(true);
+        desktopPane.add(listarEmpleado);
     }//GEN-LAST:event_itmListadoGeneralActionPerformed
 
     /**
