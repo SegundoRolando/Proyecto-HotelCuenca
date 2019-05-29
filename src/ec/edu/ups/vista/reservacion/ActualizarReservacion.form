@@ -22,9 +22,9 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-              <Component id="jPanel1" max="32767" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -32,166 +32,172 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="jPanel1">
+    <Container class="javax.swing.JPanel" name="jPanel2">
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jlbNombreBuscarClient" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jlbCedulaBuscarClient" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jlbDireccionBuscarClient" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jlbTelefonoBuscarClient" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jlbTelefonoBuscarClient1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jlbTelefonoBuscarClient2" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jlbCodigoBuscarClient" alignment="0" min="-2" pref="127" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jblCodigo" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jlbCodigoHabitacion" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jblCodigoTrabajador" alignment="0" pref="149" max="32767" attributes="0"/>
-                                  <Component id="jblFeReser" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jlbFechaSal" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jlbFechIngre" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jlbCosAloj" alignment="0" min="-2" pref="136" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtCosAloj" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                              <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="txtCodiHabitacion" alignment="0" min="-2" pref="42" max="-2" attributes="0"/>
-                                  <Component id="txtCodTrabaador" alignment="0" min="-2" pref="42" max="-2" attributes="0"/>
-                                  <Component id="txtFechReser" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtFechIngre" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtFechSal" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="txtCodigo" min="-2" pref="42" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="btnBuscarReservación" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="txtCodigo" min="-2" pref="92" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="btnBuscar" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                       </Group>
+                      <Component id="txtFechaSalida" alignment="0" pref="244" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
-                          <Component id="btnActualizar" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="txtCodigoEmpleado" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtFechaReserva" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtNumHabitacion" alignment="0" pref="244" max="32767" attributes="0"/>
+                              <Component id="txtFechaIngreso" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
+                      <Component id="txtCostoAlojamiento" alignment="0" pref="244" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="88" max="32767" attributes="0"/>
+                  <EmptySpace pref="51" max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="212" max="-2" attributes="0"/>
+                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jblCodigo" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                      <Component id="txtCodigo" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                      <Component id="btnBuscarReservación" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jlbCodigoHabitacion" alignment="0" min="-2" pref="21" max="-2" attributes="0"/>
-                      <Component id="txtCodiHabitacion" alignment="0" min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="jlbCodigoBuscarClient" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jblCodigoTrabajador" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
-                      <Component id="txtCodTrabaador" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="jlbNombreBuscarClient" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtNumHabitacion" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jblFeReser" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
-                      <Component id="txtFechReser" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jlbFechIngre" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
-                      <Component id="txtFechIngre" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="jlbCedulaBuscarClient" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtCodigoEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jlbFechaSal" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
-                      <Component id="txtFechSal" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="jlbDireccionBuscarClient" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtFechaReserva" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jlbCosAloj" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="txtCosAloj" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="jlbTelefonoBuscarClient" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtFechaIngreso" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btnActualizar" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="32" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jlbTelefonoBuscarClient1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtFechaSalida" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jlbTelefonoBuscarClient2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtCostoAlojamiento" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="45" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jblCodigo">
+        <Component class="javax.swing.JLabel" name="jlbCodigoBuscarClient">
           <Properties>
-            <Property name="text" type="java.lang.String" value="CODIGO :"/>
+            <Property name="text" type="java.lang.String" value="INGRESAR CODIGO :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtCodigo">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCodigoActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jlbCodigoHabitacion">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="CODIGO HABITACION :"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtCodiHabitacion">
-        </Component>
-        <Component class="javax.swing.JLabel" name="jblCodigoTrabajador">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="CODIGO TRABAJADOR :"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtFechIngre">
-        </Component>
-        <Component class="javax.swing.JLabel" name="jblFeReser">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="FECHA DE RESERVA :"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtCodTrabaador">
-        </Component>
-        <Component class="javax.swing.JLabel" name="jlbFechaSal">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="FECHA DE SALIDA  :"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtFechReser">
-        </Component>
-        <Component class="javax.swing.JLabel" name="jlbFechIngre">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="FECHA DE INGRESO :"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtCosAloj">
-        </Component>
-        <Component class="javax.swing.JLabel" name="jlbCosAloj">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="COSTO DE ALOJAMIENTO :"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtFechSal">
-        </Component>
-        <Component class="javax.swing.JButton" name="btnBuscarReservaci&#xf3;n">
+        <Component class="javax.swing.JButton" name="btnBuscar">
           <Properties>
             <Property name="text" type="java.lang.String" value="BUSCAR"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBuscarReservaci&#xf3;nActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBuscarActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnActualizar">
+        <Component class="javax.swing.JTextField" name="txtFechaReserva">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtFechaIngreso">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtNumHabitacion">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jlbNombreBuscarClient">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="N&#xfa;mero de Habitaci&#xf3;n :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jlbCedulaBuscarClient">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="C&#xf2;digo del Empleado:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jlbDireccionBuscarClient">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Fecha de rerva:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jlbTelefonoBuscarClient">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Fecha de Ingreso:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtCodigoEmpleado">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jlbTelefonoBuscarClient1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Fecha de Salida:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtFechaSalida">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jlbTelefonoBuscarClient2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Costo de alojamiento:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtCostoAlojamiento">
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
             <Property name="text" type="java.lang.String" value="ACTUALIZAR"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

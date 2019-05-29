@@ -49,6 +49,9 @@ public class CrearFactura extends javax.swing.JInternalFrame {
     public void llenarDatos() {
         DefaultTableModel modelo = (DefaultTableModel) tblListarFactu.getModel();
         Set<FacturaDetalle> lista = controladorFacturaDetalle.getLista();
+        modelo.setRowCount(0);
+        Object[] nuevo = {};
+        modelo.addRow(nuevo);
       
         for(FacturaDetalle facDetalle : lista) {
             Object[] datos = {facDetalle.getCodigo(),facDetalle.getCantidad(),

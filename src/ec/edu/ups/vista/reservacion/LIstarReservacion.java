@@ -5,19 +5,35 @@
  */
 package ec.edu.ups.vista.reservacion;
 
+import ec.edu.ups.controladores.ControladorReservacion;
+import ec.edu.ups.modelo.Producto;
+import ec.edu.ups.modelo.Reserva;
+import java.util.Set;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author LENOVO
  */
 public class LIstarReservacion extends javax.swing.JInternalFrame {
-
+    private ControladorReservacion controladorReservacion;
     /**
      * Creates new form LIstarReservacion
      */
-    public LIstarReservacion() {
+    public LIstarReservacion(ControladorReservacion controladorReservacion) {
         initComponents();
+        this.controladorReservacion=controladorReservacion;
+        llenarDatos();
     }
-
+     public void llenarDatos(){
+        DefaultTableModel modelo=(DefaultTableModel)tbtListarReserva.getModel();
+        Set<Reserva>lista=controladorReservacion.getLista();
+         for(Reserva reserva:lista){
+        Object[]datos={reserva.getCodigoReserva(),reserva.getCodigoHabitacion(),reserva.getCodigoTrabajador(),
+            reserva.getFechaIngreso(),reserva.getFechaIngreso(),reserva.getFechaSalida(),reserva.getCostoAlojamiento()};
+            modelo.addRow(datos);
+     }
+     }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,12 +46,14 @@ public class LIstarReservacion extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tbtListarReserva = new javax.swing.JTable();
 
+        setClosable(true);
+
         tbtListarReserva.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "CODIGO RESERVA", "CODIGO HABITACIÓN", "CODIGO TRABAJADOR", "FECHA RESERVA", "COSTO"
+                "CODIGO RESERVA", "CODIGO HABITACIÓN", "CODIGO TRABAJADOR", "FECHA RESERVA", "FECHA INGRESO ", "FECHA SALIDA", "COSTO"
             }
         ));
         jScrollPane1.setViewportView(tbtListarReserva);

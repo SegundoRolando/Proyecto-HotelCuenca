@@ -30,8 +30,11 @@ import ec.edu.ups.vista.empleado.BuscarEmpleado;
 import ec.edu.ups.vista.empleado.CrearEmpleado;
 import ec.edu.ups.vista.empleado.EliminarEmpleado;
 import ec.edu.ups.vista.empleado.ListarEmpleado;
+import ec.edu.ups.vista.reservacion.ActualizarReservacion;
 import ec.edu.ups.vista.reservacion.BuscarReservacion;
 import ec.edu.ups.vista.reservacion.CrearReservacion;
+import ec.edu.ups.vista.reservacion.EliminarReservacion;
+import ec.edu.ups.vista.reservacion.LIstarReservacion;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -147,12 +150,12 @@ public class VistaMenu extends javax.swing.JFrame {
         itmReadFactura = new javax.swing.JMenuItem();
         itmDeleateFactura = new javax.swing.JMenuItem();
         itmListarFactura = new javax.swing.JMenuItem();
-        facturaMenu1 = new javax.swing.JMenu();
-        itmCreateFactura1 = new javax.swing.JMenuItem();
-        itmReadFactura1 = new javax.swing.JMenuItem();
-        itmUpdateFactura1 = new javax.swing.JMenuItem();
-        itmDeleateFactura1 = new javax.swing.JMenuItem();
-        itmListarFactura1 = new javax.swing.JMenuItem();
+        facturaMenu2 = new javax.swing.JMenu();
+        itmCreateFactura2 = new javax.swing.JMenuItem();
+        itmReadFactura2 = new javax.swing.JMenuItem();
+        itmUpdateFactura2 = new javax.swing.JMenuItem();
+        itmDeleateFactura2 = new javax.swing.JMenuItem();
+        itmListarFactura2 = new javax.swing.JMenuItem();
         clienteMenu1 = new javax.swing.JMenu();
         itmCreateEmpleado = new javax.swing.JMenuItem();
         itmReadrEmpleado = new javax.swing.JMenuItem();
@@ -346,58 +349,58 @@ public class VistaMenu extends javax.swing.JFrame {
 
         menuBar.add(facturaMenu);
 
-        facturaMenu1.setText("Reservacion");
+        facturaMenu2.setText("Reservacion");
 
-        itmCreateFactura1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
-        itmCreateFactura1.setMnemonic('o');
-        itmCreateFactura1.setText("Create");
-        itmCreateFactura1.addActionListener(new java.awt.event.ActionListener() {
+        itmCreateFactura2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        itmCreateFactura2.setMnemonic('o');
+        itmCreateFactura2.setText("Create");
+        itmCreateFactura2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmCreateFactura1ActionPerformed(evt);
+                itmCreateFactura2ActionPerformed(evt);
             }
         });
-        facturaMenu1.add(itmCreateFactura1);
+        facturaMenu2.add(itmCreateFactura2);
 
-        itmReadFactura1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
-        itmReadFactura1.setMnemonic('s');
-        itmReadFactura1.setText("Read");
-        itmReadFactura1.addActionListener(new java.awt.event.ActionListener() {
+        itmReadFactura2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
+        itmReadFactura2.setMnemonic('s');
+        itmReadFactura2.setText("Read");
+        itmReadFactura2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmReadFactura1ActionPerformed(evt);
+                itmReadFactura2ActionPerformed(evt);
             }
         });
-        facturaMenu1.add(itmReadFactura1);
+        facturaMenu2.add(itmReadFactura2);
 
-        itmUpdateFactura1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
-        itmUpdateFactura1.setMnemonic('a');
-        itmUpdateFactura1.setText("Update");
-        itmUpdateFactura1.addActionListener(new java.awt.event.ActionListener() {
+        itmUpdateFactura2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
+        itmUpdateFactura2.setMnemonic('a');
+        itmUpdateFactura2.setText("Update");
+        itmUpdateFactura2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmUpdateFactura1ActionPerformed(evt);
+                itmUpdateFactura2ActionPerformed(evt);
             }
         });
-        facturaMenu1.add(itmUpdateFactura1);
+        facturaMenu2.add(itmUpdateFactura2);
 
-        itmDeleateFactura1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
-        itmDeleateFactura1.setMnemonic('x');
-        itmDeleateFactura1.setText("Delete");
-        itmDeleateFactura1.addActionListener(new java.awt.event.ActionListener() {
+        itmDeleateFactura2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
+        itmDeleateFactura2.setMnemonic('x');
+        itmDeleateFactura2.setText("Delete");
+        itmDeleateFactura2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmDeleateFactura1ActionPerformed(evt);
+                itmDeleateFactura2ActionPerformed(evt);
             }
         });
-        facturaMenu1.add(itmDeleateFactura1);
+        facturaMenu2.add(itmDeleateFactura2);
 
-        itmListarFactura1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
-        itmListarFactura1.setText("Listar");
-        itmListarFactura1.addActionListener(new java.awt.event.ActionListener() {
+        itmListarFactura2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
+        itmListarFactura2.setText("Listar");
+        itmListarFactura2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmListarFactura1ActionPerformed(evt);
+                itmListarFactura2ActionPerformed(evt);
             }
         });
-        facturaMenu1.add(itmListarFactura1);
+        facturaMenu2.add(itmListarFactura2);
 
-        menuBar.add(facturaMenu1);
+        menuBar.add(facturaMenu2);
 
         clienteMenu1.setMnemonic('f');
         clienteMenu1.setText("Empleado");
@@ -595,31 +598,6 @@ public class VistaMenu extends javax.swing.JFrame {
         cambiarIdioma();
     }//GEN-LAST:event_itmInglesFactura1ActionPerformed
 
-    private void itmCreateFactura1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmCreateFactura1ActionPerformed
-        CrearReservacion crearReservacion=new CrearReservacion(controladorReservacion);
-        crearReservacion.setVisible(true);
-        desktopPane.add(crearReservacion);
-    }//GEN-LAST:event_itmCreateFactura1ActionPerformed
-
-    private void itmReadFactura1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmReadFactura1ActionPerformed
-        // TODO add your handling code here:
-        BuscarReservacion buscar = new BuscarReservacion(controladorReservacion);
-        buscar.setVisible(true);
-        desktopPane.add(buscar);
-    }//GEN-LAST:event_itmReadFactura1ActionPerformed
-
-    private void itmUpdateFactura1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmUpdateFactura1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_itmUpdateFactura1ActionPerformed
-
-    private void itmDeleateFactura1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmDeleateFactura1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_itmDeleateFactura1ActionPerformed
-
-    private void itmListarFactura1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmListarFactura1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_itmListarFactura1ActionPerformed
-
     private void itmListarFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmListarFacturaActionPerformed
         ListarFactura listarFacturas=new ListarFactura(controladorFactura);
         listarFacturas.setVisible(true);
@@ -682,6 +660,41 @@ public class VistaMenu extends javax.swing.JFrame {
         desktopPane.add(listarEmpleado);
     }//GEN-LAST:event_itmListadoGeneralActionPerformed
 
+    private void itmCreateFactura2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmCreateFactura2ActionPerformed
+        CrearReservacion crearReservacion=new CrearReservacion(controladorReservacion);
+        crearReservacion.setVisible(true);
+        desktopPane.add(crearReservacion);
+    }//GEN-LAST:event_itmCreateFactura2ActionPerformed
+
+    private void itmReadFactura2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmReadFactura2ActionPerformed
+        // TODO add your handling code here:
+        BuscarReservacion buscar = new BuscarReservacion(controladorReservacion);
+        buscar.setVisible(true);
+        desktopPane.add(buscar);
+    }//GEN-LAST:event_itmReadFactura2ActionPerformed
+
+    private void itmUpdateFactura2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmUpdateFactura2ActionPerformed
+        // TODO add your handling code here:
+        ActualizarReservacion actualizarReservacion=new ActualizarReservacion(controladorReservacion);
+        actualizarReservacion.setVisible(true);
+        desktopPane.add(actualizarReservacion);
+    }//GEN-LAST:event_itmUpdateFactura2ActionPerformed
+
+    private void itmDeleateFactura2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmDeleateFactura2ActionPerformed
+        // TODO add your handling code here:
+        EliminarReservacion eliminarReservacion=new EliminarReservacion(controladorReservacion);
+        eliminarReservacion.setVisible(true);
+        desktopPane.add(eliminarReservacion);
+    }//GEN-LAST:event_itmDeleateFactura2ActionPerformed
+
+    private void itmListarFactura2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmListarFactura2ActionPerformed
+        // TODO add your handling code here:
+        LIstarReservacion listarReservacion=new LIstarReservacion(controladorReservacion);
+        listarReservacion.setVisible(true);
+        desktopPane.add(listarReservacion);
+
+    }//GEN-LAST:event_itmListarFactura2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -729,18 +742,18 @@ public class VistaMenu extends javax.swing.JFrame {
     private javax.swing.JMenu clienteMenu1;
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenu facturaMenu;
-    private javax.swing.JMenu facturaMenu1;
+    private javax.swing.JMenu facturaMenu2;
     private javax.swing.JMenu idiomaMenu;
     private javax.swing.JMenu idiomaMenu1;
     private javax.swing.JMenuItem itmCreateCliente;
     private javax.swing.JMenuItem itmCreateEmpleado;
     private javax.swing.JMenuItem itmCreateFactura;
-    private javax.swing.JMenuItem itmCreateFactura1;
+    private javax.swing.JMenuItem itmCreateFactura2;
     private javax.swing.JMenuItem itmCreateProducto;
     private javax.swing.JMenuItem itmDeleateCliente;
     private javax.swing.JMenuItem itmDeleateEmpleado;
     private javax.swing.JMenuItem itmDeleateFactura;
-    private javax.swing.JMenuItem itmDeleateFactura1;
+    private javax.swing.JMenuItem itmDeleateFactura2;
     private javax.swing.JMenuItem itmDeleateProducto;
     private javax.swing.JMenuItem itmEspanolFactura1;
     private javax.swing.JMenuItem itmInglesFactura1;
@@ -748,16 +761,16 @@ public class VistaMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem itmListarCliente;
     private javax.swing.JMenuItem itmListarEmpleado;
     private javax.swing.JMenuItem itmListarFactura;
-    private javax.swing.JMenuItem itmListarFactura1;
+    private javax.swing.JMenuItem itmListarFactura2;
     private javax.swing.JMenuItem itmListarProducto;
     private javax.swing.JMenuItem itmReadCliente;
     private javax.swing.JMenuItem itmReadFactura;
-    private javax.swing.JMenuItem itmReadFactura1;
+    private javax.swing.JMenuItem itmReadFactura2;
     private javax.swing.JMenuItem itmReadProducto;
     private javax.swing.JMenuItem itmReadrEmpleado;
     private javax.swing.JMenuItem itmUpdateCliente;
     private javax.swing.JMenuItem itmUpdateEmpleado;
-    private javax.swing.JMenuItem itmUpdateFactura1;
+    private javax.swing.JMenuItem itmUpdateFactura2;
     private javax.swing.JMenuItem itmUpdateProducto;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JMenu jMenu1;
