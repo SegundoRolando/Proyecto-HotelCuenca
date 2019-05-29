@@ -226,17 +226,14 @@ public class EliminarReservacion extends javax.swing.JInternalFrame {
         Reserva reserva = controladorReservacion.read(codigo);
         txtNumHabitacion.setText(Integer.toString(reserva.getCodigoHabitacion()));
         txtCodigoEmpleado.setText(Integer.toString(reserva.getCodigoTrabajador()));
-        txtFechaReserva.setText(fechaTexto);
-        txtFechaIngreso.setText(fechaTexto);
-        txtFechaSalida.setText(fechaTexto);
+        txtFechaReserva.setText(reserva.getFechaReserva());
+        txtFechaIngreso.setText(reserva.getFechaIngreso());
+        txtFechaSalida.setText(reserva.getFechaSalida());
         txtCostoAlojamiento.setText(Double.toString(reserva.getCostoAlojamiento()));
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        Date date = new Date();
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-        String fechaTexto = formato.format(date.getTime());
         int codigo = Integer.parseInt(txtCodigo.getText());
         controladorReservacion.delete(codigo);
         txtCodigo.setText("");

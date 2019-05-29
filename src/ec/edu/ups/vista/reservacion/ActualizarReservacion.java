@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -10,6 +11,7 @@ import ec.edu.ups.modelo.Producto;
 import ec.edu.ups.modelo.Reserva;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -50,7 +52,7 @@ public class ActualizarReservacion extends javax.swing.JInternalFrame {
         txtFechaSalida = new javax.swing.JTextField();
         jlbTelefonoBuscarClient2 = new javax.swing.JLabel();
         txtCostoAlojamiento = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnActualizar = new javax.swing.JButton();
 
         setClosable(true);
 
@@ -81,10 +83,10 @@ public class ActualizarReservacion extends javax.swing.JInternalFrame {
 
         jlbTelefonoBuscarClient2.setText("Costo de alojamiento:");
 
-        jButton1.setText("ACTUALIZAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnActualizar.setText("ACTUALIZAR");
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnActualizarActionPerformed(evt);
             }
         });
 
@@ -121,7 +123,7 @@ public class ActualizarReservacion extends javax.swing.JInternalFrame {
                 .addContainerGap(51, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(212, 212, 212)
-                .addComponent(jButton1)
+                .addComponent(btnActualizar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -157,7 +159,7 @@ public class ActualizarReservacion extends javax.swing.JInternalFrame {
                     .addComponent(jlbTelefonoBuscarClient2)
                     .addComponent(txtCostoAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
-                .addComponent(jButton1)
+                .addComponent(btnActualizar)
                 .addContainerGap(45, Short.MAX_VALUE))
         );
 
@@ -188,40 +190,40 @@ public class ActualizarReservacion extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         int codigo = Integer.parseInt(txtCodigo.getText());
         Reserva reserva = controladorReservacion.read(codigo);
-        Date date = new Date();
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-        String fechaTexto = formato.format(date.getTime());
         txtNumHabitacion.setText(Integer.toString(reserva.getCodigoHabitacion()));
         txtCodigoEmpleado.setText(Integer.toString(reserva.getCodigoTrabajador()));
-        txtFechaReserva.setText(fechaTexto);
-        txtFechaIngreso.setText(fechaTexto);
-        txtFechaSalida.setText(fechaTexto);
+        txtFechaReserva.setText(reserva.getFechaReserva());
+        txtFechaIngreso.setText(reserva.getFechaIngreso());
+        txtFechaSalida.setText(reserva.getFechaSalida());
         txtCostoAlojamiento.setText(Double.toString(reserva.getCostoAlojamiento()));
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         // TODO add your handling code here:
-        Reserva reservacion = controladorReservacion.read(Integer.parseInt(txtCodigo.getText()));
-        txtNumHabitacion.setText(txtNumHabitacion.getText());
-        txtCodigoEmpleado.setText(txtCodigoEmpleado.getText());
-        txtFechaReserva.setText(txtFechaReserva.getText());
-        txtFechaIngreso.setText(txtFechaIngreso.getText());
-        txtFechaSalida.setText(txtFechaSalida.getText());
-        txtCostoAlojamiento.setText(txtCostoAlojamiento.getText());
+         Reserva reserva = controladorReservacion.read(Integer.parseInt(txtCodigo.getText()));     
+        reserva.setCodigoReserva(Integer.parseInt(txtCodigo.getText()));
+        reserva.setCodigoHabitacion(Integer.parseInt(txtNumHabitacion.getText()));
+        reserva.setCodigoTrabajador(Integer.parseInt(txtCodigoEmpleado.getText()));
+        reserva.setFechaIngreso(txtFechaIngreso.getText());
+        reserva.setFechaReserva(txtFechaReserva.getText());
+        reserva.setFechaSalida(txtFechaSalida.getText());
+        reserva.setCostoAlojamiento(Double.parseDouble(txtCostoAlojamiento.getText()));
+        txtCodigo.setText(Integer.toString(this.controladorReservacion.getCodigo()));
+        JOptionPane.showMessageDialog(this, "RESERRVACION CREADA", "Crear RESERVACION", JOptionPane.INFORMATION_MESSAGE);
+        txtCodigo.setText(String.valueOf(this.controladorReservacion.getCodigo()));
+        controladorReservacion.update(reserva);
         txtNumHabitacion.setText("");
         txtCodigoEmpleado.setText("");
         txtFechaReserva.setText("");
         txtFechaIngreso.setText("");
         txtFechaSalida.setText("");
         txtCostoAlojamiento.setText("");
-        txtCodigo.setText("");
-        controladorReservacion.update(reservacion);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnActualizarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel jlbCedulaBuscarClient;
     private javax.swing.JLabel jlbCodigoBuscarClient;

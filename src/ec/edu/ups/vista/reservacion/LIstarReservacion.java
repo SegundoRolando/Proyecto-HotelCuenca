@@ -32,7 +32,9 @@ public class LIstarReservacion extends javax.swing.JInternalFrame {
         Object[]datos={reserva.getCodigoReserva(),reserva.getCodigoHabitacion(),reserva.getCodigoTrabajador(),
             reserva.getFechaIngreso(),reserva.getFechaIngreso(),reserva.getFechaSalida(),reserva.getCostoAlojamiento()};
             modelo.addRow(datos);
-     }
+     
+            
+         }
      }
     /**
      * This method is called from within the constructor to initialize the form.

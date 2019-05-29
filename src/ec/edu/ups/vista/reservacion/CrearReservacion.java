@@ -174,25 +174,18 @@ public class CrearReservacion extends javax.swing.JInternalFrame {
 
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
         Reserva reserva = new Reserva();
-        Date date = new Date();
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-        String fechaTexto = formato.format(date.getTime());
         reserva.setCodigoReserva(Integer.parseInt(txtCodigo.getText()));
         reserva.setCodigoHabitacion(Integer.parseInt(txtCodiHabitacion.getText()));
         reserva.setCodigoTrabajador(Integer.parseInt(txtCodTrabaador.getText()));
-        reserva.setFechaReserva(date);
-        txtFechReser.setText(fechaTexto);
-        reserva.setFechaIngreso(date);
-        txtFechIngre.setText(fechaTexto);
-        reserva.setFechaSalida(date);
-        txtFechSal.setText(fechaTexto);
+        reserva.setFechaReserva((txtFechReser.getText()));
+        reserva.setFechaIngreso(txtFechIngre.getText());
+        reserva.setFechaSalida(txtFechSal.getText());
         reserva.setCostoAlojamiento(Double.parseDouble(txtCosAloj.getText()));
         txtCodigo.setText(String.valueOf(reserva.getCodigoReserva()));
         controladorReservacion.create(reserva);
         txtCodigo.setText(Integer.toString(this.controladorReservacion.getCodigo()));
         JOptionPane.showMessageDialog(this, "RESERRVACION CREADA", "Crear RESERVACION", JOptionPane.INFORMATION_MESSAGE);
         txtCodigo.setText(String.valueOf(this.controladorReservacion.getCodigo()));
-        
         txtCodiHabitacion.setText("");
         txtCodTrabaador.setText("");
         txtFechReser.setText("");

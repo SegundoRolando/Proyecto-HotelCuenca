@@ -18,15 +18,15 @@ public class Reserva {
     private  int codigoCliente;
     private int codigoTrabajador;
     private  String  tipoReserva;
-    private  Date fechaReserva;
-    private Date fechaIngreso;
-    private Date fechaSalida;
+    private  String fechaReserva;
+    private String  fechaIngreso;
+    private String  fechaSalida;
     private double costoAlojamiento;
 
     public Reserva() {
     }
 
-    public Reserva(int codigoReserva, int codigoHabitacion, int codigoCliente, int codigoTrabajador, String tipoReserva, Date fechaReserva, Date fechaIngreso, Date fechaSalida, double costoAlojamiento) {
+    public Reserva(int codigoReserva, int codigoHabitacion, int codigoCliente, int codigoTrabajador, String tipoReserva, String  fechaReserva, String  fechaIngreso, String  fechaSalida, double costoAlojamiento) {
         this.codigoReserva = codigoReserva;
         this.codigoHabitacion = codigoHabitacion;
         this.codigoCliente = codigoCliente;
@@ -78,27 +78,27 @@ public class Reserva {
         this.tipoReserva = tipoReserva;
     }
 
-    public Date getFechaReserva() {
+    public String getFechaReserva() {
         return fechaReserva;
     }
 
-    public void setFechaReserva(Date fechaReserva) {
+    public void setFechaReserva(String  fechaReserva) {
         this.fechaReserva = fechaReserva;
     }
 
-    public Date getFechaIngreso() {
+    public String  getFechaIngreso() {
         return fechaIngreso;
     }
 
-    public void setFechaIngreso(Date fechaIngreso) {
+    public void setFechaIngreso(String  fechaIngreso) {
         this.fechaIngreso = fechaIngreso;
     }
 
-    public Date getFechaSalida() {
+    public String  getFechaSalida() {
         return fechaSalida;
     }
 
-    public void setFechaSalida(Date fechaSalida) {
+    public void setFechaSalida(String  fechaSalida) {
         this.fechaSalida = fechaSalida;
     }
 
