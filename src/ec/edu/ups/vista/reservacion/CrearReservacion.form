@@ -138,7 +138,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jlbCodigoHabitacion">
           <Properties>
-            <Property name="text" type="java.lang.String" value="CODIGO HABITACION :"/>
+            <Property name="text" type="java.lang.String" value="NUMERO HABITACION :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtCodiHabitacion">
@@ -148,7 +148,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jblCodigoTrabajador">
           <Properties>
-            <Property name="text" type="java.lang.String" value="CODIGO TRABAJADOR :"/>
+            <Property name="text" type="java.lang.String" value="NUMERO TRABAJADOR :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtFechIngre">

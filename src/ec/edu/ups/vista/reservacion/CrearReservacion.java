@@ -61,7 +61,7 @@ public class CrearReservacion extends javax.swing.JInternalFrame {
             }
         });
 
-        jlbCodigoHabitacion.setText("CODIGO HABITACION :");
+        jlbCodigoHabitacion.setText("NUMERO HABITACION :");
 
         txtCodiHabitacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,7 +69,7 @@ public class CrearReservacion extends javax.swing.JInternalFrame {
             }
         });
 
-        jblCodigoTrabajador.setText("CODIGO TRABAJADOR :");
+        jblCodigoTrabajador.setText("NUMERO TRABAJADOR :");
 
         jblFeReser.setText("FECHA DE RESERVA :");
 

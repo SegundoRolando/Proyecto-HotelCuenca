@@ -6,6 +6,7 @@
 package ec.edu.ups.modelo;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -22,6 +23,7 @@ public class Reserva {
     private String  fechaIngreso;
     private String  fechaSalida;
     private double costoAlojamiento;
+    
 
     public Reserva() {
     }

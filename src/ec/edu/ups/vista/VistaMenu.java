@@ -606,7 +606,7 @@ public class VistaMenu extends javax.swing.JFrame {
 
     private void itmCreateFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmCreateFacturaActionPerformed
         // TODO add your handling code here:
-        CrearFactura crearFactura = new CrearFactura(controladorFactura, controladorCliente,controladorProducto,controladorFacturaDetalle);
+        CrearFactura crearFactura = new CrearFactura(controladorFactura, controladorCliente,controladorProducto,controladorFacturaDetalle,controladorReservacion);
         crearFactura.setVisible(true);
         desktopPane.add(crearFactura);
     }//GEN-LAST:event_itmCreateFacturaActionPerformed
