@@ -12,22 +12,18 @@ package ec.edu.ups.modelo;
 public class Habitacion {
     
     private int codigoHabitacion;
-    private int numerPiso;
     private int numeroHabitacion;
     private String descripcion;
-    private  double precioDiario;
     private  String tipoHabitacion;
     
     public Habitacion(){
         
     }
 
-    public Habitacion(int codigoHabitacion, int numerPiso, int numeroHabitacion, String descripcion, double precioDiario, String tipoHabitacion) {
+    public Habitacion(int codigoHabitacion, int numeroHabitacion, String descripcion, String tipoHabitacion) {
         this.codigoHabitacion = codigoHabitacion;
-        this.numerPiso = numerPiso;
         this.numeroHabitacion = numeroHabitacion;
         this.descripcion = descripcion;
-        this.precioDiario = precioDiario;
         this.tipoHabitacion = tipoHabitacion;
     }
 
@@ -37,14 +33,6 @@ public class Habitacion {
 
     public void setCodigoHabitacion(int codigoHabitacion) {
         this.codigoHabitacion = codigoHabitacion;
-    }
-
-    public int getNumerPiso() {
-        return numerPiso;
-    }
-
-    public void setNumerPiso(int numerPiso) {
-        this.numerPiso = numerPiso;
     }
 
     public int getNumeroHabitacion() {
@@ -63,14 +51,7 @@ public class Habitacion {
         this.descripcion = descripcion;
     }
 
-    public double getPrecioDiario() {
-        return precioDiario;
-    }
-
-    public void setPrecioDiario(double precioDiario) {
-        this.precioDiario = precioDiario;
-    }
-
+    
     public String getTipoHabitacion() {
         return tipoHabitacion;
     }
@@ -81,7 +62,9 @@ public class Habitacion {
 
     @Override
     public String toString() {
-        return "Habitacion{" + "codigoHabitacion=" + codigoHabitacion + ", numerPiso=" + numerPiso + ", numeroHabitacion=" + numeroHabitacion + ", descripcion=" + descripcion + ", precioDiario=" + precioDiario + ", tipoHabitacion=" + tipoHabitacion + '}';
+        return "Habitacion{" + "codigoHabitacion=" + codigoHabitacion + ", numeroHabitacion=" + numeroHabitacion + ", descripcion=" + descripcion + ", tipoHabitacion=" + tipoHabitacion + '}';
     }
+
+  
     
 }

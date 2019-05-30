@@ -27,7 +27,6 @@ import ec.edu.ups.controladores.ControladorFactura;
 import ec.edu.ups.controladores.ControladorFacturaDetalle;
 import ec.edu.ups.controladores.ControladorProducto;
 import ec.edu.ups.controladores.ControladorReservacion;
-import ec.edu.ups.vista.empleado.ActualizarEmpleado;
 import ec.edu.ups.vista.empleado.BuscarEmpleado;
 import ec.edu.ups.vista.empleado.CrearEmpleado;
 import ec.edu.ups.vista.empleado.EliminarEmpleado;
@@ -159,15 +158,15 @@ public class VistaMenu extends javax.swing.JFrame {
         itmUpdateFactura2 = new javax.swing.JMenuItem();
         itmDeleateFactura2 = new javax.swing.JMenuItem();
         itmListarFactura2 = new javax.swing.JMenuItem();
-        idiomaMenu = new javax.swing.JMenu();
-        itmEspanolFactura1 = new javax.swing.JMenuItem();
-        itmInglesFactura1 = new javax.swing.JMenuItem();
         clienteMenu1 = new javax.swing.JMenu();
         itmCreateEmpleado = new javax.swing.JMenuItem();
         itmReadrEmpleado = new javax.swing.JMenuItem();
         itmUpdateEmpleado = new javax.swing.JMenuItem();
         itmDeleateEmpleado = new javax.swing.JMenuItem();
         itmListarEmpleado = new javax.swing.JMenuItem();
+        idiomaMenu = new javax.swing.JMenu();
+        itmEspanolFactura1 = new javax.swing.JMenuItem();
+        itmInglesFactura1 = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -403,30 +402,6 @@ public class VistaMenu extends javax.swing.JFrame {
 
         menuBar.add(facturaMenu2);
 
-        idiomaMenu.setText("Idiomas");
-
-        itmEspanolFactura1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
-        itmEspanolFactura1.setMnemonic('o');
-        itmEspanolFactura1.setText("Español");
-        itmEspanolFactura1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmEspanolFactura1ActionPerformed(evt);
-            }
-        });
-        idiomaMenu.add(itmEspanolFactura1);
-
-        itmInglesFactura1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
-        itmInglesFactura1.setMnemonic('s');
-        itmInglesFactura1.setText("Ingles");
-        itmInglesFactura1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmInglesFactura1ActionPerformed(evt);
-            }
-        });
-        idiomaMenu.add(itmInglesFactura1);
-
-        menuBar.add(idiomaMenu);
-
         clienteMenu1.setMnemonic('f');
         clienteMenu1.setText("Empleado");
 
@@ -481,6 +456,30 @@ public class VistaMenu extends javax.swing.JFrame {
 
         menuBar.add(clienteMenu1);
 
+        idiomaMenu.setText("Idiomas");
+
+        itmEspanolFactura1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        itmEspanolFactura1.setMnemonic('o');
+        itmEspanolFactura1.setText("Español");
+        itmEspanolFactura1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmEspanolFactura1ActionPerformed(evt);
+            }
+        });
+        idiomaMenu.add(itmEspanolFactura1);
+
+        itmInglesFactura1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
+        itmInglesFactura1.setMnemonic('s');
+        itmInglesFactura1.setText("Ingles");
+        itmInglesFactura1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmInglesFactura1ActionPerformed(evt);
+            }
+        });
+        idiomaMenu.add(itmInglesFactura1);
+
+        menuBar.add(idiomaMenu);
+
         setJMenuBar(menuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -488,12 +487,12 @@ public class VistaMenu extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
+                .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
         );
 
         pack();
@@ -593,10 +592,7 @@ public class VistaMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_itmListarFacturaActionPerformed
 
     private void itmDeleateFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmDeleateFacturaActionPerformed
-        EliminarFactura eliminarFactura=new EliminarFactura(controladorFactura, controladorCliente, controladorProducto, controladorFacturaDetalle);
-        eliminarFactura.setVisible(true);
-        desktopPane.add(eliminarFactura);
-        
+
     }//GEN-LAST:event_itmDeleateFacturaActionPerformed
 
     private void itmReadFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmReadFacturaActionPerformed
@@ -629,9 +625,6 @@ public class VistaMenu extends javax.swing.JFrame {
 
     private void itmUpdateEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmUpdateEmpleadoActionPerformed
         // TODO add your handling code here:
-        ActualizarEmpleado actualizarEmpleado=new ActualizarEmpleado(controadorEmpleado);
-        actualizarEmpleado.setVisible(true);
-        desktopPane.add(actualizarEmpleado);
     }//GEN-LAST:event_itmUpdateEmpleadoActionPerformed
 
     private void itmDeleateEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmDeleateEmpleadoActionPerformed
@@ -708,6 +701,14 @@ public class VistaMenu extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(VistaMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
