@@ -28,6 +28,8 @@ public class BuscarProducto extends javax.swing.JInternalFrame {
     }
 public void cambiarIdioma(ResourceBundle mensajes){ 
       
+     txtBuscarProducto.setText(mensajes.getString("Ventana.Buscar.Producto"));
+     btnLeer.setText(mensajes.getString("Ventanas.Buscar.Reservacion"));
      jlbCodigoBuscarProd.setText(mensajes.getString("Ventanas.Codigo"));
      jlbNombreBuscarProd.setText(mensajes.getString("Ventanas.Nombre"));
      jlbCostoBuscarProd.setText(mensajes.getString("Ventanas.Costo"));
@@ -55,6 +57,7 @@ public void cambiarIdioma(ResourceBundle mensajes){
         txtNombre = new javax.swing.JTextField();
         txtCodigo = new javax.swing.JTextField();
         jlbCodigoBuscarProd = new javax.swing.JLabel();
+        txtBuscarProducto = new javax.swing.JLabel();
 
         setClosable(true);
 
@@ -95,6 +98,9 @@ public void cambiarIdioma(ResourceBundle mensajes){
 
         jlbCodigoBuscarProd.setText("CODIGO:");
 
+        txtBuscarProducto.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        txtBuscarProducto.setText("BUSCAR PRODUCTO");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -102,7 +108,7 @@ public void cambiarIdioma(ResourceBundle mensajes){
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jlbNombreBuscarProd, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jlbCostoBuscarProd, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -117,15 +123,22 @@ public void cambiarIdioma(ResourceBundle mensajes){
                                 .addGap(0, 95, Short.MAX_VALUE)))
                         .addGap(34, 34, 34))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jlbCantidadBuscarProd, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(2, 2, 2)
-                        .addComponent(btnLeer, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jlbCantidadBuscarProd, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(2, 2, 2)
+                                .addComponent(btnLeer, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(34, 34, 34)
+                                .addComponent(txtBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(34, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(txtBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jlbCodigoBuscarProd))
@@ -160,7 +173,7 @@ public void cambiarIdioma(ResourceBundle mensajes){
             .addGroup(layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pack();
@@ -196,6 +209,7 @@ public void cambiarIdioma(ResourceBundle mensajes){
     private javax.swing.JLabel jlbCodigoBuscarProd;
     private javax.swing.JLabel jlbCostoBuscarProd;
     private javax.swing.JLabel jlbNombreBuscarProd;
+    private javax.swing.JLabel txtBuscarProducto;
     private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtDetalle;
     private javax.swing.JTextField txtNombre;

@@ -30,7 +30,8 @@ public class EliminarProducto extends javax.swing.JInternalFrame {
     public void cambiarIdioma(ResourceBundle mensajes) {
 
         jlbCodigoElimProd.setText(mensajes.getString("Ventanas.Codigo"));
-
+         txtEliminarProducto.setText(mensajes.getString("Ventana.Eliminar.Producto"));
+         btnEliminar.setText(mensajes.getString("Ventana.EliminarR.Reservacion"));
     }
 
     /**
@@ -45,6 +46,7 @@ public class EliminarProducto extends javax.swing.JInternalFrame {
         jlbCodigoElimProd = new javax.swing.JLabel();
         txtEliminar = new javax.swing.JTextField();
         btnEliminar = new javax.swing.JButton();
+        txtEliminarProducto = new javax.swing.JLabel();
 
         setClosable(true);
 
@@ -57,6 +59,9 @@ public class EliminarProducto extends javax.swing.JInternalFrame {
             }
         });
 
+        txtEliminarProducto.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        txtEliminarProducto.setText("ELIMINAR PRODUCTO");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -64,26 +69,31 @@ public class EliminarProducto extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(121, 121, 121)
+                        .addGap(135, 135, 135)
+                        .addComponent(txtEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(txtEliminarProducto))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(115, 115, 115)
                         .addComponent(jlbCodigoElimProd))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(txtEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(110, 110, 110)
+                        .addGap(100, 100, 100)
                         .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(121, Short.MAX_VALUE))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(82, 82, 82)
+                .addGap(49, 49, 49)
+                .addComponent(txtEliminarProducto)
+                .addGap(18, 18, 18)
                 .addComponent(jlbCodigoElimProd, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
 
         pack();
@@ -101,5 +111,6 @@ public class EliminarProducto extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnEliminar;
     private javax.swing.JLabel jlbCodigoElimProd;
     private javax.swing.JTextField txtEliminar;
+    private javax.swing.JLabel txtEliminarProducto;
     // End of variables declaration//GEN-END:variables
 }

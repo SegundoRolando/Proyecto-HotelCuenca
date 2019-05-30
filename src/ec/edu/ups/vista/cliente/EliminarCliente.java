@@ -27,7 +27,7 @@ public class EliminarCliente extends javax.swing.JInternalFrame {
 public void cambiarIdioma(ResourceBundle mensajes){
        jlbTituloElimiClient.setText(mensajes.getString("Ventana.Eliminar.Cliente"));
        jlbCodigoElimiClient.setText(mensajes.getString("Ventanas.Codigo"));
-       
+       btnEliminar.setText(mensajes.getString("Ventana.EliminarR.Reservacion"));
        
    }
     /**

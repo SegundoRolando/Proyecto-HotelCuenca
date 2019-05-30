@@ -27,8 +27,10 @@ public class ActualizarProductos extends javax.swing.JInternalFrame {
         cambiarIdioma (mensajes);
     }
   public void cambiarIdioma(ResourceBundle mensajes){
-   
-    
+      
+   txtActualizarProducto.setText(mensajes.getString("Ventana.Actualizar.Producto"));
+   btnBuscar.setText(mensajes.getString("Ventanas.Buscar.Reservacion"));
+   btnActualizar.setText(mensajes.getString("Ventana.Actualizar.Reservacion"));  
    jlbCodigoVentProd.setText(mensajes.getString("Ventanas.Codigo"));
    jlbNombreVentProd.setText(mensajes.getString("Ventanas.Nombre"));
    jlbCostoVentProd.setText(mensajes.getString("Ventanas.Costo"));
@@ -54,8 +56,11 @@ public class ActualizarProductos extends javax.swing.JInternalFrame {
         jlbNombreVentProd = new javax.swing.JLabel();
         jlbCostoVentProd = new javax.swing.JLabel();
         btnBuscar = new javax.swing.JButton();
+        txtActualizarProducto = new javax.swing.JLabel();
 
         setClosable(true);
+
+        jPanel1.setForeground(new java.awt.Color(0, 0, 0));
 
         jlbCodigoVentProd.setText("INGRESAR CODIGO:");
 
@@ -91,6 +96,10 @@ public class ActualizarProductos extends javax.swing.JInternalFrame {
             }
         });
 
+        txtActualizarProducto.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        txtActualizarProducto.setForeground(new java.awt.Color(0, 0, 0));
+        txtActualizarProducto.setText("ACTUALIZAR PRODUCTO");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -117,11 +126,16 @@ public class ActualizarProductos extends javax.swing.JInternalFrame {
                                 .addComponent(txtNombre, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txtDetalle, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addContainerGap()))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtActualizarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(61, 61, 61))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addComponent(txtActualizarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlbCodigoVentProd)
                     .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -140,7 +154,7 @@ public class ActualizarProductos extends javax.swing.JInternalFrame {
                     .addComponent(jlbCantidadVentProd))
                 .addGap(28, 28, 28)
                 .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -155,7 +169,7 @@ public class ActualizarProductos extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
+                .addGap(24, 24, 24)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -206,6 +220,7 @@ public class ActualizarProductos extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jlbCodigoVentProd;
     private javax.swing.JLabel jlbCostoVentProd;
     private javax.swing.JLabel jlbNombreVentProd;
+    private javax.swing.JLabel txtActualizarProducto;
     private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtCosto;
     private javax.swing.JTextField txtDetalle;

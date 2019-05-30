@@ -35,6 +35,7 @@ public class CrearCliente extends javax.swing.JInternalFrame {
        jlbNombreCrearClient.setText(mensajes.getString("Ventanas.Nombre"));
        jlbDireccionCrearClient.setText(mensajes.getString("Ventanas.Direccion"));
        jlbTelefonoCrearClient.setText(mensajes.getString("Ventanas.Telefono"));
+       btnCrear.setText(mensajes.getString("Ventana.CrearR.Reservacion"));
 }
     /**
      * This method is called from within the constructor to initialize the form.

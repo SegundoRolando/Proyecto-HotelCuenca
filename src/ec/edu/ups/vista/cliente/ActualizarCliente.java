@@ -28,7 +28,8 @@ public class ActualizarCliente extends javax.swing.JInternalFrame {
         cambiarIdioma(mensajes);
     }
     public void cambiarIdioma(ResourceBundle mensajes){
-        
+    btnBuscar.setText(mensajes.getString("Ventanas.Buscar.Reservacion"));
+    btnActualizar.setText(mensajes.getString("Ventana.Actualizar.Reservacion"));  
     jlbTituloVentActClient.setText(mensajes.getString("Ventana.Actualizar.Cliente"));
     jlbCodigoVentActClient.setText(mensajes.getString("Ventanas.Codigo"));
     jlbCedulaVentActClient.setText(mensajes.getString("Ventanas.Cedula"));

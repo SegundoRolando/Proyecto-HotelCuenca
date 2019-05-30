@@ -14,23 +14,36 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author 
+ * @author
  */
 public class EliminarEmpleado extends javax.swing.JInternalFrame {
 
+    private ResourceBundle mensajes;
     private ControladorEmpleado controladorEmpleado;
-    
+
     /**
      * Creates new form CrearCliente
      */
-    public EliminarEmpleado(ControladorEmpleado controladorEmpleado) {
+    public EliminarEmpleado(ControladorEmpleado controladorEmpleado, ResourceBundle mensajes) {
         initComponents();
         this.controladorEmpleado = controladorEmpleado;
         txtCodigo.setText(Integer.toString(this.controladorEmpleado.getCodigo()));
-        
+        this.mensajes = mensajes;
+        cambiarIdioma(mensajes);
     }
-    
-   
+
+    public void cambiarIdioma(ResourceBundle mensajes) {
+        jlbTituloCrearClient.setText(mensajes.getString("Ventanas.Eliminar.Empleado"));
+        jlbCodigoCrearClient.setText(mensajes.getString("Ventanas.CodigoE"));
+        jlbNombreCrearClient.setText(mensajes.getString("Ventanas.NombreE"));
+        jlbCedulaCrearClient.setText(mensajes.getString("Ventanas.CedulaE"));
+        jlbDireccionCrearClient.setText(mensajes.getString("Ventanas.DireccionE"));
+        jlbTelefonoCrearClient.setText(mensajes.getString("Ventanas.TelefonoE"));
+        btnBuscar.setText(mensajes.getString("Ventanas.Buscar.Reservacion"));
+        btnCancelar.setText(mensajes.getString("Ventana.Cancelar.Reservacion"));
+        btnEliminar.setText(mensajes.getString("Ventana.EliminarR.Reservacion"));
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -51,7 +64,7 @@ public class EliminarEmpleado extends javax.swing.JInternalFrame {
         blnEmail = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
 
         setClosable(true);
 
@@ -97,7 +110,7 @@ public class EliminarEmpleado extends javax.swing.JInternalFrame {
         jlbCodigoCrearClient.setText("Código:");
 
         jlbTituloCrearClient.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jlbTituloCrearClient.setText("BUSCAR EMPLEADO");
+        jlbTituloCrearClient.setText("ELIMINAR EMPLEADO");
 
         blnEmail.setText("Email:");
 
@@ -110,22 +123,12 @@ public class EliminarEmpleado extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton2.setText("Cancelar");
+        btnCancelar.setText("Cancelar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jlbTituloCrearClient)
-                .addGap(92, 92, 92))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(143, 143, 143)
-                .addComponent(btnEliminar)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,6 +156,17 @@ public class EliminarEmpleado extends javax.swing.JInternalFrame {
                                 .addGap(0, 4, Short.MAX_VALUE))
                             .addComponent(txtTelefono))))
                 .addGap(34, 34, 34))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(143, 143, 143)
+                        .addComponent(btnEliminar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnCancelar))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(jlbTituloCrearClient)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,7 +201,7 @@ public class EliminarEmpleado extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEliminar)
-                    .addComponent(jButton2))
+                    .addComponent(btnCancelar))
                 .addContainerGap())
         );
 
@@ -221,10 +235,10 @@ public class EliminarEmpleado extends javax.swing.JInternalFrame {
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here:
-       int codigo = Integer.parseInt(txtCodigo.getText());
+        int codigo = Integer.parseInt(txtCodigo.getText());
         controladorEmpleado.remove(codigo);
         txtCodigo.setText("");
-         txtNombre.setText("");
+        txtNombre.setText("");
         txtCedula.setText("");
         txtDireccion.setText("");
         txtTelefono.setText("");
@@ -233,27 +247,27 @@ public class EliminarEmpleado extends javax.swing.JInternalFrame {
 
     private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_txtCodigoActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
-         int codigo = Integer.parseInt(txtCodigo.getText());
-        Empleado  empleado = controladorEmpleado.read(codigo);
+        int codigo = Integer.parseInt(txtCodigo.getText());
+        Empleado empleado = controladorEmpleado.read(codigo);
         txtNombre.setText(empleado.getNombre());
         txtCedula.setText(empleado.getCedula());
         txtDireccion.setText(empleado.getDireccion());
         txtTelefono.setText(empleado.getTelefono());
         txtEmail.setText(empleado.getEmail());
-                
+
     }//GEN-LAST:event_btnBuscarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel blnEmail;
     private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnEliminar;
-    private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jlbCedulaCrearClient;
     private javax.swing.JLabel jlbCodigoCrearClient;

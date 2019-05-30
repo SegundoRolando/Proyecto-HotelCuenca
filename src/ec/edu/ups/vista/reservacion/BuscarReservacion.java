@@ -19,14 +19,28 @@ import java.util.ResourceBundle;
 public class BuscarReservacion extends javax.swing.JInternalFrame {
 
     private ControladorReservacion controladorReservacion;
-
+    private ResourceBundle mensajes;
     /**
      * Creates new form ReadCliente
      */
-    public BuscarReservacion(ControladorReservacion controladorReservacion) {
+    public BuscarReservacion(ControladorReservacion controladorReservacion,ResourceBundle mensajes) {
         initComponents();
         this.controladorReservacion = controladorReservacion;
+        this.mensajes = mensajes;
+        cambiarIdioma(mensajes);
+    }
 
+    public void cambiarIdioma(ResourceBundle mensajes) {
+        jlbTituloBuscarClient.setText(mensajes.getString("Ventana.Buscar.Reservacion"));
+        jblCodigoCrearReservacion.setText(mensajes.getString("Ventanas.CodigoReservacion"));
+        btnBuscar.setText(mensajes.getString("Ventanas.Buscar.Reservacion"));
+        btnCancelar.setText(mensajes.getString("Ventana.Cancelar.Reservacion"));
+        jlbCodigoHabitacion.setText(mensajes.getString("Ventanas.CodigoH"));
+        jlbCodigoHabitacion.setText(mensajes.getString("Ventanas.CodigoEH"));
+        jblFechaReserva.setText(mensajes.getString("Ventanas.FechaR"));
+        jblFechaReserva.setText(mensajes.getString("Ventanas.FechaI"));
+        jblFechaIngreso.setText(mensajes.getString("Ventanas.FechaS"));
+        jblCostoAlojamiento.setText(mensajes.getString("Ventanas.CostoR"));
     }
 
     /**
@@ -39,27 +53,27 @@ public class BuscarReservacion extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jlbCodigoBuscarClient = new javax.swing.JLabel();
+        jblCodigoCrearReservacion = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
         txtFechaReserva = new javax.swing.JTextField();
         txtFechaIngreso = new javax.swing.JTextField();
         txtNumHabitacion = new javax.swing.JTextField();
-        jlbNombreBuscarClient = new javax.swing.JLabel();
-        jlbCedulaBuscarClient = new javax.swing.JLabel();
-        jlbDireccionBuscarClient = new javax.swing.JLabel();
-        jlbTelefonoBuscarClient = new javax.swing.JLabel();
+        jlbCodigoHabitacion = new javax.swing.JLabel();
+        jblCodigoTrabajador = new javax.swing.JLabel();
+        jblFechaReserva = new javax.swing.JLabel();
+        jblFechaIngreso = new javax.swing.JLabel();
         txtCodigoEmpleado = new javax.swing.JTextField();
-        jlbTelefonoBuscarClient1 = new javax.swing.JLabel();
+        jblFechaSalida = new javax.swing.JLabel();
         txtFechaSalida = new javax.swing.JTextField();
         btnCancelar = new javax.swing.JButton();
-        jlbTelefonoBuscarClient2 = new javax.swing.JLabel();
+        jblCostoAlojamiento = new javax.swing.JLabel();
         txtCostoAlojamiento = new javax.swing.JTextField();
         jlbTituloBuscarClient = new javax.swing.JLabel();
 
         setClosable(true);
 
-        jlbCodigoBuscarClient.setText("INGRESAR CODIGO :");
+        jblCodigoCrearReservacion.setText("INGRESAR CODIGO :");
 
         txtCodigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,17 +94,17 @@ public class BuscarReservacion extends javax.swing.JInternalFrame {
 
         txtNumHabitacion.setEditable(false);
 
-        jlbNombreBuscarClient.setText("Número de Habitación :");
+        jlbCodigoHabitacion.setText("Número de Habitación :");
 
-        jlbCedulaBuscarClient.setText("Còdigo del Empleado:");
+        jblCodigoTrabajador.setText("Còdigo del Empleado:");
 
-        jlbDireccionBuscarClient.setText("Fecha de rerva:");
+        jblFechaReserva.setText("Fecha de rerva:");
 
-        jlbTelefonoBuscarClient.setText("Fecha de Ingreso:");
+        jblFechaIngreso.setText("Fecha de Ingreso:");
 
         txtCodigoEmpleado.setEditable(false);
 
-        jlbTelefonoBuscarClient1.setText("Fecha de Salida:");
+        jblFechaSalida.setText("Fecha de Salida:");
 
         txtFechaSalida.setEditable(false);
 
@@ -101,7 +115,7 @@ public class BuscarReservacion extends javax.swing.JInternalFrame {
             }
         });
 
-        jlbTelefonoBuscarClient2.setText("Costo de alojamiento:");
+        jblCostoAlojamiento.setText("Costo de alojamiento:");
 
         txtCostoAlojamiento.setEditable(false);
 
@@ -112,13 +126,13 @@ public class BuscarReservacion extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jlbNombreBuscarClient)
-                    .addComponent(jlbCedulaBuscarClient)
-                    .addComponent(jlbDireccionBuscarClient)
-                    .addComponent(jlbTelefonoBuscarClient)
-                    .addComponent(jlbTelefonoBuscarClient1)
-                    .addComponent(jlbTelefonoBuscarClient2)
-                    .addComponent(jlbCodigoBuscarClient, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jlbCodigoHabitacion)
+                    .addComponent(jblCodigoTrabajador)
+                    .addComponent(jblFechaReserva)
+                    .addComponent(jblFechaIngreso)
+                    .addComponent(jblFechaSalida)
+                    .addComponent(jblCostoAlojamiento)
+                    .addComponent(jblCodigoCrearReservacion, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(70, 70, 70)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -146,32 +160,32 @@ public class BuscarReservacion extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlbCodigoBuscarClient)
+                    .addComponent(jblCodigoCrearReservacion)
                     .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBuscar))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlbNombreBuscarClient)
+                    .addComponent(jlbCodigoHabitacion)
                     .addComponent(txtNumHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlbCedulaBuscarClient)
+                    .addComponent(jblCodigoTrabajador)
                     .addComponent(txtCodigoEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlbDireccionBuscarClient)
+                    .addComponent(jblFechaReserva)
                     .addComponent(txtFechaReserva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlbTelefonoBuscarClient)
+                    .addComponent(jblFechaIngreso)
                     .addComponent(txtFechaIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlbTelefonoBuscarClient1)
+                    .addComponent(jblFechaSalida)
                     .addComponent(txtFechaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlbTelefonoBuscarClient2)
+                    .addComponent(jblCostoAlojamiento)
                     .addComponent(txtCostoAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -240,13 +254,13 @@ public class BuscarReservacion extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel jlbCedulaBuscarClient;
-    private javax.swing.JLabel jlbCodigoBuscarClient;
-    private javax.swing.JLabel jlbDireccionBuscarClient;
-    private javax.swing.JLabel jlbNombreBuscarClient;
-    private javax.swing.JLabel jlbTelefonoBuscarClient;
-    private javax.swing.JLabel jlbTelefonoBuscarClient1;
-    private javax.swing.JLabel jlbTelefonoBuscarClient2;
+    private javax.swing.JLabel jblCodigoCrearReservacion;
+    private javax.swing.JLabel jblCodigoTrabajador;
+    private javax.swing.JLabel jblCostoAlojamiento;
+    private javax.swing.JLabel jblFechaIngreso;
+    private javax.swing.JLabel jblFechaReserva;
+    private javax.swing.JLabel jblFechaSalida;
+    private javax.swing.JLabel jlbCodigoHabitacion;
     private javax.swing.JLabel jlbTituloBuscarClient;
     private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtCodigoEmpleado;

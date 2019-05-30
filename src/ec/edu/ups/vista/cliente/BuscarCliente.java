@@ -26,7 +26,8 @@ public class BuscarCliente extends javax.swing.JInternalFrame {
         cambiarIdioma(mensajes);
     }
 public void cambiarIdioma(ResourceBundle mensajes){
-     
+      btnBuscar.setText(mensajes.getString("Ventanas.Buscar.Reservacion"));
+      btnCancelar.setText(mensajes.getString("Ventana.Cancelar.Reservacion"));
       jlbTituloBuscarClient.setText(mensajes.getString("Ventana.Buscar.Cliente"));
       jlbCodigoBuscarClient.setText(mensajes.getString("Ventanas.Codigo"));
       jlbCedulaBuscarClient.setText(mensajes.getString("Ventanas.Cedula"));

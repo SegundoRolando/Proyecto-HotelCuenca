@@ -7,26 +7,37 @@ package ec.edu.ups.vista.empleado;
 
 import ec.edu.ups.controladores.ControladorEmpleado;
 import ec.edu.ups.modelo.Empleado;
+import java.util.ResourceBundle;
 import javax.swing.JOptionPane;
 /**
  *
  * @author 
  */
 public class ActualizarEmpleado extends javax.swing.JInternalFrame {
-
+     private ResourceBundle mensajes;
     private ControladorEmpleado controladorEmpleado;
     /**
      * Creates new form CrearCliente
      */
-    public ActualizarEmpleado(ControladorEmpleado controladorEmpleado) {
+    public ActualizarEmpleado(ControladorEmpleado controladorEmpleado,ResourceBundle mensajes) {
         
         initComponents();
-        this.controladorEmpleado = controladorEmpleado;
-        
+         this.controladorEmpleado = controladorEmpleado;
+        this. mensajes = mensajes;
+        cambiarIdioma (mensajes);
         
     }
-    
-   
+    public void cambiarIdioma(ResourceBundle mensajes){
+   jlbTituloCrearClient.setText(mensajes.getString("Ventanas.Actualizar.Empleado"));
+   btnBuscar.setText(mensajes.getString("Ventanas.Buscar.Reservacion"));
+   btnCancelar.setText(mensajes.getString("Ventana.Cancelar.Reservacion"));
+   btnActualizar.setText(mensajes.getString("Ventana.Actualizar.Reservacion"));  
+   jlbCodigoCrearClient.setText(mensajes.getString("Ventanas.CodigoE"));
+   jlbNombreCrearClient.setText(mensajes.getString("Ventanas.NombreE"));
+   jlbCedulaCrearClient.setText(mensajes.getString("Ventanas.CedulaE"));
+   jlbDireccionCrearClient.setText(mensajes.getString("Ventanas.DireccionE"));
+   jlbTelefonoCrearClient.setText(mensajes.getString("Ventanas.TelefonoE"));
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -47,7 +58,7 @@ public class ActualizarEmpleado extends javax.swing.JInternalFrame {
         blnEmail = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
 
         setClosable(true);
 
@@ -87,7 +98,8 @@ public class ActualizarEmpleado extends javax.swing.JInternalFrame {
         jlbCodigoCrearClient.setText("Código:");
 
         jlbTituloCrearClient.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jlbTituloCrearClient.setText("BUSCAR EMPLEADO");
+        jlbTituloCrearClient.setForeground(new java.awt.Color(0, 0, 0));
+        jlbTituloCrearClient.setText("ACTUALIZAR  EMPLEADO");
 
         blnEmail.setText("Email:");
 
@@ -98,21 +110,17 @@ public class ActualizarEmpleado extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton2.setText("Cancelar");
+        btnCancelar.setText("Cancelar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jlbTituloCrearClient)
-                .addGap(92, 92, 92))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(143, 143, 143)
                 .addComponent(btnActualizar)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(btnCancelar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
@@ -138,9 +146,13 @@ public class ActualizarEmpleado extends javax.swing.JInternalFrame {
                                 .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnBuscar)
-                                .addGap(0, 4, Short.MAX_VALUE))
+                                .addGap(0, 29, Short.MAX_VALUE))
                             .addComponent(txtTelefono))))
                 .addGap(34, 34, 34))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jlbTituloCrearClient)
+                .addGap(45, 45, 45))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,7 +187,7 @@ public class ActualizarEmpleado extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnActualizar)
-                    .addComponent(jButton2))
+                    .addComponent(btnCancelar))
                 .addContainerGap())
         );
 
@@ -256,7 +268,7 @@ public class ActualizarEmpleado extends javax.swing.JInternalFrame {
     private javax.swing.JLabel blnEmail;
     private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnCancelar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jlbCedulaCrearClient;
     private javax.swing.JLabel jlbCodigoCrearClient;

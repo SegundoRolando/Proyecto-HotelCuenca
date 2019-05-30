@@ -14,23 +14,35 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author 
+ * @author
  */
 public class CrearEmpleado extends javax.swing.JInternalFrame {
 
+    private ResourceBundle mensajes;
     private ControladorEmpleado controladorEmpleado;
-    
+
     /**
      * Creates new form CrearCliente
      */
-    public CrearEmpleado(ControladorEmpleado controladorEmpleado) {
+    public CrearEmpleado(ControladorEmpleado controladorEmpleado, ResourceBundle mensajes) {
         initComponents();
         this.controladorEmpleado = controladorEmpleado;
         txtCodigo.setText(Integer.toString(this.controladorEmpleado.getCodigo()));
-        
+        this.mensajes = mensajes;
+        cambiarIdioma(mensajes);
+
     }
-    
-   
+
+    public void cambiarIdioma(ResourceBundle mensajes) {
+        btnCrear.setText(mensajes.getString("Ventana.CrearR.Reservacion"));
+        jlbTituloCrearClient.setText(mensajes.getString("Ventanas.Crear.Empleado"));
+        jlbCodigoCrearClient.setText(mensajes.getString("Ventanas.CodigoE"));
+        jlbNombreCrearClient.setText(mensajes.getString("Ventanas.NombreE"));
+        jlbCedulaCrearClient.setText(mensajes.getString("Ventanas.CedulaE"));
+        jlbDireccionCrearClient.setText(mensajes.getString("Ventanas.DireccionE"));
+        jlbTelefonoCrearClient.setText(mensajes.getString("Ventanas.TelefonoE"));
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -215,7 +227,7 @@ public class CrearEmpleado extends javax.swing.JInternalFrame {
 
     private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_txtCodigoActionPerformed
 
 

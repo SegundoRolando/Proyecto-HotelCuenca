@@ -18,16 +18,21 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ListarEmpleado extends javax.swing.JInternalFrame {
  private ControladorEmpleado controladorEmpleado;
- 
+ private ResourceBundle mensajes;
     /**
      * Creates new form ListarClientes
      */
-    public ListarEmpleado(ControladorEmpleado controladorEmpleado) {
+    public ListarEmpleado(ControladorEmpleado controladorEmpleado,ResourceBundle mensajes) {
         initComponents();
         this.controladorEmpleado=controladorEmpleado;
         llenarDatos();
+         this.mensajes = mensajes;
+        cambiarIdioma(mensajes);
        
     }
+     public void cambiarIdioma(ResourceBundle mensajes){
+     jlbTituloListaCliente.setText(mensajes.getString("Ventanas.Titulo.ListaE"));    
+     }
    
     public void llenarDatos(){
         DefaultTableModel modelo=(DefaultTableModel)tblEmpleado.getModel();

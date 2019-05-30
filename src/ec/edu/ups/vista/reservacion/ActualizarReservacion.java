@@ -11,6 +11,7 @@ import ec.edu.ups.modelo.Producto;
 import ec.edu.ups.modelo.Reserva;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.ResourceBundle;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,14 +20,29 @@ import javax.swing.JOptionPane;
  */
 public class ActualizarReservacion extends javax.swing.JInternalFrame {
    private ControladorReservacion controladorReservacion; 
+   private ResourceBundle mensajes;
     /**
      * Creates new form ActualizarReservacion
      */
-    public ActualizarReservacion(ControladorReservacion controladorReservacion) {
+    public ActualizarReservacion(ControladorReservacion controladorReservacion,ResourceBundle mensajes) {
         this.controladorReservacion=controladorReservacion;
         initComponents();
+        this. mensajes = mensajes;
+        cambiarIdioma (mensajes);
     }
-
+    public void cambiarIdioma(ResourceBundle mensajes){  
+   btnBuscar.setText(mensajes.getString("Ventanas.Buscar.Reservacion"));
+   btnActualizar.setText(mensajes.getString("Ventana.Actualizar.Reservacion"));
+   
+   jlbActualizarReservacion.setText(mensajes.getString("Ventana.Titulo.Actualizar"));
+   jblCodigoCrearReservacion.setText(mensajes.getString("Ventanas.CodigoReservacion"));
+   jblCodigoHabitacion.setText(mensajes.getString("Ventanas.CodigoH"));
+   jlbCodigoEmpleado.setText(mensajes.getString("Ventanas.CodigoEH"));
+   jlbFechaReserva.setText(mensajes.getString("Ventanas.FechaR"));
+   jlbFechaIngreso.setText(mensajes.getString("Ventanas.FechaI"));
+   jlbFechaSalida.setText(mensajes.getString("Ventanas.FechaS"));
+   jlbCostoAlojamiento.setText(mensajes.getString("Ventanas.CostoR"));
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,26 +53,27 @@ public class ActualizarReservacion extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        jlbCodigoBuscarClient = new javax.swing.JLabel();
+        jblCodigoCrearReservacion = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
         txtFechaReserva = new javax.swing.JTextField();
         txtFechaIngreso = new javax.swing.JTextField();
         txtNumHabitacion = new javax.swing.JTextField();
-        jlbNombreBuscarClient = new javax.swing.JLabel();
-        jlbCedulaBuscarClient = new javax.swing.JLabel();
-        jlbDireccionBuscarClient = new javax.swing.JLabel();
-        jlbTelefonoBuscarClient = new javax.swing.JLabel();
+        jblCodigoHabitacion = new javax.swing.JLabel();
+        jlbCodigoEmpleado = new javax.swing.JLabel();
+        jlbFechaReserva = new javax.swing.JLabel();
+        jlbFechaIngreso = new javax.swing.JLabel();
         txtCodigoEmpleado = new javax.swing.JTextField();
-        jlbTelefonoBuscarClient1 = new javax.swing.JLabel();
+        jlbFechaSalida = new javax.swing.JLabel();
         txtFechaSalida = new javax.swing.JTextField();
-        jlbTelefonoBuscarClient2 = new javax.swing.JLabel();
+        jlbCostoAlojamiento = new javax.swing.JLabel();
         txtCostoAlojamiento = new javax.swing.JTextField();
         btnActualizar = new javax.swing.JButton();
+        jlbActualizarReservacion = new javax.swing.JLabel();
 
         setClosable(true);
 
-        jlbCodigoBuscarClient.setText("INGRESAR CODIGO :");
+        jblCodigoCrearReservacion.setText("INGRESAR CODIGO :");
 
         txtCodigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,17 +88,17 @@ public class ActualizarReservacion extends javax.swing.JInternalFrame {
             }
         });
 
-        jlbNombreBuscarClient.setText("Número de Habitación :");
+        jblCodigoHabitacion.setText("Número de Habitación :");
 
-        jlbCedulaBuscarClient.setText("Còdigo del Empleado:");
+        jlbCodigoEmpleado.setText("Còdigo del Empleado:");
 
-        jlbDireccionBuscarClient.setText("Fecha de rerva:");
+        jlbFechaReserva.setText("Fecha de rerva:");
 
-        jlbTelefonoBuscarClient.setText("Fecha de Ingreso:");
+        jlbFechaIngreso.setText("Fecha de Ingreso:");
 
-        jlbTelefonoBuscarClient1.setText("Fecha de Salida:");
+        jlbFechaSalida.setText("Fecha de Salida:");
 
-        jlbTelefonoBuscarClient2.setText("Costo de alojamiento:");
+        jlbCostoAlojamiento.setText("Costo de alojamiento:");
 
         btnActualizar.setText("ACTUALIZAR");
         btnActualizar.addActionListener(new java.awt.event.ActionListener() {
@@ -90,6 +107,10 @@ public class ActualizarReservacion extends javax.swing.JInternalFrame {
             }
         });
 
+        jlbActualizarReservacion.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jlbActualizarReservacion.setForeground(new java.awt.Color(0, 0, 0));
+        jlbActualizarReservacion.setText("ACTUALIZAR RESERVACIÓN ");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -97,13 +118,13 @@ public class ActualizarReservacion extends javax.swing.JInternalFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jlbNombreBuscarClient)
-                    .addComponent(jlbCedulaBuscarClient)
-                    .addComponent(jlbDireccionBuscarClient)
-                    .addComponent(jlbTelefonoBuscarClient)
-                    .addComponent(jlbTelefonoBuscarClient1)
-                    .addComponent(jlbTelefonoBuscarClient2)
-                    .addComponent(jlbCodigoBuscarClient, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jblCodigoHabitacion)
+                    .addComponent(jlbCodigoEmpleado)
+                    .addComponent(jlbFechaReserva)
+                    .addComponent(jlbFechaIngreso)
+                    .addComponent(jlbFechaSalida)
+                    .addComponent(jlbCostoAlojamiento)
+                    .addComponent(jblCodigoCrearReservacion, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(70, 70, 70)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -125,38 +146,44 @@ public class ActualizarReservacion extends javax.swing.JInternalFrame {
                 .addGap(212, 212, 212)
                 .addComponent(btnActualizar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(88, 88, 88)
+                .addComponent(jlbActualizarReservacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
+                .addGap(7, 7, 7)
+                .addComponent(jlbActualizarReservacion, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlbCodigoBuscarClient)
+                    .addComponent(jblCodigoCrearReservacion)
                     .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBuscar))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlbNombreBuscarClient)
+                    .addComponent(jblCodigoHabitacion)
                     .addComponent(txtNumHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlbCedulaBuscarClient)
+                    .addComponent(jlbCodigoEmpleado)
                     .addComponent(txtCodigoEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlbDireccionBuscarClient)
+                    .addComponent(jlbFechaReserva)
                     .addComponent(txtFechaReserva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlbTelefonoBuscarClient)
+                    .addComponent(jlbFechaIngreso)
                     .addComponent(txtFechaIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlbTelefonoBuscarClient1)
+                    .addComponent(jlbFechaSalida)
                     .addComponent(txtFechaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlbTelefonoBuscarClient2)
+                    .addComponent(jlbCostoAlojamiento)
                     .addComponent(txtCostoAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
                 .addComponent(btnActualizar)
@@ -225,13 +252,14 @@ public class ActualizarReservacion extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel jlbCedulaBuscarClient;
-    private javax.swing.JLabel jlbCodigoBuscarClient;
-    private javax.swing.JLabel jlbDireccionBuscarClient;
-    private javax.swing.JLabel jlbNombreBuscarClient;
-    private javax.swing.JLabel jlbTelefonoBuscarClient;
-    private javax.swing.JLabel jlbTelefonoBuscarClient1;
-    private javax.swing.JLabel jlbTelefonoBuscarClient2;
+    private javax.swing.JLabel jblCodigoCrearReservacion;
+    private javax.swing.JLabel jblCodigoHabitacion;
+    private javax.swing.JLabel jlbActualizarReservacion;
+    private javax.swing.JLabel jlbCodigoEmpleado;
+    private javax.swing.JLabel jlbCostoAlojamiento;
+    private javax.swing.JLabel jlbFechaIngreso;
+    private javax.swing.JLabel jlbFechaReserva;
+    private javax.swing.JLabel jlbFechaSalida;
     private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtCodigoEmpleado;
     private javax.swing.JTextField txtCostoAlojamiento;

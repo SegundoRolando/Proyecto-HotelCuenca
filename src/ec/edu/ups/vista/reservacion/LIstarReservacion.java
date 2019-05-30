@@ -8,6 +8,7 @@ package ec.edu.ups.vista.reservacion;
 import ec.edu.ups.controladores.ControladorReservacion;
 import ec.edu.ups.modelo.Producto;
 import ec.edu.ups.modelo.Reserva;
+import java.util.ResourceBundle;
 import java.util.Set;
 import javax.swing.table.DefaultTableModel;
 
@@ -17,13 +18,16 @@ import javax.swing.table.DefaultTableModel;
  */
 public class LIstarReservacion extends javax.swing.JInternalFrame {
     private ControladorReservacion controladorReservacion;
+     private ResourceBundle mensajes;
     /**
      * Creates new form LIstarReservacion
      */
-    public LIstarReservacion(ControladorReservacion controladorReservacion) {
+    public LIstarReservacion(ControladorReservacion controladorReservacion,ResourceBundle mensajes) {
         initComponents();
         this.controladorReservacion=controladorReservacion;
         llenarDatos();
+        this. mensajes = mensajes;
+        cambiarIdioma (mensajes);
     }
      public void llenarDatos(){
         DefaultTableModel modelo=(DefaultTableModel)tbtListarReserva.getModel();
@@ -36,6 +40,10 @@ public class LIstarReservacion extends javax.swing.JInternalFrame {
             
          }
      }
+     public void cambiarIdioma(ResourceBundle mensajes){
+         btnListarReservacion.setText(mensajes.getString("Ventana.ListarR.Reservacion"));
+     }
+     
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -47,6 +55,7 @@ public class LIstarReservacion extends javax.swing.JInternalFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tbtListarReserva = new javax.swing.JTable();
+        btnListarReservacion = new javax.swing.JLabel();
 
         setClosable(true);
 
@@ -60,6 +69,9 @@ public class LIstarReservacion extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tbtListarReserva);
 
+        btnListarReservacion.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btnListarReservacion.setText("LISTAR RESERVACION");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -68,13 +80,19 @@ public class LIstarReservacion extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 717, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(216, 216, 216)
+                .addComponent(btnListarReservacion, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(29, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(btnListarReservacion, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(166, 166, 166))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
 
         pack();
@@ -82,6 +100,7 @@ public class LIstarReservacion extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel btnListarReservacion;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tbtListarReserva;
     // End of variables declaration//GEN-END:variables

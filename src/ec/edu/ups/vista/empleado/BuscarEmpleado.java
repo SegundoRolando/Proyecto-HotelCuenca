@@ -17,17 +17,28 @@ import javax.swing.JOptionPane;
  * @author 
  */
 public class BuscarEmpleado extends javax.swing.JInternalFrame {
-
+    private ResourceBundle mensajes;
     private ControladorEmpleado controladorEmpleado;
     
     /**
      * Creates new form CrearCliente
      */
-    public BuscarEmpleado(ControladorEmpleado controladorEmpleado) {
+    public BuscarEmpleado(ControladorEmpleado controladorEmpleado,ResourceBundle mensajes) {
         initComponents();
         this.controladorEmpleado = controladorEmpleado;
         txtCodigo.setText(Integer.toString(this.controladorEmpleado.getCodigo()));
-        
+         this. mensajes = mensajes;
+        cambiarIdioma (mensajes);
+    }
+    public void cambiarIdioma(ResourceBundle mensajes){
+   btnBuscar.setText(mensajes.getString("Ventanas.Buscar.Reservacion"));
+   btnCancelar.setText(mensajes.getString("Ventana.Cancelar.Reservacion"));
+   jlbTituloCrearClient.setText(mensajes.getString("Ventanas.Buscar.Empleado"));
+   jlbCodigoCrearClient.setText(mensajes.getString("Ventanas.CodigoE"));
+   jlbNombreCrearClient.setText(mensajes.getString("Ventanas.NombreE"));
+   jlbCedulaCrearClient.setText(mensajes.getString("Ventanas.CedulaE"));
+   jlbDireccionCrearClient.setText(mensajes.getString("Ventanas.DireccionE"));
+   jlbTelefonoCrearClient.setText(mensajes.getString("Ventanas.TelefonoE"));
     }
     
    
@@ -50,7 +61,7 @@ public class BuscarEmpleado extends javax.swing.JInternalFrame {
         blnEmail = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
 
         setClosable(true);
 
@@ -102,10 +113,10 @@ public class BuscarEmpleado extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton2.setText("Cancelar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnCancelarActionPerformed(evt);
             }
         });
 
@@ -146,7 +157,7 @@ public class BuscarEmpleado extends javax.swing.JInternalFrame {
                 .addGap(34, 34, 34))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(149, 149, 149)
-                .addComponent(jButton2)
+                .addComponent(btnCancelar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -180,7 +191,7 @@ public class BuscarEmpleado extends javax.swing.JInternalFrame {
                     .addComponent(blnEmail)
                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(btnCancelar)
                 .addContainerGap())
         );
 
@@ -229,17 +240,17 @@ public class BuscarEmpleado extends javax.swing.JInternalFrame {
                 
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         // TODO add your handling code here:
         txtCodigo.setText("");  
         this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel blnEmail;
     private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnCancelar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jlbCedulaCrearClient;
     private javax.swing.JLabel jlbCodigoCrearClient;

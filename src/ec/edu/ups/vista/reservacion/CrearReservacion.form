@@ -23,17 +23,18 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-              <Component id="jPanel1" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel1" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel1" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -44,22 +45,40 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jblCodigo" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jlbCodigoHabitacion" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jblCodigoTrabajador" alignment="0" pref="149" max="32767" attributes="0"/>
-                                  <Component id="jblFeReser" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jlbFechaSal" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jlbFechIngre" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                                  <Component id="jlbCostoAlojamiento" min="-2" pref="136" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jlbCosAloj" alignment="0" min="-2" pref="136" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jlbFechaIngreso" min="-2" pref="115" max="-2" attributes="0"/>
+                                              <Component id="jlbFechaSalida" min="-2" pref="134" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Component id="jblCodigoTrabajador" min="-2" pref="149" max="-2" attributes="0"/>
+                                              <Component id="jblFechaReserva" min="-2" pref="149" max="-2" attributes="0"/>
+                                              <Component id="jlbCodigoHabitacion" alignment="1" min="-2" pref="149" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="jblCodigoCrearReservacion" min="-2" pref="125" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="txtCosAloj" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
                               <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
@@ -73,60 +92,66 @@
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="183" max="-2" attributes="0"/>
                           <Component id="btnCrear" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+                          <Component id="jlbCrearReservacion" min="-2" pref="280" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="122" max="32767" attributes="0"/>
+                  <EmptySpace pref="86" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
+                  <Component id="jlbCrearReservacion" pref="32" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jblCodigo" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                      <Component id="jblCodigoCrearReservacion" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                       <Component id="txtCodigo" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jlbCodigoHabitacion" alignment="0" min="-2" pref="21" max="-2" attributes="0"/>
-                      <Component id="txtCodiHabitacion" alignment="0" min="-2" pref="27" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jlbCodigoHabitacion" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
+                      <Component id="txtCodiHabitacion" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jblCodigoTrabajador" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
                       <Component id="txtCodTrabaador" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jblFeReser" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
+                      <Component id="jblFechaReserva" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
                       <Component id="txtFechReser" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jlbFechIngre" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
+                      <Component id="jlbFechaIngreso" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
                       <Component id="txtFechIngre" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jlbFechaSal" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
+                      <Component id="jlbFechaSalida" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
                       <Component id="txtFechSal" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jlbCosAloj" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="jlbCostoAlojamiento" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="txtCosAloj" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   <Component id="btnCrear" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jblCodigo">
+        <Component class="javax.swing.JLabel" name="jblCodigoCrearReservacion">
           <Properties>
             <Property name="text" type="java.lang.String" value="CODIGO :"/>
           </Properties>
@@ -138,7 +163,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jlbCodigoHabitacion">
           <Properties>
-            <Property name="text" type="java.lang.String" value="NUMERO HABITACION :"/>
+            <Property name="text" type="java.lang.String" value="CODIGO HABITACION :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtCodiHabitacion">
@@ -148,33 +173,33 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jblCodigoTrabajador">
           <Properties>
-            <Property name="text" type="java.lang.String" value="NUMERO TRABAJADOR :"/>
+            <Property name="text" type="java.lang.String" value="CODIGO TRABAJADOR :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtFechIngre">
         </Component>
-        <Component class="javax.swing.JLabel" name="jblFeReser">
+        <Component class="javax.swing.JLabel" name="jblFechaReserva">
           <Properties>
             <Property name="text" type="java.lang.String" value="FECHA DE RESERVA :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtCodTrabaador">
         </Component>
-        <Component class="javax.swing.JLabel" name="jlbFechaSal">
+        <Component class="javax.swing.JLabel" name="jlbFechaSalida">
           <Properties>
             <Property name="text" type="java.lang.String" value="FECHA DE SALIDA  :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtFechReser">
         </Component>
-        <Component class="javax.swing.JLabel" name="jlbFechIngre">
+        <Component class="javax.swing.JLabel" name="jlbFechaIngreso">
           <Properties>
             <Property name="text" type="java.lang.String" value="FECHA DE INGRESO :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtCosAloj">
         </Component>
-        <Component class="javax.swing.JLabel" name="jlbCosAloj">
+        <Component class="javax.swing.JLabel" name="jlbCostoAlojamiento">
           <Properties>
             <Property name="text" type="java.lang.String" value="COSTO DE ALOJAMIENTO :"/>
           </Properties>
@@ -188,6 +213,14 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCrearActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jlbCrearReservacion">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="24" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="CREAR RESERVACION"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
