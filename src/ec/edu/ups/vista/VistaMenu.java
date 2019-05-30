@@ -159,17 +159,15 @@ public class VistaMenu extends javax.swing.JFrame {
         itmUpdateFactura2 = new javax.swing.JMenuItem();
         itmDeleateFactura2 = new javax.swing.JMenuItem();
         itmListarFactura2 = new javax.swing.JMenuItem();
+        idiomaMenu = new javax.swing.JMenu();
+        itmEspanolFactura1 = new javax.swing.JMenuItem();
+        itmInglesFactura1 = new javax.swing.JMenuItem();
         clienteMenu1 = new javax.swing.JMenu();
         itmCreateEmpleado = new javax.swing.JMenuItem();
         itmReadrEmpleado = new javax.swing.JMenuItem();
         itmUpdateEmpleado = new javax.swing.JMenuItem();
         itmDeleateEmpleado = new javax.swing.JMenuItem();
         itmListarEmpleado = new javax.swing.JMenuItem();
-        idiomaMenu1 = new javax.swing.JMenu();
-        itmListadoGeneral = new javax.swing.JMenuItem();
-        idiomaMenu = new javax.swing.JMenu();
-        itmEspanolFactura1 = new javax.swing.JMenuItem();
-        itmInglesFactura1 = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -405,6 +403,30 @@ public class VistaMenu extends javax.swing.JFrame {
 
         menuBar.add(facturaMenu2);
 
+        idiomaMenu.setText("Idiomas");
+
+        itmEspanolFactura1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        itmEspanolFactura1.setMnemonic('o');
+        itmEspanolFactura1.setText("Español");
+        itmEspanolFactura1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmEspanolFactura1ActionPerformed(evt);
+            }
+        });
+        idiomaMenu.add(itmEspanolFactura1);
+
+        itmInglesFactura1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
+        itmInglesFactura1.setMnemonic('s');
+        itmInglesFactura1.setText("Ingles");
+        itmInglesFactura1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmInglesFactura1ActionPerformed(evt);
+            }
+        });
+        idiomaMenu.add(itmInglesFactura1);
+
+        menuBar.add(idiomaMenu);
+
         clienteMenu1.setMnemonic('f');
         clienteMenu1.setText("Empleado");
 
@@ -459,44 +481,6 @@ public class VistaMenu extends javax.swing.JFrame {
 
         menuBar.add(clienteMenu1);
 
-        idiomaMenu1.setText("Tabla de Registros");
-
-        itmListadoGeneral.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
-        itmListadoGeneral.setMnemonic('o');
-        itmListadoGeneral.setText("Listado General");
-        itmListadoGeneral.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmListadoGeneralActionPerformed(evt);
-            }
-        });
-        idiomaMenu1.add(itmListadoGeneral);
-
-        menuBar.add(idiomaMenu1);
-
-        idiomaMenu.setText("Idiomas");
-
-        itmEspanolFactura1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
-        itmEspanolFactura1.setMnemonic('o');
-        itmEspanolFactura1.setText("Español");
-        itmEspanolFactura1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmEspanolFactura1ActionPerformed(evt);
-            }
-        });
-        idiomaMenu.add(itmEspanolFactura1);
-
-        itmInglesFactura1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
-        itmInglesFactura1.setMnemonic('s');
-        itmInglesFactura1.setText("Ingles");
-        itmInglesFactura1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmInglesFactura1ActionPerformed(evt);
-            }
-        });
-        idiomaMenu.add(itmInglesFactura1);
-
-        menuBar.add(idiomaMenu);
-
         setJMenuBar(menuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -509,7 +493,7 @@ public class VistaMenu extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
         );
 
         pack();
@@ -664,13 +648,6 @@ public class VistaMenu extends javax.swing.JFrame {
         desktopPane.add(listarEmpleado);
     }//GEN-LAST:event_itmListarEmpleadoActionPerformed
 
-    private void itmListadoGeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmListadoGeneralActionPerformed
-        // TODO add your handling code here:
-        ListarEmpleado listarEmpleado =new ListarEmpleado(controadorEmpleado);
-        listarEmpleado.setVisible(true);
-        desktopPane.add(listarEmpleado);
-    }//GEN-LAST:event_itmListadoGeneralActionPerformed
-
     private void itmCreateFactura2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmCreateFactura2ActionPerformed
         CrearReservacion crearReservacion=new CrearReservacion(controladorReservacion);
         crearReservacion.setVisible(true);
@@ -755,7 +732,6 @@ public class VistaMenu extends javax.swing.JFrame {
     private javax.swing.JMenu facturaMenu;
     private javax.swing.JMenu facturaMenu2;
     private javax.swing.JMenu idiomaMenu;
-    private javax.swing.JMenu idiomaMenu1;
     private javax.swing.JMenuItem itmCreateCliente;
     private javax.swing.JMenuItem itmCreateEmpleado;
     private javax.swing.JMenuItem itmCreateFactura;
@@ -768,7 +744,6 @@ public class VistaMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem itmDeleateProducto;
     private javax.swing.JMenuItem itmEspanolFactura1;
     private javax.swing.JMenuItem itmInglesFactura1;
-    private javax.swing.JMenuItem itmListadoGeneral;
     private javax.swing.JMenuItem itmListarCliente;
     private javax.swing.JMenuItem itmListarEmpleado;
     private javax.swing.JMenuItem itmListarFactura;

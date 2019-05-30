@@ -207,32 +207,38 @@ public class ActualizarCliente extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtNombreActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-        Cliente cliente = new Cliente();
-        cliente.setCodigo(Integer.parseInt(txtCodigo.getText()));
+        Cliente cliente = controladorCliente.read(Integer.parseInt(txtCodigo.getText()));
         cliente.setNombre(txtNombre.getText());
-        cliente.setCedula(txtCedula.getText());
         cliente.setDireccion(txtDireccion.getText());
+        cliente.setCedula(txtCedula.getText());
         cliente.setTelefono(txtTelefono.getText());
+        cliente.setEmail(txtEmail.getText());
+        txtCodigo.setText(String.valueOf(cliente.getCodigo()));
         controladorCliente.update(cliente);
-        JOptionPane.showMessageDialog(this,"Cliente Actualizado");
+        JOptionPane.showMessageDialog(this, "Cliente actualizado", "Actualizar cliente", JOptionPane.INFORMATION_MESSAGE);
+        txtCodigo.setText("");
         txtNombre.setText("");
-        txtCedula.setText("");
         txtDireccion.setText("");
+        txtCedula.setText("");
         txtTelefono.setText("");
+        txtEmail.setText("");
     }//GEN-LAST:event_btnActualizarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
         int codigo = Integer.parseInt(txtCodigo.getText());
-        Cliente cliente = controladorCliente.read(codigo);
+        Cliente  cliente = controladorCliente.read(codigo);
         txtNombre.setText(cliente.getNombre());
         txtCedula.setText(cliente.getCedula());
         txtDireccion.setText(cliente.getDireccion());
         txtTelefono.setText(cliente.getTelefono());
+        txtEmail.setText(cliente.getEmail());
         txtNombre.setEnabled(true);
-        txtDireccion.setEnabled(true);
         txtCedula.setEnabled(true);
+        txtCodigo.setEnabled(true);
+        txtDireccion.setEnabled(true);
         txtTelefono.setEnabled(true);
+        txtEmail.setEnabled(true);
         btnActualizar.setEnabled(true);
     }//GEN-LAST:event_btnBuscarActionPerformed
 
