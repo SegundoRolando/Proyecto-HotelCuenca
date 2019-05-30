@@ -407,7 +407,13 @@ public class BuscarFactura extends javax.swing.JInternalFrame {
         
         int codigo =Integer.parseInt(txtNumeroFactura.getText());
         Factura factura=controladorFactura.read(codigo);
-        
+        txtCedula.setText(factura.getCliente().getCedula());
+        txtDireccion.setText(factura.getCliente().getDireccion());
+        txtFecha.setText(factura.getFecha());
+        txtNombre.setText(factura.getCliente().getNombre());
+        txtTelefono.setText(factura.getCliente().getTelefono());
+        txtEmail.setText(factura.getCliente().getEmail());
+       
          /*int codigo = Integer.parseInt(txtCodigo.getText());
         Cliente cliente = controladorCliente.read(codigo);
         txtNombre.setText(cliente.getNombre());

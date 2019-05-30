@@ -609,7 +609,10 @@ public class VistaMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_itmListarFacturaActionPerformed
 
     private void itmDeleateFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmDeleateFacturaActionPerformed
-
+        EliminarFactura eliminarFactura=new EliminarFactura(controladorFactura, controladorCliente, controladorProducto, controladorFacturaDetalle);
+        eliminarFactura.setVisible(true);
+        desktopPane.add(eliminarFactura);
+        
     }//GEN-LAST:event_itmDeleateFacturaActionPerformed
 
     private void itmReadFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmReadFacturaActionPerformed

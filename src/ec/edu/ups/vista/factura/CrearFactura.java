@@ -391,7 +391,7 @@ public class CrearFactura extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         Date date = new Date();
         Factura factura = new Factura();
-        Cliente cliente = controladorCliente.read(Integer.parseInt(txtCedula.getText()));
+        Cliente cliente = controladorCliente.read(txtCedula.getText());
         factura.setNumeroFactura(Integer.parseInt(txtNumeroFactura.getText()));
         factura.setFecha(date);
         factura.setCliente(cliente);
