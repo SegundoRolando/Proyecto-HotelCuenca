@@ -10,12 +10,12 @@ public class FacturaDetalle {
     private double precio;
     private int cantidad;
     private double subtotal;
-    private Producto producto;
+    private Habitacion producto;
 
     public FacturaDetalle() {
     }
 
-    public FacturaDetalle(int codigo, double precio, int cantidad, double subtotal, Producto producto) {
+    public FacturaDetalle(int codigo, double precio, int cantidad, double subtotal, Habitacion producto) {
         this.codigo = codigo;
         this.precio = precio;
         this.cantidad = cantidad;
@@ -55,11 +55,11 @@ public class FacturaDetalle {
         this.subtotal = subtotal;
     }
 
-    public Producto getProducto() {
+    public Habitacion getProducto() {
         return producto;
     }
 
-    public void setProducto(Producto producto) {
+    public void setProducto(Habitacion producto) {
         this.producto = producto;
     }
 

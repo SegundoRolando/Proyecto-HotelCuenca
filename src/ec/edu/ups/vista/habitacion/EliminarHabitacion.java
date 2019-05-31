@@ -3,24 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.ups.vista.producto;
+package ec.edu.ups.vista.habitacion;
 
-import ec.edu.ups.controladores.ControladorProducto;
+import ec.edu.ups.controladores.ControladorHabitacion;
 import java.util.ResourceBundle;
 
 /**
  *
  * @author
  */
-public class EliminarProducto extends javax.swing.JInternalFrame {
+public class EliminarHabitacion extends javax.swing.JInternalFrame {
 
     private ResourceBundle mensajes;
-    private ControladorProducto controladorProducto;
+    private ControladorHabitacion controladorProducto;
 
     /**
      * Creates new form DeleteCliente
      */
-    public EliminarProducto(ControladorProducto controladorProducto, ResourceBundle mensajes) {
+    public EliminarHabitacion(ControladorHabitacion controladorProducto, ResourceBundle mensajes) {
         initComponents();
         this.controladorProducto = controladorProducto;
         this.mensajes = mensajes;
@@ -60,7 +60,7 @@ public class EliminarProducto extends javax.swing.JInternalFrame {
         });
 
         txtEliminarProducto.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        txtEliminarProducto.setText("ELIMINAR PRODUCTO");
+        txtEliminarProducto.setText("ELIMINAR HABITACIÒN");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -69,18 +69,18 @@ public class EliminarProducto extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(135, 135, 135)
-                        .addComponent(txtEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(49, 49, 49)
                         .addComponent(txtEliminarProducto))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addComponent(jlbCodigoElimProd))
+                        .addGap(110, 110, 110)
+                        .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(63, Short.MAX_VALUE))
+                        .addGap(96, 96, 96)
+                        .addComponent(txtEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(122, 122, 122)
+                        .addComponent(jlbCodigoElimProd)))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,7 +93,7 @@ public class EliminarProducto extends javax.swing.JInternalFrame {
                 .addComponent(txtEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(109, Short.MAX_VALUE))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
 
         pack();

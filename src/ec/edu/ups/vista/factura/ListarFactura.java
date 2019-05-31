@@ -5,6 +5,7 @@
  */
 package ec.edu.ups.vista.factura;
 
+import ec.edu.ups.controladores.ControladorCliente;
 import ec.edu.ups.controladores.ControladorFactura;
 import ec.edu.ups.modelo.Cliente;
 import ec.edu.ups.modelo.Factura;
@@ -18,11 +19,11 @@ import javax.swing.table.DefaultTableModel;
 public class ListarFactura extends javax.swing.JInternalFrame {
 
     private final ControladorFactura controladorFactura;
-
+     private ControladorCliente  controladorCliente;
     /**
      * Creates new form ListarClientes
      */
-    public ListarFactura(ControladorFactura controladorFactura) {
+    public ListarFactura(ControladorFactura controladorFactura,ControladorCliente controladorCliente) {
         initComponents();
         this.controladorFactura=controladorFactura;
         llenarDatos();
@@ -30,15 +31,13 @@ public class ListarFactura extends javax.swing.JInternalFrame {
     public void llenarDatos(){
         DefaultTableModel modelo=(DefaultTableModel)tblListarFacturas.getModel();
         Set<Factura>lista=controladorFactura.getLista();
+        
         for(Factura factura:lista){
-            Object[]datos={factura.getCliente(),
-                factura.getFecha(),factura.getIva(),
-                factura.getIva(),factura.getNumeroFactura(),factura.getSubtotal(),
-            factura.getTotal()};
+            Object[]datos={factura.getCliente().getNombre(),factura.getCliente().getCedula(),factura.getNumeroFactura(),
+                factura.getFecha(),factura.getSubtotal(),factura.getTotal()};
             modelo.addRow(datos);
         }
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -59,7 +58,7 @@ public class ListarFactura extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Codigo", "Nombre", "Cedula", "Direccion", "Telefono", "Email"
+                "Nombre", "Cédula", "Numero Factura", "Fecha", "Subtotal", "Total"
             }
         ));
         jScrollPane1.setViewportView(tblListarFacturas);

@@ -8,7 +8,6 @@ package ec.edu.ups.vista;
 import com.sun.swing.internal.plaf.basic.resources.basic;
 import ec.edu.ups.vista.factura.ListarFactura;
 
-
 import ec.edu.ups.vista.factura.CrearFactura;
 import ec.edu.ups.vista.factura.EliminarFactura;
 import ec.edu.ups.vista.cliente.EliminarCliente;
@@ -16,16 +15,16 @@ import ec.edu.ups.vista.cliente.ActualizarCliente;
 import ec.edu.ups.vista.cliente.CrearCliente;
 import ec.edu.ups.vista.cliente.ListarCliente;
 import ec.edu.ups.vista.cliente.BuscarCliente;
-import ec.edu.ups.vista.producto.ActualizarProductos;
-import ec.edu.ups.vista.producto.BuscarProducto;
-import ec.edu.ups.vista.producto.ListarProductos;
-import ec.edu.ups.vista.producto.CrearProducto;
-import ec.edu.ups.vista.producto.EliminarProducto;
+import ec.edu.ups.vista.habitacion.ActualizarHabitacion;
+import ec.edu.ups.vista.habitacion.BuscarHabitacion;
+import ec.edu.ups.vista.habitacion.ListarHabitacion;
+import ec.edu.ups.vista.habitacion.CrearHabitacion;
+import ec.edu.ups.vista.habitacion.EliminarHabitacion;
 import ec.edu.ups.controladores.ControladorCliente;
 import ec.edu.ups.controladores.ControladorEmpleado;
 import ec.edu.ups.controladores.ControladorFactura;
 import ec.edu.ups.controladores.ControladorFacturaDetalle;
-import ec.edu.ups.controladores.ControladorProducto;
+import ec.edu.ups.controladores.ControladorHabitacion;
 import ec.edu.ups.controladores.ControladorReservacion;
 import ec.edu.ups.vista.empleado.ActualizarEmpleado;
 import ec.edu.ups.vista.empleado.BuscarEmpleado;
@@ -43,12 +42,12 @@ import java.util.ResourceBundle;
 
 /**
  *
- * @author 
+ * @author
  */
 public class VistaMenu extends javax.swing.JFrame {
 
     private ControladorCliente controladorCliente;
-    private ControladorProducto controladorProducto;
+    private ControladorHabitacion controladorProducto;
     private ControladorFactura controladorFactura;
     private ControladorFacturaDetalle controladorFacturaDetalle;
     private ControladorReservacion controladorReservacion;
@@ -63,11 +62,11 @@ public class VistaMenu extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         controladorCliente = new ControladorCliente();
-        controladorProducto = new ControladorProducto();
+        controladorProducto = new ControladorHabitacion();
         controladorFactura = new ControladorFactura();
-        controladorFacturaDetalle=new ControladorFacturaDetalle();
-        controladorReservacion =new ControladorReservacion();
-        controadorEmpleado=new ControladorEmpleado();
+        controladorFacturaDetalle = new ControladorFacturaDetalle();
+        controladorReservacion = new ControladorReservacion();
+        controadorEmpleado = new ControladorEmpleado();
         //System.out.println("Localizacion por defecto :"+Locale.getDefault().getLanguage());
         localizacion = new Locale("es", "EC");
         Locale.setDefault(localizacion);
@@ -80,9 +79,9 @@ public class VistaMenu extends javax.swing.JFrame {
 
     public void cambiarIdioma() {
         mensajes = ResourceBundle.getBundle("ec.edu.ups.idiomas.mensajes", Locale.getDefault());
-        
+
         clienteMenu.setText(mensajes.getString("menu.cliente"));
-        productoMenu.setText(mensajes.getString("menu.producto"));
+        productoMenu.setText(mensajes.getString("menu.habitacion"));
         EmpleadoMenu1.setText(mensajes.getString("menu.empleado"));
         facturaMenu2.setText(mensajes.getString("menu.reservacion"));
         facturaMenu.setText(mensajes.getString("menu.factura"));
@@ -104,23 +103,20 @@ public class VistaMenu extends javax.swing.JFrame {
         itmUpdateProducto.setText(mensajes.getString("menu.item.actualizar"));
         itmUpdateEmpleado.setText(mensajes.getString("menu.item.actualizar"));
         itmUpdateReservacion2.setText(mensajes.getString("menu.item.actualizar"));
-        
+
         itmDeleateCliente.setText(mensajes.getString("menu.item.eliminar"));
         itmDeleateProducto.setText(mensajes.getString("menu.item.eliminar"));
         itmDeleateFactura.setText(mensajes.getString("menu.item.eliminar"));
         itmDeleateEmpleado.setText(mensajes.getString("menu.item.eliminar"));
         itmDeleateReservacion2.setText(mensajes.getString("menu.item.eliminar"));
-        
+
         itmListarCliente.setText(mensajes.getString("menu.item.listar"));
         itmListarProducto.setText(mensajes.getString("menu.item.listar"));
         itmListarFactura.setText(mensajes.getString("menu.item.listar"));
         itmListarEmpleado.setText(mensajes.getString("menu.item.listar"));
         itmListarReservacion2.setText(mensajes.getString("menu.item.listar"));
-        
-        
-        
-        
-       // itmCreateFactura.setText(mensajes.getString("menu.item.crear"));        itm
+
+        // itmCreateFactura.setText(mensajes.getString("menu.item.crear"));        itm
     }
 
     /**
@@ -214,6 +210,7 @@ public class VistaMenu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        clienteMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/ups/imagenes/clientes.png"))); // NOI18N
         clienteMenu.setMnemonic('f');
         clienteMenu.setText("Cliente");
 
@@ -268,7 +265,8 @@ public class VistaMenu extends javax.swing.JFrame {
 
         menuBar.add(clienteMenu);
 
-        productoMenu.setText("Producto");
+        productoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/ups/imagenes/Archivo.png"))); // NOI18N
+        productoMenu.setText("Registro Habitaciones");
 
         itmCreateProducto.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
         itmCreateProducto.setMnemonic('o');
@@ -321,6 +319,7 @@ public class VistaMenu extends javax.swing.JFrame {
 
         menuBar.add(productoMenu);
 
+        facturaMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/ups/imagenes/pagos.png"))); // NOI18N
         facturaMenu.setText("Factura");
 
         itmCreateFactura.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
@@ -364,6 +363,7 @@ public class VistaMenu extends javax.swing.JFrame {
 
         menuBar.add(facturaMenu);
 
+        facturaMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/ups/imagenes/Reservas.png"))); // NOI18N
         facturaMenu2.setText("Reservacion");
 
         itmCreateReservacion2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
@@ -417,6 +417,7 @@ public class VistaMenu extends javax.swing.JFrame {
 
         menuBar.add(facturaMenu2);
 
+        EmpleadoMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/ups/imagenes/trabajadores.png"))); // NOI18N
         EmpleadoMenu1.setMnemonic('f');
         EmpleadoMenu1.setText("Empleado");
 
@@ -471,6 +472,7 @@ public class VistaMenu extends javax.swing.JFrame {
 
         menuBar.add(EmpleadoMenu1);
 
+        idiomaMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/ups/imagenes/Configuraciones.png"))); // NOI18N
         idiomaMenu.setText("Idiomas");
 
         itmEspanolFactura1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
@@ -507,29 +509,29 @@ public class VistaMenu extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void itmDeleateClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmDeleateClienteActionPerformed
-        EliminarCliente deleteCliente = new EliminarCliente(controladorCliente,mensajes);
+        EliminarCliente deleteCliente = new EliminarCliente(controladorCliente, mensajes);
         deleteCliente.setVisible(true);
         desktopPane.add(deleteCliente);
     }//GEN-LAST:event_itmDeleateClienteActionPerformed
 
     private void itmListarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmListarClienteActionPerformed
-        ListarCliente listarCliente=new ListarCliente(controladorCliente,mensajes);
+        ListarCliente listarCliente = new ListarCliente(controladorCliente, mensajes);
         listarCliente.setVisible(true);
-        desktopPane.add(listarCliente);      
-        
-        
+        desktopPane.add(listarCliente);
+
+
     }//GEN-LAST:event_itmListarClienteActionPerformed
 
     private void itmCreateClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmCreateClienteActionPerformed
         // TODO add your handling code here:
-        CrearCliente crearCliente = new CrearCliente(controladorCliente,mensajes);
+        CrearCliente crearCliente = new CrearCliente(controladorCliente, mensajes);
         crearCliente.setVisible(true);
         desktopPane.add(crearCliente);
 
@@ -537,158 +539,160 @@ public class VistaMenu extends javax.swing.JFrame {
 
     private void itmReadClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmReadClienteActionPerformed
         // TODO add your handling code here:
-        BuscarCliente readCliente = new BuscarCliente(controladorCliente,mensajes);
+        BuscarCliente readCliente = new BuscarCliente(controladorCliente, mensajes);
         readCliente.setVisible(true);
         desktopPane.add(readCliente);
     }//GEN-LAST:event_itmReadClienteActionPerformed
 
     private void itmUpdateClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmUpdateClienteActionPerformed
         // TODO add your handling code here:
-        ActualizarCliente updateCliente = new ActualizarCliente(controladorCliente,mensajes);
+        ActualizarCliente updateCliente = new ActualizarCliente(controladorCliente, mensajes);
         updateCliente.setVisible(true);
         desktopPane.add(updateCliente);
     }//GEN-LAST:event_itmUpdateClienteActionPerformed
 
     private void itmCreateProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmCreateProductoActionPerformed
         // TODO add your handling code here:
-        CrearProducto crearProducto = new CrearProducto(controladorProducto,controladorFacturaDetalle,mensajes);
+        CrearHabitacion crearProducto = new CrearHabitacion(controladorProducto, controladorFacturaDetalle, mensajes);
         crearProducto.setVisible(true);
         desktopPane.add(crearProducto);
     }//GEN-LAST:event_itmCreateProductoActionPerformed
 
     private void itmReadProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmReadProductoActionPerformed
         // TODO add your handling code here:
-        BuscarProducto readProducto = new BuscarProducto(controladorProducto,mensajes);
+        BuscarHabitacion readProducto = new BuscarHabitacion(controladorProducto, mensajes);
         readProducto.setVisible(true);
         desktopPane.add(readProducto);
     }//GEN-LAST:event_itmReadProductoActionPerformed
 
     private void itmUpdateProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmUpdateProductoActionPerformed
         // TODO add your handling code here:
-        ActualizarProductos updateProducto = new ActualizarProductos(controladorProducto,mensajes);
+        ActualizarHabitacion updateProducto = new ActualizarHabitacion(controladorProducto, mensajes);
         updateProducto.setVisible(true);
         desktopPane.add(updateProducto);
     }//GEN-LAST:event_itmUpdateProductoActionPerformed
 
     private void itmDeleateProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmDeleateProductoActionPerformed
         // TODO add your handling code here:
-        EliminarProducto deleteProducto = new EliminarProducto(controladorProducto,mensajes);
+        EliminarHabitacion deleteProducto = new EliminarHabitacion(controladorProducto, mensajes);
         deleteProducto.setVisible(true);
         desktopPane.add(deleteProducto);
     }//GEN-LAST:event_itmDeleateProductoActionPerformed
 
     private void itmListarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmListarProductoActionPerformed
-        ListarProductos listarProducto=new ListarProductos(controladorProducto,mensajes);
+        ListarHabitacion listarProducto = new ListarHabitacion(controladorProducto, mensajes);
         listarProducto.setVisible(true);
-        desktopPane.add(listarProducto); 
-       
+        desktopPane.add(listarProducto);
+
     }//GEN-LAST:event_itmListarProductoActionPerformed
 
     private void itmEspanolFactura1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmEspanolFactura1ActionPerformed
-       // TODO add your handling code here:
-        localizacion=new Locale("es","EC");
+        // TODO add your handling code here:
+        localizacion = new Locale("es", "EC");
         Locale.setDefault(localizacion);
-        cambiarIdioma();        
+        cambiarIdioma();
     }//GEN-LAST:event_itmEspanolFactura1ActionPerformed
 
     private void itmInglesFactura1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmInglesFactura1ActionPerformed
         // TODO add your handling code here:
-        
-        localizacion=new Locale("en","US");
+
+        localizacion = new Locale("en", "US");
         Locale.setDefault(localizacion);
         cambiarIdioma();
     }//GEN-LAST:event_itmInglesFactura1ActionPerformed
 
     private void itmListarFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmListarFacturaActionPerformed
-        ListarFactura listarFacturas=new ListarFactura(controladorFactura);
+        ListarFactura listarFacturas = new ListarFactura(controladorFactura,controladorCliente);
         listarFacturas.setVisible(true);
         desktopPane.add(listarFacturas);
 
     }//GEN-LAST:event_itmListarFacturaActionPerformed
 
     private void itmDeleateFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmDeleateFacturaActionPerformed
-
+        EliminarFactura eliminarFactura = new EliminarFactura(controladorFactura, controladorCliente, controladorProducto, controladorFacturaDetalle);
+        eliminarFactura.setVisible(true);
+        desktopPane.add(eliminarFactura);
     }//GEN-LAST:event_itmDeleateFacturaActionPerformed
 
     private void itmReadFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmReadFacturaActionPerformed
-        BuscarFactura buscarFactura=new BuscarFactura(controladorFactura, controladorCliente, controladorProducto, controladorFacturaDetalle);
+        BuscarFactura buscarFactura = new BuscarFactura(controladorFactura, controladorCliente, controladorProducto, controladorFacturaDetalle);
         buscarFactura.setVisible(true);
         desktopPane.add(buscarFactura);
     }//GEN-LAST:event_itmReadFacturaActionPerformed
 
     private void itmCreateFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmCreateFacturaActionPerformed
         // TODO add your handling code here:
-        CrearFactura crearFactura = new CrearFactura(controladorFactura, controladorCliente,controladorProducto,controladorFacturaDetalle,controladorReservacion);
+        CrearFactura crearFactura = new CrearFactura(controladorFactura, controladorCliente, controladorProducto, controladorFacturaDetalle, controladorReservacion);
         crearFactura.setVisible(true);
         desktopPane.add(crearFactura);
     }//GEN-LAST:event_itmCreateFacturaActionPerformed
 
     private void itmCreateEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmCreateEmpleadoActionPerformed
         // TODO add your handling code here:
-        CrearEmpleado crearEmpleado=new CrearEmpleado(controadorEmpleado,mensajes);
+        CrearEmpleado crearEmpleado = new CrearEmpleado(controadorEmpleado, mensajes);
         crearEmpleado.setVisible(true);
         desktopPane.add(crearEmpleado);
-        
+
     }//GEN-LAST:event_itmCreateEmpleadoActionPerformed
 
     private void itmReadrEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmReadrEmpleadoActionPerformed
         // TODO add your handling code here:
-        BuscarEmpleado buscarEmpleado=new BuscarEmpleado(controadorEmpleado,mensajes);
+        BuscarEmpleado buscarEmpleado = new BuscarEmpleado(controadorEmpleado, mensajes);
         buscarEmpleado.setVisible(true);
         desktopPane.add(buscarEmpleado);
     }//GEN-LAST:event_itmReadrEmpleadoActionPerformed
 
     private void itmUpdateEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmUpdateEmpleadoActionPerformed
         // TODO add your handling code here:
-        ActualizarEmpleado actualizarEmpleado=new ActualizarEmpleado(controadorEmpleado,mensajes);
+        ActualizarEmpleado actualizarEmpleado = new ActualizarEmpleado(controadorEmpleado, mensajes);
         actualizarEmpleado.setVisible(true);
         desktopPane.add(actualizarEmpleado);
     }//GEN-LAST:event_itmUpdateEmpleadoActionPerformed
 
     private void itmDeleateEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmDeleateEmpleadoActionPerformed
         // TODO add your handling code here:
-        EliminarEmpleado eliminarEmpleado=new EliminarEmpleado(controadorEmpleado,mensajes);
+        EliminarEmpleado eliminarEmpleado = new EliminarEmpleado(controadorEmpleado, mensajes);
         eliminarEmpleado.setVisible(true);
         desktopPane.add(eliminarEmpleado);
     }//GEN-LAST:event_itmDeleateEmpleadoActionPerformed
 
     private void itmListarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmListarEmpleadoActionPerformed
         // TODO add your handling code here:
-        ListarEmpleado listarEmpleado =new ListarEmpleado(controadorEmpleado,mensajes);
+        ListarEmpleado listarEmpleado = new ListarEmpleado(controadorEmpleado, mensajes);
         listarEmpleado.setVisible(true);
         desktopPane.add(listarEmpleado);
     }//GEN-LAST:event_itmListarEmpleadoActionPerformed
 
     private void itmCreateReservacion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmCreateReservacion2ActionPerformed
-        CrearReservacion crearReservacion=new CrearReservacion(controladorReservacion,mensajes);
+        CrearReservacion crearReservacion = new CrearReservacion(controladorReservacion, mensajes);
         crearReservacion.setVisible(true);
         desktopPane.add(crearReservacion);
     }//GEN-LAST:event_itmCreateReservacion2ActionPerformed
 
     private void itmReadReservacion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmReadReservacion2ActionPerformed
         // TODO add your handling code here:
-        BuscarReservacion buscar = new BuscarReservacion(controladorReservacion,mensajes);
+        BuscarReservacion buscar = new BuscarReservacion(controladorReservacion, mensajes);
         buscar.setVisible(true);
         desktopPane.add(buscar);
     }//GEN-LAST:event_itmReadReservacion2ActionPerformed
 
     private void itmUpdateReservacion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmUpdateReservacion2ActionPerformed
         // TODO add your handling code here:
-        ActualizarReservacion actualizarReservacion=new ActualizarReservacion(controladorReservacion,mensajes);
+        ActualizarReservacion actualizarReservacion = new ActualizarReservacion(controladorReservacion, mensajes);
         actualizarReservacion.setVisible(true);
         desktopPane.add(actualizarReservacion);
     }//GEN-LAST:event_itmUpdateReservacion2ActionPerformed
 
     private void itmDeleateReservacion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmDeleateReservacion2ActionPerformed
         // TODO add your handling code here:
-        EliminarReservacion eliminarReservacion=new EliminarReservacion(controladorReservacion,mensajes);
+        EliminarReservacion eliminarReservacion = new EliminarReservacion(controladorReservacion, mensajes);
         eliminarReservacion.setVisible(true);
         desktopPane.add(eliminarReservacion);
     }//GEN-LAST:event_itmDeleateReservacion2ActionPerformed
 
     private void itmListarReservacion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmListarReservacion2ActionPerformed
         // TODO add your handling code here:
-        LIstarReservacion listarReservacion=new LIstarReservacion(controladorReservacion,mensajes);
+        LIstarReservacion listarReservacion = new LIstarReservacion(controladorReservacion, mensajes);
         listarReservacion.setVisible(true);
         desktopPane.add(listarReservacion);
 

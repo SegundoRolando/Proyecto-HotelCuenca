@@ -7,7 +7,7 @@
 package ec.edu.ups.vista.reservacion;
 
 import ec.edu.ups.controladores.ControladorReservacion;
-import ec.edu.ups.modelo.Producto;
+import ec.edu.ups.modelo.Habitacion;
 import ec.edu.ups.modelo.Reserva;
 import java.text.SimpleDateFormat;
 import java.util.Date;

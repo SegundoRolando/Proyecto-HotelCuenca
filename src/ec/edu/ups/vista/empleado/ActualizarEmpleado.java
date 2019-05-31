@@ -98,11 +98,11 @@ public class ActualizarEmpleado extends javax.swing.JInternalFrame {
         jlbCodigoCrearClient.setText("Código:");
 
         jlbTituloCrearClient.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jlbTituloCrearClient.setForeground(new java.awt.Color(0, 0, 0));
         jlbTituloCrearClient.setText("ACTUALIZAR  EMPLEADO");
 
         blnEmail.setText("Email:");
 
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/ups/imagenes/buscar.png"))); // NOI18N
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,6 +110,7 @@ public class ActualizarEmpleado extends javax.swing.JInternalFrame {
             }
         });
 
+        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/ups/imagenes/cancelar.png"))); // NOI18N
         btnCancelar.setText("Cancelar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -198,7 +199,7 @@ public class ActualizarEmpleado extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -3,24 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.ups.vista.producto;
+package ec.edu.ups.vista.habitacion;
 
-import ec.edu.ups.controladores.ControladorProducto;
+import ec.edu.ups.controladores.ControladorHabitacion;
 import ec.edu.ups.modelo.Cliente;
-import ec.edu.ups.modelo.Producto;
+import ec.edu.ups.modelo.Habitacion;
 import java.util.ResourceBundle;
 
 /**
  *
  * @author 
  */
-public class BuscarProducto extends javax.swing.JInternalFrame {
+public class BuscarHabitacion extends javax.swing.JInternalFrame {
     private ResourceBundle mensajes;
-    private ControladorProducto controladorProducto;
+    private ControladorHabitacion controladorProducto;
     /**
      * Creates new form ReadCliente
      */
-    public BuscarProducto(ControladorProducto controladorProducto,ResourceBundle mensajes) {
+    public BuscarHabitacion(ControladorHabitacion controladorProducto,ResourceBundle mensajes) {
         initComponents();
         this.controladorProducto = controladorProducto;
         this.mensajes = mensajes;
@@ -31,7 +31,7 @@ public void cambiarIdioma(ResourceBundle mensajes){
      txtBuscarProducto.setText(mensajes.getString("Ventana.Buscar.Producto"));
      btnLeer.setText(mensajes.getString("Ventanas.Buscar.Reservacion"));
      jlbCodigoBuscarProd.setText(mensajes.getString("Ventanas.Codigo"));
-     jlbNombreBuscarProd.setText(mensajes.getString("Ventanas.Nombre"));
+     jlbNombreBuscarProd.setText(mensajes.getString("Ventana.Numero.Habitacion"));
      jlbCostoBuscarProd.setText(mensajes.getString("Ventanas.Costo"));
      jlbCantidadBuscarProd.setText(mensajes.getString("Ventanas.Cantidad"));
       
@@ -81,7 +81,7 @@ public void cambiarIdioma(ResourceBundle mensajes){
             }
         });
 
-        jlbNombreBuscarProd.setText("NOMBRE :");
+        jlbNombreBuscarProd.setText("NUMERO DE HABITACION :");
 
         txtNombre.setEditable(false);
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
@@ -99,7 +99,7 @@ public void cambiarIdioma(ResourceBundle mensajes){
         jlbCodigoBuscarProd.setText("CODIGO:");
 
         txtBuscarProducto.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        txtBuscarProducto.setText("BUSCAR PRODUCTO");
+        txtBuscarProducto.setText("BUSCAR HABITACION");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -108,37 +108,33 @@ public void cambiarIdioma(ResourceBundle mensajes){
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jlbNombreBuscarProd, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jlbCostoBuscarProd, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jlbCodigoBuscarProd))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNombre)
-                            .addComponent(txtPrecio)
-                            .addComponent(txtDetalle)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 95, Short.MAX_VALUE)))
-                        .addGap(34, 34, 34))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jlbCantidadBuscarProd, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(2, 2, 2)
-                                .addComponent(btnLeer, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(34, 34, 34)
-                                .addComponent(txtBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(txtBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(95, 95, 95)
+                        .addComponent(btnLeer, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(136, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jlbCodigoBuscarProd)
+                    .addComponent(jlbCostoBuscarProd, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlbCantidadBuscarProd, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlbNombreBuscarProd, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtDetalle, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(txtBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jlbCodigoBuscarProd))
@@ -150,8 +146,8 @@ public void cambiarIdioma(ResourceBundle mensajes){
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlbCostoBuscarProd)
                     .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jlbCantidadBuscarProd)
                     .addComponent(txtDetalle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -173,7 +169,7 @@ public void cambiarIdioma(ResourceBundle mensajes){
             .addGroup(layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         pack();
@@ -186,7 +182,7 @@ public void cambiarIdioma(ResourceBundle mensajes){
     private void btnLeerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLeerActionPerformed
         // TODO add your handling code here:
         int codigo = Integer.parseInt(txtCodigo.getText());
-        Producto producto = controladorProducto.read(codigo);
+        Habitacion producto = controladorProducto.read(codigo);
         txtNombre.setText(producto.getNombre());
         txtDetalle.setText(producto.getDetalle());
         txtPrecio.setText(Double.toString(producto.getPrecio()));

@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.ups.vista.producto;
+package ec.edu.ups.vista.habitacion;
 
 import ec.edu.ups.controladores.ControladorFacturaDetalle;
-import ec.edu.ups.controladores.ControladorProducto;
+import ec.edu.ups.controladores.ControladorHabitacion;
 import ec.edu.ups.modelo.Cliente;
 import ec.edu.ups.modelo.FacturaDetalle;
-import ec.edu.ups.modelo.Producto;
+import ec.edu.ups.modelo.Habitacion;
 import java.util.ResourceBundle;
 import javax.swing.JOptionPane;
 
@@ -17,14 +17,14 @@ import javax.swing.JOptionPane;
  *
  * @author 
  */
-public class CrearProducto extends javax.swing.JInternalFrame {
+public class CrearHabitacion extends javax.swing.JInternalFrame {
     private ResourceBundle mensajes;
-   private ControladorProducto controladorProducto;
+   private ControladorHabitacion controladorProducto;
     private ControladorFacturaDetalle controladorFacturaDetalle;
     /**
      * Creates new form CrearCliente
      */
-    public CrearProducto(ControladorProducto controladorProducto,ControladorFacturaDetalle controladorFacturaDetalle,ResourceBundle mensajes) {
+    public CrearHabitacion(ControladorHabitacion controladorProducto,ControladorFacturaDetalle controladorFacturaDetalle,ResourceBundle mensajes) {
         initComponents();
         this.controladorProducto = controladorProducto;
         this.controladorFacturaDetalle=controladorFacturaDetalle;
@@ -35,12 +35,11 @@ public class CrearProducto extends javax.swing.JInternalFrame {
     }
 public void cambiarIdioma(ResourceBundle mensajes){
  
-    //jlbTituloCrearProd.setText(mensajes.getString("Ventana.Crear.Producto"));
+    //jlbTituloCrearProd.setText(mensajes.getString("Ventana.Crear.Habitacion"));
     jlbCodigoCrearProd.setText(mensajes.getString("Ventanas.Codigo"));
-    jlbNombreCrearProd.setText(mensajes.getString("Ventanas.Nombre"));
+    jlbNombreCrearProd.setText(mensajes.getString("Ventana.Numero.Habitacion"));
     jlbDescripcionCrearProd.setText(mensajes.getString("Ventanas.Descripcion"));
     jlbCostoCrearProd.setText(mensajes.getString("Ventanas.Costo"));
-    jlbCantidadCrearProd.setText(mensajes.getString("Ventanas.Cantidad"));
     jlbDescripcionCrearProd.setText(mensajes.getString("Ventanas.Descripcion"));
     btnCrear.setText(mensajes.getString("Ventana.CrearR.Reservacion"));
     txtCreaProducto.setText(mensajes.getString("Ventana.Crear.Producto"));
@@ -64,8 +63,6 @@ public void cambiarIdioma(ResourceBundle mensajes){
         txtNombre = new javax.swing.JTextField();
         txtCodigo = new javax.swing.JTextField();
         jlbCodigoCrearProd = new javax.swing.JLabel();
-        jlbCantidadCrearProd = new javax.swing.JLabel();
-        txtCantidad = new javax.swing.JTextField();
         txtCreaProducto = new javax.swing.JLabel();
 
         setClosable(true);
@@ -78,7 +75,7 @@ public void cambiarIdioma(ResourceBundle mensajes){
             }
         });
 
-        jlbDescripcionCrearProd.setText("DESCRIPCION PRODUCTO :");
+        jlbDescripcionCrearProd.setText("DESCRIPCION HABITACION  :");
 
         txtDetalle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,7 +90,7 @@ public void cambiarIdioma(ResourceBundle mensajes){
             }
         });
 
-        jlbNombreCrearProd.setText("NOMBRE :");
+        jlbNombreCrearProd.setText("NÚMERO DE HABITACIÓN :");
 
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,46 +107,37 @@ public void cambiarIdioma(ResourceBundle mensajes){
 
         jlbCodigoCrearProd.setText("CODIGO :");
 
-        jlbCantidadCrearProd.setText("CANTIDAD :");
-
-        txtCantidad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCantidadActionPerformed(evt);
-            }
-        });
-
         txtCreaProducto.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        txtCreaProducto.setText("CREAR PRODUCTO ");
+        txtCreaProducto.setText("REGISTRAR HABITACIÓN ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(141, 141, 141))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addComponent(txtCreaProducto))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jlbCodigoCrearProd)
                             .addComponent(jlbNombreCrearProd)
-                            .addComponent(jlbCantidadCrearProd, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jlbCostoCrearProd, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jlbDescripcionCrearProd))
-                        .addGap(18, 18, 18)
+                        .addGap(28, 28, 28)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtDetalle, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addComponent(txtCreaProducto)))
-                .addContainerGap(24, Short.MAX_VALUE))
+                            .addComponent(txtDetalle, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+                                .addComponent(txtCodigo)
+                                .addComponent(txtPrecio)))))
+                .addContainerGap(57, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(129, 129, 129))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,37 +152,34 @@ public void cambiarIdioma(ResourceBundle mensajes){
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlbNombreCrearProd, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlbCantidadCrearProd)
-                    .addComponent(txtCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlbCostoCrearProd, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jlbDescripcionCrearProd)
-                    .addComponent(txtDetalle, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                .addComponent(btnCrear)
-                .addContainerGap())
+                    .addComponent(txtDetalle, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(49, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -217,25 +202,19 @@ public void cambiarIdioma(ResourceBundle mensajes){
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPrecioActionPerformed
 
-    private void txtCantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCantidadActionPerformed
-
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
         // TODO add your handling code here:
-        Producto producto = new Producto();
+        Habitacion producto = new Habitacion();
         producto.setCodigoProducto(Integer.parseInt(txtCodigo.getText()));
         producto.setNombre(txtNombre.getText());
         producto.setPrecio(Double.parseDouble(txtPrecio.getText()));
         producto.setDetalle(txtDetalle.getText());
-        producto.setCantidad(Integer.parseInt(txtCantidad.getText()));
         txtCodigo.setText(String.valueOf(producto.getCodigoProducto()));
         controladorProducto.cread(producto);
         txtCodigo.setText(Integer.toString(this.controladorProducto.getCodigo()));
         JOptionPane.showMessageDialog(this, "Producto Creado ", "Crear Producto", JOptionPane.INFORMATION_MESSAGE);
         txtCodigo.setText(String.valueOf(this.controladorProducto.getCodigo()));
         txtNombre.setText("");
-        txtCantidad.setText("");
         txtPrecio.setText("");
         txtDetalle.setText("");
     }//GEN-LAST:event_btnCrearActionPerformed
@@ -244,12 +223,10 @@ public void cambiarIdioma(ResourceBundle mensajes){
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCrear;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel jlbCantidadCrearProd;
     private javax.swing.JLabel jlbCodigoCrearProd;
     private javax.swing.JLabel jlbCostoCrearProd;
     private javax.swing.JLabel jlbDescripcionCrearProd;
     private javax.swing.JLabel jlbNombreCrearProd;
-    private javax.swing.JTextField txtCantidad;
     private javax.swing.JTextField txtCodigo;
     private javax.swing.JLabel txtCreaProducto;
     private javax.swing.JTextField txtDetalle;

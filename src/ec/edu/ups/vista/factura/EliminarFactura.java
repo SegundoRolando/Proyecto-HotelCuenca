@@ -8,11 +8,11 @@ package ec.edu.ups.vista.factura;
 import ec.edu.ups.controladores.ControladorCliente;
 import ec.edu.ups.controladores.ControladorFactura;
 import ec.edu.ups.controladores.ControladorFacturaDetalle;
-import ec.edu.ups.controladores.ControladorProducto;
+import ec.edu.ups.controladores.ControladorHabitacion;
 import ec.edu.ups.modelo.Cliente;
 import ec.edu.ups.modelo.Factura;
 import ec.edu.ups.modelo.FacturaDetalle;
-import ec.edu.ups.modelo.Producto;
+import ec.edu.ups.modelo.Habitacion;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Set;
@@ -26,7 +26,7 @@ public class EliminarFactura extends javax.swing.JInternalFrame {
 
     private ControladorFactura controladorFactura;
     private ControladorCliente controladorCliente;
-    private ControladorProducto controladorProducto;
+    private ControladorHabitacion controladorProducto;
     private final ControladorFacturaDetalle controladorFacturaDetalle;
     int fila=0;
     int cantidad=1;
@@ -34,7 +34,7 @@ public class EliminarFactura extends javax.swing.JInternalFrame {
     /**
      * Creates new form CrearCliente
      */
-    public EliminarFactura(ControladorFactura controladorFactura, ControladorCliente controladorCliente, ControladorProducto controladorProducto,ControladorFacturaDetalle controladorFacturaDetalle) {
+    public EliminarFactura(ControladorFactura controladorFactura, ControladorCliente controladorCliente, ControladorHabitacion controladorProducto,ControladorFacturaDetalle controladorFacturaDetalle) {
         initComponents();
         this.controladorFactura = controladorFactura;
         this.controladorCliente = controladorCliente;
@@ -67,7 +67,7 @@ public class EliminarFactura extends javax.swing.JInternalFrame {
     public void llenarTabla(){
     
      int codigo =Integer.parseInt(String.valueOf(tblListarFactu.getValueAt(0,0)));
-      Producto producto=controladorProducto.read(codigo);
+      Habitacion producto=controladorProducto.read(codigo);
       cantidad = Integer.parseInt(String.valueOf(tblListarFactu.getValueAt(0,1)));
       FacturaDetalle facdet = new FacturaDetalle(controladorFacturaDetalle.getLista().size()+1, producto.getPrecio(), cantidad, producto.getPrecio(), producto);
       controladorFacturaDetalle.getLista().add(facdet);
@@ -179,7 +179,7 @@ public class EliminarFactura extends javax.swing.JInternalFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "CODIGO", "CANTIDAD", "PRODUCTO", "P.UNIT", "TOTAL"
+                "CODIGO", "CANTIDAD", "NUMERO DE HABITACION", "P.UNIT", "TOTAL"
             }
         ) {
             boolean[] canEdit = new boolean [] {

@@ -5,66 +5,95 @@
  */
 package ec.edu.ups.modelo;
 
+import java.util.Objects;
+
 /**
  *
- * @author ASUS
+ * @author 
  */
 public class Habitacion {
     
-    private int codigoHabitacion;
-    private int numeroHabitacion;
-    private String descripcion;
-    private  String tipoHabitacion;
+    private int codigoProducto;
+    private String nombre;
+    private double precio;
+    private String detalle; 
+    private int cantidad;
     
-    public Habitacion(){
-        
+    public Habitacion() {
     }
 
-    public Habitacion(int codigoHabitacion, int numeroHabitacion, String descripcion, String tipoHabitacion) {
-        this.codigoHabitacion = codigoHabitacion;
-        this.numeroHabitacion = numeroHabitacion;
-        this.descripcion = descripcion;
-        this.tipoHabitacion = tipoHabitacion;
+    public Habitacion(int codigo, String nombre, double precio, String marca, String detalle,int cantidad) {
+        this.codigoProducto = codigo;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.detalle = detalle;
+        this.cantidad = cantidad;
     }
 
-    public int getCodigoHabitacion() {
-        return codigoHabitacion;
+    public int getCantidad() {
+        return cantidad;
     }
 
-    public void setCodigoHabitacion(int codigoHabitacion) {
-        this.codigoHabitacion = codigoHabitacion;
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
-
-    public int getNumeroHabitacion() {
-        return numeroHabitacion;
-    }
-
-    public void setNumeroHabitacion(int numeroHabitacion) {
-        this.numeroHabitacion = numeroHabitacion;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
     
-    public String getTipoHabitacion() {
-        return tipoHabitacion;
+    public int getCodigoProducto() {
+        return codigoProducto;
     }
 
-    public void setTipoHabitacion(String tipoHabitacion) {
-        this.tipoHabitacion = tipoHabitacion;
+    public void setCodigoProducto(int codigo) {
+        this.codigoProducto = codigo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public String getDetalle() {
+        return detalle;
+    }
+
+    public void setDetalle(String detalle) {
+        this.detalle = detalle;
+    }
+
+
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 41 * hash + this.codigoProducto;
+        return hash;
     }
 
     @Override
-    public String toString() {
-        return "Habitacion{" + "codigoHabitacion=" + codigoHabitacion + ", numeroHabitacion=" + numeroHabitacion + ", descripcion=" + descripcion + ", tipoHabitacion=" + tipoHabitacion + '}';
-    }
-
-  
-    
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Habitacion other = (Habitacion) obj;
+        if (this.codigoProducto != other.codigoProducto) {
+            return false;
+        }
+        return true;
+    }   
 }

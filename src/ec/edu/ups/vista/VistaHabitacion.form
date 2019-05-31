@@ -121,25 +121,25 @@
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jToggleButton1" min="-2" pref="158" max="-2" attributes="0"/>
+                  <Component id="jToggleButton1" min="-2" pref="110" max="-2" attributes="0"/>
                   <Component id="jToggleButton5" pref="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jToggleButton2" min="-2" pref="160" max="-2" attributes="0"/>
-                  <Component id="jToggleButton6" min="-2" pref="160" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jToggleButton3" min="-2" pref="163" max="-2" attributes="0"/>
+                  <Component id="jToggleButton2" min="-2" pref="107" max="-2" attributes="0"/>
+                  <Component id="jToggleButton6" pref="0" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jToggleButton3" min="-2" pref="111" max="-2" attributes="0"/>
                   <Component id="jToggleButton7" pref="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jToggleButton66" min="-2" pref="163" max="-2" attributes="0"/>
+                  <Component id="jToggleButton66" min="-2" pref="114" max="-2" attributes="0"/>
                   <Component id="jToggleButton8" pref="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="35" max="32767" attributes="0"/>
+              <EmptySpace pref="43" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -171,7 +171,7 @@
     <Component class="javax.swing.JToggleButton" name="jToggleButton1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/ec/edu/ups/imagenes/boton1.png"/>
+          <Image iconType="3" name="/ec/edu/ups/imagenes/1.png"/>
         </Property>
       </Properties>
       <Events>
@@ -181,7 +181,7 @@
     <Component class="javax.swing.JToggleButton" name="jToggleButton2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/ec/edu/ups/imagenes/boton2.png"/>
+          <Image iconType="3" name="/ec/edu/ups/imagenes/2.png"/>
         </Property>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[111, 25]"/>
@@ -194,7 +194,7 @@
     <Component class="javax.swing.JToggleButton" name="jToggleButton3">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/ec/edu/ups/imagenes/boton3.png"/>
+          <Image iconType="3" name="/ec/edu/ups/imagenes/3.png"/>
         </Property>
       </Properties>
       <Events>
@@ -204,7 +204,7 @@
     <Component class="javax.swing.JToggleButton" name="jToggleButton5">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/ec/edu/ups/imagenes/boton5.png"/>
+          <Image iconType="3" name="/ec/edu/ups/imagenes/5.png"/>
         </Property>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[11, 25]"/>
@@ -217,7 +217,7 @@
     <Component class="javax.swing.JToggleButton" name="jToggleButton6">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/ec/edu/ups/imagenes/boton6.png"/>
+          <Image iconType="3" name="/ec/edu/ups/imagenes/6.png"/>
         </Property>
         <Property name="autoscrolls" type="boolean" value="true"/>
       </Properties>
@@ -228,7 +228,7 @@
     <Component class="javax.swing.JToggleButton" name="jToggleButton7">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/ec/edu/ups/imagenes/boton7.png"/>
+          <Image iconType="3" name="/ec/edu/ups/imagenes/7.png"/>
         </Property>
       </Properties>
       <Events>
@@ -238,7 +238,7 @@
     <Component class="javax.swing.JToggleButton" name="jToggleButton8">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/ec/edu/ups/imagenes/boton8.png"/>
+          <Image iconType="3" name="/ec/edu/ups/imagenes/8.png"/>
         </Property>
       </Properties>
       <Events>
@@ -248,7 +248,7 @@
     <Component class="javax.swing.JToggleButton" name="jToggleButton66">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/ec/edu/ups/imagenes/boton4.png"/>
+          <Image iconType="3" name="/ec/edu/ups/imagenes/4.png"/>
         </Property>
       </Properties>
       <Events>

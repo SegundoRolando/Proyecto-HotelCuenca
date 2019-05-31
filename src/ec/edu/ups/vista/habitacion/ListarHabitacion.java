@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.ups.vista.producto;
+package ec.edu.ups.vista.habitacion;
 
 import ec.edu.ups.controladores.ControladorFacturaDetalle;
-import ec.edu.ups.controladores.ControladorProducto;
+import ec.edu.ups.controladores.ControladorHabitacion;
 import ec.edu.ups.modelo.Factura;
-import ec.edu.ups.modelo.Producto;
+import ec.edu.ups.modelo.Habitacion;
 import java.util.ResourceBundle;
 import java.util.Set;
 import javax.swing.table.DefaultTableModel;
@@ -17,13 +17,13 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author 
  */
-public class ListarProductos extends javax.swing.JInternalFrame {
-private ControladorProducto controladorProducto;
+public class ListarHabitacion extends javax.swing.JInternalFrame {
+private ControladorHabitacion controladorProducto;
 private ResourceBundle mensajes;
     /**
      * Creates new form ListarClientes
      */
-    public ListarProductos(ControladorProducto controladorProducto,ResourceBundle mensajes) {
+    public ListarHabitacion(ControladorHabitacion controladorProducto,ResourceBundle mensajes) {
         initComponents();
         this.controladorProducto=controladorProducto;
         this.mensajes = mensajes ;
@@ -38,8 +38,8 @@ private ResourceBundle mensajes;
     
       public void llenarDatos(){
         DefaultTableModel modelo=(DefaultTableModel)tblListarProductos.getModel();
-        Set<Producto>lista=controladorProducto.getLista();
-        for(Producto producto:lista){
+        Set<Habitacion>lista=controladorProducto.getLista();
+        for(Habitacion producto:lista){
             Object[]datos={producto.getCodigoProducto(),producto.getDetalle(),
             producto.getNombre(),producto.getPrecio()};
             modelo.addRow(datos);
@@ -68,13 +68,13 @@ private ResourceBundle mensajes;
 
             },
             new String [] {
-                "CODIGO", "CANTIDAD", "NOMBRE", "COSTO"
+                "CODIGO", "CATEGORIA", "NUMERO DE HABITACION", "COSTO"
             }
         ));
         jScrollPane1.setViewportView(tblListarProductos);
 
         jlbTituloListaProducto.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jlbTituloListaProducto.setText("LISTA PRODUCTO");
+        jlbTituloListaProducto.setText("LISTAR  HABITACIÒN");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -82,19 +82,19 @@ private ResourceBundle mensajes;
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 843, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(296, 296, 296)
+                .addGap(302, 302, 302)
                 .addComponent(jlbTituloListaProducto)
-                .addContainerGap(355, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jlbTituloListaProducto)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 335, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
                 .addContainerGap())
         );
 

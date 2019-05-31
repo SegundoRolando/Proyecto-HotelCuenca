@@ -5,7 +5,7 @@
  */
 package ec.edu.ups.controladores;
 
-import ec.edu.ups.modelo.Producto;
+import ec.edu.ups.modelo.Habitacion;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,18 +13,18 @@ import java.util.Set;
  *
  * @author 
  */
-public class ControladorProducto {
+public class ControladorHabitacion {
     
-    private Set<Producto> lista;
+    private Set<Habitacion> lista;
     private int codigo;
 
     
     
-    public ControladorProducto() {
+    public ControladorHabitacion() {
         lista = new HashSet<>();
         codigo = 1;
     }
-    public Set<Producto> getLista() {
+    public Set<Habitacion> getLista() {
         return lista;
     }
 
@@ -32,14 +32,14 @@ public class ControladorProducto {
     public int getCodigo() {
         return codigo;
     }
-    public void cread(Producto producto){
+    public void cread(Habitacion producto){
         producto.setCodigoProducto(codigo);
         lista.add(producto);
         codigo++;
     }
     
-    public Producto read(int codigo){
-        for (Producto producto : lista) {
+    public Habitacion read(int codigo){
+        for (Habitacion producto : lista) {
             if(producto.getCodigoProducto()== codigo){
                 return producto;
             }
@@ -47,7 +47,7 @@ public class ControladorProducto {
         return null;
     }
     
-    public void update(Producto producto){
+    public void update(Habitacion producto){
         if(lista.contains(producto)){
             lista.remove(producto);
             lista.add(producto);
@@ -55,7 +55,7 @@ public class ControladorProducto {
     }
     
     public void delete(int codigo){
-        for (Producto producto : lista) {
+        for (Habitacion producto : lista) {
             if(producto.getCodigoProducto()== codigo){
                 lista.remove(producto);
                 break;
@@ -66,7 +66,7 @@ public class ControladorProducto {
     
     public void printAll(){
     
-        for (Producto producto : lista) {
+        for (Habitacion producto : lista) {
             System.out.println(producto);
         }
     }

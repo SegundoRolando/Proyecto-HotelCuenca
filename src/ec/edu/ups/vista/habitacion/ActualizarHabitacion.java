@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.ups.vista.producto;
+package ec.edu.ups.vista.habitacion;
 
-import ec.edu.ups.controladores.ControladorProducto;
-import ec.edu.ups.modelo.Producto;
+import ec.edu.ups.controladores.ControladorHabitacion;
+import ec.edu.ups.modelo.Habitacion;
 import java.util.ResourceBundle;
 import javax.swing.JOptionPane;
 
@@ -14,13 +14,13 @@ import javax.swing.JOptionPane;
  *
  * @author 
  */
-public class ActualizarProductos extends javax.swing.JInternalFrame {
+public class ActualizarHabitacion extends javax.swing.JInternalFrame {
     private ResourceBundle mensajes;
-    private ControladorProducto controladorProducto;
+    private ControladorHabitacion controladorProducto;
     /**
      * Creates new form UpdateCliente
      */
-    public ActualizarProductos(ControladorProducto controladorProducto, ResourceBundle mensajes) {
+    public ActualizarHabitacion(ControladorHabitacion controladorProducto, ResourceBundle mensajes) {
         initComponents();
         this. mensajes = mensajes;
         this.controladorProducto = controladorProducto;
@@ -60,8 +60,6 @@ public class ActualizarProductos extends javax.swing.JInternalFrame {
 
         setClosable(true);
 
-        jPanel1.setForeground(new java.awt.Color(0, 0, 0));
-
         jlbCodigoVentProd.setText("INGRESAR CODIGO:");
 
         txtDetalle.addActionListener(new java.awt.event.ActionListener() {
@@ -97,8 +95,7 @@ public class ActualizarProductos extends javax.swing.JInternalFrame {
         });
 
         txtActualizarProducto.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        txtActualizarProducto.setForeground(new java.awt.Color(0, 0, 0));
-        txtActualizarProducto.setText("ACTUALIZAR PRODUCTO");
+        txtActualizarProducto.setText("ACTUALIZAR HABITACIÒN");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -128,8 +125,8 @@ public class ActualizarProductos extends javax.swing.JInternalFrame {
                             .addContainerGap()))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txtActualizarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61))
+                .addComponent(txtActualizarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,7 +184,7 @@ public class ActualizarProductos extends javax.swing.JInternalFrame {
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         // TODO add your handling code here:
-        Producto producto = new Producto();
+        Habitacion producto = new Habitacion();
         producto.setCodigoProducto(Integer.parseInt(txtCodigo.getText()));
         producto.setNombre(txtNombre.getText());
         producto.setDetalle(txtDetalle.getText());
@@ -202,7 +199,7 @@ public class ActualizarProductos extends javax.swing.JInternalFrame {
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
         int codigo = Integer.parseInt(txtCodigo.getText());
-        Producto producto = controladorProducto.read(codigo);
+        Habitacion producto = controladorProducto.read(codigo);
         txtNombre.setText(producto.getNombre());
         txtDetalle.setText(producto.getDetalle());
         txtCosto.setText(String.valueOf(producto.getPrecio()));

@@ -8,12 +8,12 @@ package ec.edu.ups.vista.factura;
 import ec.edu.ups.controladores.ControladorCliente;
 import ec.edu.ups.controladores.ControladorFactura;
 import ec.edu.ups.controladores.ControladorFacturaDetalle;
-import ec.edu.ups.controladores.ControladorProducto;
+import ec.edu.ups.controladores.ControladorHabitacion;
 import ec.edu.ups.controladores.ControladorReservacion;
 import ec.edu.ups.modelo.Cliente;
 import ec.edu.ups.modelo.Factura;
 import ec.edu.ups.modelo.FacturaDetalle;
-import ec.edu.ups.modelo.Producto;
+import ec.edu.ups.modelo.Habitacion;
 import ec.edu.ups.modelo.Reserva;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -28,7 +28,7 @@ public class BuscarFactura extends javax.swing.JInternalFrame {
 
     private ControladorFactura controladorFactura;
     private ControladorCliente controladorCliente;
-    private ControladorProducto controladorProducto;
+    private ControladorHabitacion controladorProducto;
     private ControladorReservacion controladoReservacion;
     private final ControladorFacturaDetalle controladorFacturaDetalle;
     int fila=0;
@@ -37,7 +37,7 @@ public class BuscarFactura extends javax.swing.JInternalFrame {
     /**
      * Creates new form CrearCliente
      */
-    public BuscarFactura(ControladorFactura controladorFactura, ControladorCliente controladorCliente, ControladorProducto controladorProducto,ControladorFacturaDetalle controladorFacturaDetalle) {
+    public BuscarFactura(ControladorFactura controladorFactura, ControladorCliente controladorCliente, ControladorHabitacion controladorProducto,ControladorFacturaDetalle controladorFacturaDetalle) {
         initComponents();
         this.controladorFactura = controladorFactura;
         this.controladorCliente = controladorCliente;
@@ -72,7 +72,7 @@ public class BuscarFactura extends javax.swing.JInternalFrame {
     public void llenarTabla(){
     
      int codigo =Integer.parseInt(String.valueOf(tblListarFactu.getValueAt(0,0)));
-      Producto producto=controladorProducto.read(codigo);
+      Habitacion producto=controladorProducto.read(codigo);
       cantidad = Integer.parseInt(String.valueOf(tblListarFactu.getValueAt(0,1)));
       FacturaDetalle facdet = new FacturaDetalle(controladorFacturaDetalle.getLista().size()+1, producto.getPrecio(), cantidad, producto.getPrecio(), producto);
       controladorFacturaDetalle.getLista().add(facdet);
@@ -119,12 +119,6 @@ public class BuscarFactura extends javax.swing.JInternalFrame {
         jLabel10 = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         txtFecha = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
-        txtcodigoreservacion = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        txtnumeroHabitacion = new javax.swing.JTextField();
-        txtcostoHabitacion = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
 
         setClosable(true);
@@ -188,7 +182,7 @@ public class BuscarFactura extends javax.swing.JInternalFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "CODIGO", "CANTIDAD", "PRODUCTO", "P.UNIT", "TOTAL"
+                "CODIGO", "CANTIDAD", "NUMERO DE HABITACION", "P.UNIT", "TOTAL"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -249,24 +243,6 @@ public class BuscarFactura extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel12.setText("NUMERO DE HABITACION");
-
-        jLabel13.setText("CODIGO  DE RESERVACION");
-
-        txtnumeroHabitacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtnumeroHabitacionActionPerformed(evt);
-            }
-        });
-
-        txtcostoHabitacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtcostoHabitacionActionPerformed(evt);
-            }
-        });
-
-        jLabel11.setText("Costo de la habitacion");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -277,25 +253,18 @@ public class BuscarFactura extends javax.swing.JInternalFrame {
                         .addContainerGap()
                         .addComponent(jScrollPane1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtSubtotal, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(44, 44, 44)
-                                .addComponent(jLabel4)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtIva, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(27, 27, 27)
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel11)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtcostoHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtSubtotal, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44)
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtIva, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 77, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -325,22 +294,10 @@ public class BuscarFactura extends javax.swing.JInternalFrame {
                             .addComponent(jbtBuscarFactura))
                         .addGap(42, 42, 42))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(42, 42, 42)
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtNumeroFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING))))
+                        .addGap(42, 42, 42)
+                        .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtcodigoreservacion, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
-                            .addComponent(txtnumeroHabitacion))
+                        .addComponent(txtNumeroFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -370,24 +327,14 @@ public class BuscarFactura extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtcodigoreservacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12)
-                    .addComponent(txtnumeroHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -398,10 +345,7 @@ public class BuscarFactura extends javax.swing.JInternalFrame {
                     .addComponent(txtIva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
                     .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(1, 1, 1)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtcostoHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11)))
+                .addGap(18, 18, 18))
         );
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
@@ -428,7 +372,7 @@ public class BuscarFactura extends javax.swing.JInternalFrame {
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
 
         pack();
@@ -466,9 +410,7 @@ public class BuscarFactura extends javax.swing.JInternalFrame {
         txtNombre.setText(factura.getCliente().getNombre());
         txtTelefono.setText(factura.getCliente().getTelefono());
         txtEmail.setText(factura.getCliente().getEmail());
-        txtcodigoreservacion.setText(String.valueOf(reserva.getCodigoReserva()));
-        txtcostoHabitacion.setText(String.valueOf(reserva.getCostoAlojamiento()));
-        txtnumeroHabitacion.setText(String.valueOf(reserva.getCodigoHabitacion()));
+        
         
          /*int codigo = Integer.parseInt(txtCodigo.getText());
         Cliente cliente = controladorCliente.read(codigo);
@@ -503,22 +445,11 @@ public class BuscarFactura extends javax.swing.JInternalFrame {
     private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmailActionPerformed
-
-    private void txtnumeroHabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnumeroHabitacionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtnumeroHabitacionActionPerformed
-
-    private void txtcostoHabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcostoHabitacionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtcostoHabitacionActionPerformed
  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -542,8 +473,5 @@ public class BuscarFactura extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtSubtotal;
     private javax.swing.JTextField txtTelefono;
     private javax.swing.JTextField txtTotal;
-    private javax.swing.JTextField txtcodigoreservacion;
-    private javax.swing.JTextField txtcostoHabitacion;
-    private javax.swing.JTextField txtnumeroHabitacion;
     // End of variables declaration//GEN-END:variables
 }

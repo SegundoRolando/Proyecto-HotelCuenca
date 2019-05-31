@@ -100,14 +100,13 @@ public class VistaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         if(txtUsuario.getText().equals("h")&& txtContraseña.getText().equals("1")){
-            JOptionPane.showMessageDialog(this, "login exitoso");
+            //JOptionPane.showMessageDialog(this, "login exitoso");
             principal.setVisible(true);
             this.dispose();
         }else {
             JOptionPane.showMessageDialog(this, "usuario y contraseña incorrecta");
             txtContraseña.setText("");
             txtUsuario.setText("");
-            
         }
         
      

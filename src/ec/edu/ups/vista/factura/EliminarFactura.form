@@ -303,7 +303,7 @@
                   <Table columnCount="5" rowCount="5">
                     <Column editable="true" title="CODIGO" type="java.lang.Object"/>
                     <Column editable="true" title="CANTIDAD" type="java.lang.Object"/>
-                    <Column editable="false" title="PRODUCTO" type="java.lang.Object"/>
+                    <Column editable="false" title="NUMERO DE HABITACION" type="java.lang.Object"/>
                     <Column editable="false" title="P.UNIT" type="java.lang.Object"/>
                     <Column editable="false" title="TOTAL" type="java.lang.Object"/>
                   </Table>

@@ -34,7 +34,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="31" max="32767" attributes="0"/>
+              <EmptySpace pref="38" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -48,48 +48,41 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jlbNombreBuscarProd" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
-                              <Component id="jlbCostoBuscarProd" alignment="0" min="-2" pref="93" max="-2" attributes="0"/>
-                              <Component id="jlbCodigoBuscarProd" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtNombre" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtPrecio" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtDetalle" alignment="0" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="txtCodigo" min="-2" pref="99" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="95" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="txtBuscarProducto" min="-2" pref="297" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jlbCantidadBuscarProd" min="-2" pref="93" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                                  <Component id="btnLeer" min="-2" pref="120" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                                  <Component id="txtBuscarProducto" min="-2" pref="246" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
+                          <Component id="btnLeer" min="-2" pref="120" max="-2" attributes="0"/>
+                          <EmptySpace pref="136" max="32767" attributes="0"/>
                       </Group>
                   </Group>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jlbCodigoBuscarProd" min="-2" max="-2" attributes="0"/>
+                      <Component id="jlbCostoBuscarProd" min="-2" pref="93" max="-2" attributes="0"/>
+                      <Component id="jlbCantidadBuscarProd" min="-2" pref="93" max="-2" attributes="0"/>
+                      <Component id="jlbNombreBuscarProd" min="-2" pref="149" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="txtDetalle" min="-2" pref="169" max="-2" attributes="0"/>
+                      <Component id="txtNombre" min="-2" pref="169" max="-2" attributes="0"/>
+                      <Component id="txtCodigo" min="-2" pref="99" max="-2" attributes="0"/>
+                      <Component id="txtPrecio" alignment="0" min="-2" pref="169" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="txtBuscarProducto" min="-2" pref="26" max="-2" attributes="0"/>
-                  <EmptySpace pref="19" max="32767" attributes="0"/>
+                  <EmptySpace pref="30" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="txtCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jlbCodigoBuscarProd" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -104,10 +97,10 @@
                       <Component id="jlbCostoBuscarProd" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtPrecio" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jlbCantidadBuscarProd" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtDetalle" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="jlbCantidadBuscarProd" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtDetalle" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnLeer" min="-2" pref="35" max="-2" attributes="0"/>
@@ -150,7 +143,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jlbNombreBuscarProd">
           <Properties>
-            <Property name="text" type="java.lang.String" value="NOMBRE :"/>
+            <Property name="text" type="java.lang.String" value="NUMERO DE HABITACION :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtNombre">
@@ -176,7 +169,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="24" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="BUSCAR PRODUCTO"/>
+            <Property name="text" type="java.lang.String" value="BUSCAR HABITACION"/>
           </Properties>
         </Component>
       </SubComponents>
